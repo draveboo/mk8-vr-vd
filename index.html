@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<title>VKXR — Mario Kart 8 in your headset</title>
+<meta name="description" content="VKXR is a VR layer for Cemu that adds true stereo rendering to supported Wii U titles, starting with Mario Kart 8. Free, open source, and no game files bundled." />
+<meta name="theme-color" content="#08090b" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="VKXR — Mario Kart 8 in your headset" />
+<meta property="og:description" content="A VR layer for Cemu. True stereo rendering for supported Wii U titles, starting with Mario Kart 8." />
+<meta property="og:image" content="https://vkxr.vercel.app/assets/video/nebula-poster.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<link rel="preload" as="image" href="https://vkxr.vercel.app/assets/video/nebula-poster.jpg" />
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="assets/css/style.css" />
+<script src="https://web.squarecdn.com/v1/square.js"></script>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='12' fill='none' stroke='%23ecedef' stroke-width='2'/%3E%3Ccircle cx='16' cy='16' r='4.5' fill='%239ad9e8'/%3E%3C/svg%3E" />
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================= NAV ============================= -->
+<header class="nav" id="nav" data-elevated="false">
+  <div class="nav__pill glass">
+    <a class="brand" href="#top" aria-label="VKXR home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26" fill="none">
+          <circle cx="16" cy="16" r="12" stroke="#ecedef" stroke-width="1.6" opacity=".85" />
+          <circle cx="16" cy="16" r="4.5" fill="#9ad9e8" />
+        </svg>
+      </span>
+      <span class="brand__text">VKXR</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#demo">Demo</a>
+      <a href="#why">Why</a>
+      <a href="#how">How it works</a>
+      <a href="#compatibility">Titles</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <a class="glass-btn glass-btn--primary glass-btn--sm nav__cta" href="#download" data-tilt data-ripple>
+      <span>Download</span>
+    </a>
+
+    <button class="nav__toggle glass-btn glass-btn--icon glass-btn--ghost" id="nav-toggle" type="button"
+            aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" />
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu glass" id="mobile-menu" hidden>
+  <nav aria-label="Mobile">
+    <a href="#demo">Demo</a>
+    <a href="#why">Why</a>
+    <a href="#how">How it works</a>
+    <a href="#compatibility">Titles</a>
+    <a href="#faq">FAQ</a>
+    <a href="#download">Download</a>
+  </nav>
+</div>
+
+<main id="main">
+  <!-- ============================= HERO ============================= -->
+  <section class="hero" id="top">
+    <div class="hero__media" aria-hidden="true">
+      <video class="hero__video" id="bg-video"
+             autoplay muted loop playsinline disablepictureinpicture
+             poster="https://vkxr.vercel.app/assets/video/nebula-poster.jpg" preload="auto" tabindex="-1">
+        <source src="https://vkxr.vercel.app/assets/video/nebula.webm" type="video/webm" />
+        <source src="https://vkxr.vercel.app/assets/video/nebula.mp4" type="video/mp4" />
+      </video>
+      <div class="hero__wash"></div>
+      <div class="hero__grain"></div>
+    </div>
+
+    <div class="hero__inner">
+      <p class="micro reveal" data-reveal>
+        <span class="dot" aria-hidden="true"></span>
+        Free &middot; Open source &middot; Bring your own copy
+      </p>
+
+      <h1 class="hero__title" data-reveal
+          aria-label="Mario Kart 8, in your headset.">
+        <span class="line" aria-hidden="true"><span class="line__in">Mario Kart 8,</span></span>
+        <span class="line" aria-hidden="true"><span class="line__in">in your headset.</span></span>
+      </h1>
+
+      <p class="hero__lede reveal" data-reveal data-reveal-delay="200">
+        VKXR is a VR layer for Cemu. It turns each frame of a supported Wii U title into two,
+        so Mario Kart 8 reads as depth instead of a picture on a wall.
+      </p>
+
+      <div class="hero__cta reveal" data-reveal data-reveal-delay="300">
+        <a class="glass-btn glass-btn--primary glass-btn--lg" href="https://github.com/draveboo/mk8-vr-vd/releases/download/v0.1.0/MarioKart8-VR-v0.1.0-windows-x64.zip" data-tilt data-ripple>
+          <span>Download for Windows</span>
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+            <path d="M5 12h13m0 0-5-5m5 5-5 5" />
+          </svg>
+        </a>
+        <a class="quiet-link" href="#how">See how it works</a>
+      </div>
+
+      <dl class="stats reveal" data-reveal data-reveal-delay="400">
+        <div class="stat">
+          <dt>Stereo, both eyes</dt>
+          <dd>90Hz+</dd>
+        </div>
+        <div class="stat">
+          <dt>Processing overhead</dt>
+          <dd>&lt;2%</dd>
+        </div>
+        <div class="stat">
+          <dt>Game files bundled</dt>
+          <dd>0</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============================= DEMO ============================= -->
+  <section class="section demo" id="demo">
+    <div class="frame">
+      <div class="wrap">
+        <header class="head">
+          <p class="micro reveal" data-reveal>Live demo</p>
+          <h2 class="h2 reveal" data-reveal data-reveal-delay="60">Look at it in stereo</h2>
+          <p class="head__lede reveal" data-reveal data-reveal-delay="120">
+            This is the same trick VKXR applies to a game: one scene, rendered once per eye.
+            Drag the crystal, switch on both eyes, or put it in your headset.
+          </p>
+        </header>
+
+        <figure class="stage-wrap reveal" data-reveal data-reveal-delay="160">
+          <div class="stage" data-stereo-stage data-mode="single">
+            <canvas class="stage__canvas" role="img"
+                    aria-label="Interactive 3D demo: an iridescent crystal turning in space."></canvas>
+
+            <span class="spark spark--a" aria-hidden="true"></span>
+            <span class="spark spark--b" aria-hidden="true"></span>
+            <span class="spark spark--c" aria-hidden="true"></span>
+
+            <div class="stage__hud">
+              <p class="stage__hint">Drag to spin &middot; move to tilt</p>
+              <p class="stage__status" data-xr-status>Checking for a headset&hellip;</p>
+            </div>
+
+            <div class="stage__fallback">
+              <p>This live demo needs WebGL.<br />Everything else on the page still works.</p>
+            </div>
+          </div>
+
+          <div class="stage__controls">
+            <button class="glass-btn glass-btn--primary" type="button" data-xr-enter>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M3 9.5A2.5 2.5 0 0 1 5.5 7h13A2.5 2.5 0 0 1 21 9.5v5a2.5 2.5 0 0 1-2.5 2.5h-3.3a1.4 1.4 0 0 1-1.15-.6l-1.3-1.9a1 1 0 0 0-1.6 0l-1.3 1.9a1.4 1.4 0 0 1-1.15.6H5.5A2.5 2.5 0 0 1 3 14.5z" />
+              </svg>
+              <span>Enter VR</span>
+            </button>
+
+            <button class="glass-btn" type="button" data-stereo-both aria-pressed="false" data-tilt>
+              <span>Both eyes</span>
+            </button>
+
+            <label class="lens">
+              <span class="lens__label">Pupil distance</span>
+              <input class="lens__range" type="range" min="40" max="140" step="1" value="85" data-stereo-sep />
+              <output class="lens__out" data-stereo-sep-out>85mm</output>
+            </label>
+
+            <button class="glass-btn glass-btn--ghost glass-btn--icon" type="button" data-stereo-reset
+                    aria-label="Reset the demo">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                <path d="M4 12a8 8 0 1 0 2.5-5.8M4 4v4.5h4.5" />
+              </svg>
+            </button>
+          </div>
+
+          <figcaption class="stage__caption">
+            Rendered live in your browser with WebGL. In a headset, the same scene is drawn
+            once per eye from that eye's own position &mdash; which is the whole job.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= WHY ============================= -->
+  <section class="section" id="why">
+    <div class="frame">
+      <div class="wrap section__grid">
+        <div>
+          <p class="micro reveal" data-reveal>The idea</p>
+          <h2 class="h2 reveal" data-reveal data-reveal-delay="60">
+            The game was never built for this.
+          </h2>
+        </div>
+        <div class="prose reveal" data-reveal data-reveal-delay="140">
+          <p>
+            Mario Kart 8 shipped for a console that predates consumer VR. There is no stereo
+            mode, there never will be, and the emulator that runs it today still draws a flat
+            screen.
+          </p>
+          <p>
+            VKXR sits inside Cemu's renderer and splits each frame in two, timing them to your
+            headset. You keep the game you already own, running the way it always has &mdash;
+            and you drive from the seat rather than watching from the couch.
+          </p>
+          <p class="prose__note">
+            Unofficial and independent. No game files, ROMs, textures or binaries are
+            distributed with VKXR &mdash; you supply your own copy of the game and Cemu.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= BENEFITS ============================= -->
+  <section class="section section--panel" id="benefits">
+    <div class="frame">
+      <div class="wrap">
+        <header class="head">
+          <p class="micro reveal" data-reveal>Why people keep it installed</p>
+          <h2 class="h2 reveal" data-reveal data-reveal-delay="60">
+            Everything you want, nothing to manage
+          </h2>
+        </header>
+
+        <ul class="benefits">
+          <li class="benefit reveal" data-reveal>
+            <span class="benefit__idx">01</span>
+            <h3>Depth, not a flat screen</h3>
+            <p>Every frame is split per eye and timed to your headset, so the track reads as a space you are inside rather than an image you are facing.</p>
+          </li>
+          <li class="benefit reveal" data-reveal data-reveal-delay="60">
+            <span class="benefit__idx">02</span>
+            <h3>Runs inside Cemu</h3>
+            <p>VKXR is a Vulkan layer. It attaches to the emulator you already run, instead of asking you to set up a second renderer beside it.</p>
+          </li>
+          <li class="benefit reveal" data-reveal data-reveal-delay="120">
+            <span class="benefit__idx">03</span>
+            <h3>Bring your own copy</h3>
+            <p>The download contains the layer and nothing else. No game files, no assets &mdash; you supply the game you already own and the emulator you already use.</p>
+          </li>
+          <li class="benefit reveal" data-reveal data-reveal-delay="180">
+            <span class="benefit__idx">04</span>
+            <h3>Console controls, mapped</h3>
+            <p>Analog triggers, console-style layouts and generic gamepads all work, with bindings you can change after install without rebuilding anything.</p>
+          </li>
+          <li class="benefit reveal" data-reveal data-reveal-delay="240">
+            <span class="benefit__idx">05</span>
+            <h3>Reversible in one delete</h3>
+            <p>Add the layer's folder, launch, delete the folder. No installer, no registry writes and no administrator rights.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= HOW ============================= -->
+  <section class="section" id="how">
+    <div class="frame">
+      <div class="wrap">
+        <header class="head">
+          <p class="micro reveal" data-reveal>How it works</p>
+          <h2 class="h2 reveal" data-reveal data-reveal-delay="60">Running in about a minute</h2>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal" data-reveal>
+            <span class="step__n">1</span>
+            <h3>Set up Cemu and your game</h3>
+            <p>Have Cemu working with a supported title, using its Vulkan renderer, before you start.</p>
+          </li>
+          <li class="step reveal" data-reveal data-reveal-delay="80">
+            <span class="step__n">2</span>
+            <h3>Add the VKXR layer</h3>
+            <p>Copy the layer into place. No installer, no administrator rights, nothing written elsewhere.</p>
+          </li>
+          <li class="step reveal" data-reveal data-reveal-delay="160">
+            <span class="step__n">3</span>
+            <h3>Launch in VR</h3>
+            <p>Start the game with your headset connected. The layer picks up the renderer and presents in stereo.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= COMPATIBILITY ============================= -->
+  <section class="section section--panel" id="compatibility">
+    <div class="frame">
+      <div class="wrap wrap--narrow">
+        <header class="head head--left">
+          <p class="micro reveal" data-reveal>Supported titles</p>
+          <h2 class="h2 reveal" data-reveal data-reveal-delay="60">What works today</h2>
+          <p class="head__lede reveal" data-reveal data-reveal-delay="120">
+            Support is built one title at a time. These are the games VKXR has been written
+            for &mdash; other Wii U titles will not work.
+          </p>
+        </header>
+
+        <ul class="compat">
+          <li class="compat__row reveal" data-reveal>
+            <span class="compat__name">Mario Kart 8</span>
+            <span class="pill pill--yes">Supported</span>
+            <span class="compat__note">The primary target</span>
+          </li>
+          <li class="compat__row reveal" data-reveal data-reveal-delay="40">
+            <span class="compat__name">Super Mario 3D World</span>
+            <span class="pill pill--maybe">In progress</span>
+            <span class="compat__note">Second title in development</span>
+          </li>
+          <li class="compat__row reveal" data-reveal data-reveal-delay="80">
+            <span class="compat__name">Other Wii U titles</span>
+            <span class="pill pill--no">Not supported</span>
+            <span class="compat__note">Support is per game, not universal</span>
+          </li>
+        </ul>
+
+        <header class="head head--left head--minor">
+          <h3 class="h2 h2--minor">What you need</h3>
+        </header>
+
+        <ul class="compat">
+          <li class="compat__row reveal" data-reveal>
+            <span class="compat__name">Windows 10 &amp; 11 (64-bit)</span>
+            <span class="pill pill--yes">Supported</span>
+            <span class="compat__note">The main platform</span>
+          </li>
+          <li class="compat__row reveal" data-reveal data-reveal-delay="40">
+            <span class="compat__name">Cemu with the Vulkan renderer</span>
+            <span class="pill">Required</span>
+            <span class="compat__note">VKXR is a layer, not an emulator</span>
+          </li>
+          <li class="compat__row reveal" data-reveal data-reveal-delay="80">
+            <span class="compat__name">Your own copy of the game</span>
+            <span class="pill">Required</span>
+            <span class="compat__note">Nothing is bundled or redistributed</span>
+          </li>
+          <li class="compat__row reveal" data-reveal data-reveal-delay="120">
+            <span class="compat__name">An OpenXR runtime</span>
+            <span class="pill pill--yes">Supported</span>
+            <span class="compat__note">VDXR, Virtual Desktop, SteamVR</span>
+          </li>
+          <li class="compat__row reveal" data-reveal data-reveal-delay="160">
+            <span class="compat__name">Mac &amp; Linux</span>
+            <span class="pill pill--no">Not planned</span>
+            <span class="compat__note">Windows-only for now</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FAQ ============================= -->
+  <section class="section" id="faq">
+    <div class="frame">
+      <div class="wrap wrap--narrow">
+        <header class="head head--left">
+          <p class="micro reveal" data-reveal>Questions</p>
+          <h2 class="h2 reveal" data-reveal data-reveal-delay="60">Before you download</h2>
+        </header>
+
+        <div class="faq reveal" data-reveal data-reveal-delay="100">
+          <details class="qa">
+            <summary>Do I need to own the game?</summary>
+            <p>Yes. VKXR distributes no game files, ROMs, textures or assets of any kind. You supply your own copy of the game and your own Cemu install.</p>
+          </details>
+          <details class="qa">
+            <summary>Which games are supported?</summary>
+            <p>Mario Kart 8 is supported today. Super Mario 3D World is in development. Support is written per title, so other Wii U games will not work yet.</p>
+          </details>
+          <details class="qa">
+            <summary>Do I need Cemu first?</summary>
+            <p>Yes. VKXR is a layer for Cemu and does nothing on its own &mdash; it needs a working Cemu install with a supported title running on the Vulkan renderer.</p>
+          </details>
+          <details class="qa">
+            <summary>Is this official or endorsed?</summary>
+            <p>No. It is an independent, unofficial, non-commercial project. It is not affiliated with, endorsed by or supported by Nintendo, Cemu, or any headset or runtime vendor.</p>
+          </details>
+          <details class="qa">
+            <summary>Is it free?</summary>
+            <p>Yes. It is open source with no account, no subscription and no telemetry.</p>
+          </details>
+          <details class="qa">
+            <summary>Will it slow the game down?</summary>
+            <p>It is built to stay under roughly two percent of your processor, and it works inside the frame Cemu already renders rather than alongside it.</p>
+          </details>
+          <details class="qa">
+            <summary>Does it work with my headset?</summary>
+            <p>If your headset runs on Windows through an OpenXR runtime, VKXR can present to it &mdash; including the runtimes most people already have installed.</p>
+          </details>
+          <details class="qa">
+            <summary>Will this get me banned online?</summary>
+            <p>Treat online play as unsupported and at your own risk. The game is being modified at runtime, and nobody can guarantee how an online service will react to that. If you care about your online standing, play offline.</p>
+          </details>
+          <details class="qa">
+            <summary>How do I remove it?</summary>
+            <p>Delete the layer's folder. That is the whole process &mdash; nothing is written to the registry or anywhere else on your system.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= DOWNLOAD ============================= -->
+  <section class="section section--panel" id="download">
+    <div class="frame">
+      <div class="wrap">
+        <div class="finale reveal" data-reveal>
+          <p class="micro">Ready when you are</p>
+          <h2 class="h2 finale__title">Mario Kart 8, in stereo, tonight.</h2>
+          <p class="finale__lede">
+            Free, open source, and removed with a single delete. Bring your own copy of the
+            game and your own Cemu install.
+          </p>
+          <a class="glass-btn glass-btn--primary glass-btn--lg" href="https://github.com/draveboo/mk8-vr-vd/releases/download/v0.1.0/MarioKart8-VR-v0.1.0-windows-x64.zip" data-tilt data-ripple>
+            <span>Download for Windows</span>
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <path d="M5 12h13m0 0-5-5m5 5-5 5" />
+            </svg>
+          </a>
+          <p class="finale__fine">Windows 10 &amp; 11 &middot; 64-bit &middot; Nothing bundled</p>
+        </div>
+        <div class="finale reveal" data-reveal id="support">
+          <p class="micro">Keep the project moving</p>
+          <h2 class="h2 finale__title">Support VKXR</h2>
+          <p class="finale__lede">If VKXR adds a little magic to your headset, help fund testing and compatibility work.</p>
+          <form id="donation-form" class="donation-form">
+            <label for="donation-amount">Donation amount (USD)</label>
+            <div class="donation-form__row"><input id="donation-amount" name="amount" type="number" min="1" step="1" value="5" required /><button class="glass-btn glass-btn--primary" type="submit">Donate with Square</button></div>
+            <div id="card-container"></div><p id="donation-status" class="finale__fine" role="status"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="footer">
+  <div class="frame">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="VKXR home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="22" height="22" fill="none">
+              <circle cx="16" cy="16" r="12" stroke="#ecedef" stroke-width="1.6" opacity=".85" />
+              <circle cx="16" cy="16" r="4.5" fill="#9ad9e8" />
+            </svg>
+          </span>
+          <span class="brand__text">VKXR</span>
+        </a>
+        <p>A VR layer for Cemu.</p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Footer">
+        <div>
+          <h4>Product</h4>
+          <a href="#why">Why VKXR</a>
+          <a href="#how">How it works</a>
+          <a href="#compatibility">Supported titles</a>
+        </div>
+        <div>
+          <h4>Get started</h4>
+          <a href="#download">Download</a>
+          <a href="#faq">FAQ</a>
+          <a href="#download">License</a>
+        </div>
+        <div>
+          <h4>Project</h4>
+          <a href="#download">Repository</a>
+          <a href="#faq">Issues</a>
+          <a href="#faq">Discussions</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="wrap footer__legal">
+      <p class="disclaimer">
+        VKXR is an independent, unofficial, non-commercial project. It is not affiliated with,
+        endorsed by or supported by Nintendo, Cemu, or any headset or runtime vendor. It
+        distributes no game files, ROMs, textures or copyrighted binaries &mdash; you must
+        supply your own copy of any game you use with it. All product, platform and game names
+        are the property of their respective owners and are used for identification only.
+      </p>
+      <p class="copyright">&copy; <span id="year">2026</span> VKXR contributors</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/stereo-demo.js" defer></script>
+<script src="assets/js/app.js" defer></script>
+<script src="assets/js/donation.js" defer></script>
+</body>
+</html>

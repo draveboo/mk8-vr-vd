@@ -22,3 +22,5 @@
 build/
 cmake-build-*/
 dist/
+.vercel
+.env*
