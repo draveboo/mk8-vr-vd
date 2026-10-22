@@ -1,0 +1,47 @@
+--- decompile record body A FUN_026A4700 : FUN_026a4700 [[026a4700, 026a4717]] ---
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_026a4700(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+--- decompile record body B FUN_026A5158 : FUN_026a5158 [[026a5158, 026a5167]] ---
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_026a5158(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+--- decompile record body C FUN_026A53E0 : FUN_026a53e0 [[026a53e0, 026a53f3]] ---
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_026a53e0(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+--- disasmfunc body A after fix : FUN_026a4700 [[026a4700, 026a4717]] ---
+  026a4700  stwu r1,-0x168(r1)
+  026a4704  stmw r19,0xd4(r1)
+  026a4708  stfd f26,0x108(r1)
+  026a470c  stfd f27,0x118(r1)
+  026a4710  stfd f28,0x128(r1)
+  026a4714  stfd f29,0x138(r1)
+

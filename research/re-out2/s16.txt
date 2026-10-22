@@ -1,0 +1,18 @@
+==== table around 0x100F3FE4 (FUN_026A5D98 slot) ====
+  dump@100f3fc0: 00000000 00000000 00000000 026A453C 00000000 02A87160 00000000 02A87160 00000000 026A5D98 00000000 00000000 00000000 026A603C 00000000 026A616C 00000000 00000000 00000000 00000000 00000000 00000000 00000000 02697284 
+
+==== refs to 100f3fe4 : slot holding FUN_026A5D98 ====
+  (none)
+
+==== refs to 100f3fc0 : table base probe ====
+  DATA from 026a35d8 in FUN_026a358c [[026a358c, 026a453b]]
+  DATA from 026a456c in FUN_026a453c [[026a453c, 026a45a7]]
+
+  table@100f3fcc -> func 26a453c
+  table@100f3fd4 -> func 2a87160
+  table@100f3fdc -> func 2a87160
+  table@100f3fe4 -> func 26a5d98
+  table@100f3ff4 -> func 26a603c
+  table@100f3ffc -> func 26a616c
+  table@100f401c -> func 2697284
+

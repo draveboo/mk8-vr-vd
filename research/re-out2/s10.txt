@@ -1,0 +1,638 @@
+--- disasmfunc FUN_026A5D98 record driver : FUN_026a5d98 [[026a5d98, 026a5f17]] ---
+  026a5d98  stwu r1,-0x50(r1)
+  026a5d9c  stmw r25,0x34(r1)
+  026a5da0  mfspr r0,LR
+  026a5da4  stw r0,0x54(r1)
+  026a5da8  or r29,r5,r5
+  026a5dac  or r27,r3,r3
+  026a5db0  or r26,r9,r9
+  026a5db4  lbz r9,0x35(r27)
+  026a5db8  or r28,r4,r4
+  026a5dbc  or r30,r6,r6
+  026a5dc0  or r31,r7,r7
+  026a5dc4  rlwinm. r0,r9,0x0,0x1e,0x1e
+  026a5dc8  or r25,r8,r8
+  026a5dcc  beq 0x026a5e04
+  026a5dd0  or r6,r26,r26
+  026a5dd4  or r5,r25,r25
+  026a5dd8  or r4,r28,r28
+  026a5ddc  or r3,r27,r27
+  026a5de0  bl 0x026a4700
+  026a5de4  or r3,r27,r27
+  026a5de8  or r4,r28,r28
+  026a5dec  bl 0x026a5158
+  026a5df0  lmw r25,0x34(r1)
+  026a5df4  lwz r0,0x54(r1)
+  026a5df8  mtspr LR,r0
+  026a5dfc  addi r1,r1,0x50
+  026a5e00  blr
+  026a5e04  lwz r0,0xc(r27)
+  026a5e08  mulli r11,r30,0x31
+  026a5e0c  rlwinm r0,r0,0x2,0x1e,0x1f
+  026a5e10  cmplwi r0,0x3
+  026a5e14  ble 0x026a5e1c
+  026a5e18  li r0,0x3
+  026a5e1c  stw r0,0xb8(r28)
+  026a5e20  lwz r12,0x14(r27)
+  026a5e24  or r3,r28,r28
+  026a5e28  add r4,r12,r11
+  026a5e2c  bl 0x02695720
+  026a5e30  cmpwi r30,0x1
+  026a5e34  beq 0x026a5e94
+  026a5e38  or r3,r28,r28
+  026a5e3c  li r4,0x8
+  026a5e40  bl 0x02695660
+  026a5e44  stw r29,0x1c(r1)
+  026a5e48  lis r0,0x4330
+  026a5e4c  lis r8,0x100f
+  026a5e50  stw r0,0x18(r1)
+  026a5e54  lfd f0,0x18(r1)
+  026a5e58  lis r7,0x100f
+  026a5e5c  lfd f13,0x3f40(r8)
+  026a5e60  lis r6,0x100f
+  026a5e64  lfs f12,0x3fbc(r7)
+  026a5e68  fsub f13,f0,f13
+  026a5e6c  lfs f0,0x3fb8(r6)
+  026a5e70  stfs f12,0xc(r1)
+  026a5e74  frsp f13,f13
+  026a5e78  stfs f12,0x10(r1)
+  026a5e7c  fmuls f0,f0,f13
+  026a5e80  stfs f12,0x8(r1)
+  026a5e84  li r4,0x4
+  026a5e88  addi r5,r1,0x8
+  026a5e8c  stfs f0,0x14(r1)
+  026a5e90  bl 0x04008be0
+  026a5e94  or r3,r28,r28
+  026a5e98  bl 0x02695674
+  026a5e9c  cmpwi r31,0x0
+  026a5ea0  beq 0x026a5ed0
+  026a5ea4  li r4,0xa
+  026a5ea8  or r3,r28,r28
+  026a5eac  bl 0x02695660
+  026a5eb0  li r0,0x0
+  026a5eb4  stw r0,0x20(r1)
+  026a5eb8  li r4,0x4
+  026a5ebc  stw r0,0x28(r1)
+  026a5ec0  stw r0,0x2c(r1)
+  026a5ec4  addi r5,r1,0x20
+  026a5ec8  stw r0,0x24(r1)
+  026a5ecc  bl 0x04008be0
+  026a5ed0  or r6,r26,r26
+  026a5ed4  or r5,r25,r25
+  026a5ed8  or r4,r28,r28
+  026a5edc  or r3,r27,r27
+  026a5ee0  bl 0x026a4700
+  026a5ee4  or r3,r27,r27
+  026a5ee8  or r4,r28,r28
+  026a5eec  bl 0x026a5158
+  026a5ef0  or r3,r27,r27
+  026a5ef4  or r4,r28,r28
+  026a5ef8  bl 0x026a53e0
+  026a5efc  or r3,r27,r27
+  026a5f00  bl 0x026a599c
+  026a5f04  lmw r25,0x34(r1)
+  026a5f08  lwz r0,0x54(r1)
+  026a5f0c  mtspr LR,r0
+  026a5f10  addi r1,r1,0x50
+  026a5f14  blr
+
+--- disasmfunc FUN_02695720 record begin/rotate : FUN_02695720 [[02695720, 0269576f]] ---
+  02695720  mfspr r0,LR
+  02695724  stwu r1,-0x10(r1)
+  02695728  stw r31,0xc(r1)
+  0269572c  or r31,r3,r3
+  02695730  stw r0,0x14(r1)
+  02695734  lwz r10,0xa8(r31)
+  02695738  addi r3,r10,0x25c
+  0269573c  bl 0x0269e484
+  02695740  lwz r12,0xa8(r31)
+  02695744  or r4,r3,r3
+  02695748  addi r3,r12,0x25c
+  0269574c  stw r4,0xbc(r31)
+  02695750  bl 0x0269e4dc
+  02695754  li r0,0x0
+  02695758  stb r0,0xb6(r31)
+  0269575c  lwz r0,0x14(r1)
+  02695760  lwz r31,0xc(r1)
+  02695764  mtspr LR,r0
+  02695768  addi r1,r1,0x10
+  0269576c  blr
+
+--- disasmfunc FUN_0269E4DC end+call helper : FUN_0269e4dc [[0269e4dc, 0269e59b]] ---
+  0269e4dc  mfspr r0,LR
+  0269e4e0  stwu r1,-0x18(r1)
+  0269e4e4  stw r30,0x10(r1)
+  0269e4e8  stw r28,0x8(r1)
+  0269e4ec  stw r29,0xc(r1)
+  0269e4f0  stw r31,0x14(r1)
+  0269e4f4  stw r0,0x1c(r1)
+  0269e4f8  or r29,r4,r4
+  0269e4fc  lwz r3,0x34(r29)
+  0269e500  cmpwi r3,0x0
+  0269e504  addi r30,r29,0x34
+  0269e508  beq 0x0269e518
+  0269e50c  lwz r4,0x8(r30)
+  0269e510  cmpwi r4,0x0
+  0269e514  bne 0x0269e578
+  0269e518  or r31,r30,r30
+  0269e51c  lwz r3,0x0(r31)
+  0269e520  cmpwi r3,0x0
+  0269e524  beq 0x0269e534
+  0269e528  lwz r4,0x4(r31)
+  0269e52c  li r5,0x1
+  0269e530  bl 0x04008808
+  0269e534  lwz r28,0x0(r29)
+  0269e538  addi r3,r29,0x8
+  0269e53c  lwz r29,0x4(r29)
+  0269e540  bl 0x04008a70
+  0269e544  or r3,r28,r28
+  0269e548  bl 0x04008bc8
+  0269e54c  or r3,r29,r29
+  0269e550  bl 0x04008ad8
+  0269e554  lwz r3,0x0(r31)
+  0269e558  cmpwi r3,0x0
+  0269e55c  beq 0x0269e568
+  0269e560  bl 0x040088a0
+  0269e564  stw r3,0x8(r31)
+  0269e568  lwz r4,0x8(r30)
+  0269e56c  cmpwi r4,0x0
+  0269e570  beq 0x0269e57c
+  0269e574  lwz r3,0x0(r30)
+  0269e578  bl 0x04008850
+  0269e57c  lwz r28,0x8(r1)
+  0269e580  lwz r29,0xc(r1)
+  0269e584  lwz r0,0x1c(r1)
+  0269e588  lwz r30,0x10(r1)
+  0269e58c  mtspr LR,r0
+  0269e590  lwz r31,0x14(r1)
+  0269e594  addi r1,r1,0x18
+  0269e598  blr
+
+--- disasm record body A raw [26a4700..26a4800] ---
+  026a4700  stwu r1,-0x168(r1)
+  026a4704  stmw r19,0xd4(r1)
+  026a4708  stfd f26,0x108(r1)
+  026a470c  stfd f27,0x118(r1)
+  026a4710  stfd f28,0x128(r1)
+  026a4714  stfd f29,0x138(r1)
+  026a4718  <no instr>
+  026a471c  <no instr>
+  026a4720  <no instr>
+  026a4724  <no instr>
+  026a4728  <no instr>
+  026a472c  <no instr>
+  026a4730  <no instr>
+  026a4734  <no instr>
+  026a4738  <no instr>
+  026a473c  <no instr>
+  026a4740  <no instr>
+  026a4744  <no instr>
+  026a4748  <no instr>
+  026a474c  <no instr>
+  026a4750  <no instr>
+  026a4754  <no instr>
+  026a4758  <no instr>
+  026a475c  <no instr>
+  026a4760  <no instr>
+  026a4764  <no instr>
+  026a4768  <no instr>
+  026a476c  <no instr>
+  026a4770  <no instr>
+  026a4774  <no instr>
+  026a4778  <no instr>
+  026a477c  <no instr>
+  026a4780  <no instr>
+  026a4784  <no instr>
+  026a4788  <no instr>
+  026a478c  <no instr>
+  026a4790  <no instr>
+  026a4794  <no instr>
+  026a4798  <no instr>
+  026a479c  <no instr>
+  026a47a0  <no instr>
+  026a47a4  <no instr>
+  026a47a8  <no instr>
+  026a47ac  <no instr>
+  026a47b0  <no instr>
+  026a47b4  <no instr>
+  026a47b8  <no instr>
+  026a47bc  <no instr>
+  026a47c0  <no instr>
+  026a47c4  <no instr>
+  026a47c8  <no instr>
+  026a47cc  <no instr>
+  026a47d0  <no instr>
+  026a47d4  <no instr>
+  026a47d8  <no instr>
+  026a47dc  <no instr>
+  026a47e0  <no instr>
+  026a47e4  <no instr>
+  026a47e8  <no instr>
+  026a47ec  <no instr>
+  026a47f0  <no instr>
+  026a47f4  <no instr>
+  026a47f8  <no instr>
+  026a47fc  <no instr>
+
+--- disasm record body B raw [26a5158..26a5220] ---
+  026a5158  stwu r1,-0x68(r1)
+  026a515c  stmw r23,0x24(r1)
+  026a5160  stfd f30,0x48(r1)
+  026a5164  stfd f31,0x58(r1)
+  026a5168  <no instr>
+  026a516c  <no instr>
+  026a5170  <no instr>
+  026a5174  <no instr>
+  026a5178  <no instr>
+  026a517c  <no instr>
+  026a5180  <no instr>
+  026a5184  <no instr>
+  026a5188  <no instr>
+  026a518c  <no instr>
+  026a5190  <no instr>
+  026a5194  <no instr>
+  026a5198  <no instr>
+  026a519c  <no instr>
+  026a51a0  <no instr>
+  026a51a4  <no instr>
+  026a51a8  <no instr>
+  026a51ac  <no instr>
+  026a51b0  <no instr>
+  026a51b4  <no instr>
+  026a51b8  <no instr>
+  026a51bc  <no instr>
+  026a51c0  <no instr>
+  026a51c4  <no instr>
+  026a51c8  <no instr>
+  026a51cc  <no instr>
+  026a51d0  <no instr>
+  026a51d4  <no instr>
+  026a51d8  <no instr>
+  026a51dc  <no instr>
+  026a51e0  <no instr>
+  026a51e4  <no instr>
+  026a51e8  <no instr>
+  026a51ec  <no instr>
+  026a51f0  <no instr>
+  026a51f4  <no instr>
+  026a51f8  <no instr>
+  026a51fc  <no instr>
+  026a5200  <no instr>
+  026a5204  <no instr>
+  026a5208  <no instr>
+  026a520c  <no instr>
+  026a5210  <no instr>
+  026a5214  <no instr>
+  026a5218  <no instr>
+  026a521c  <no instr>
+
+--- disasm record body C raw [26a53e0..26a5480] ---
+  026a53e0  stwu r1,-0x120(r1)
+  026a53e4  stmw r27,0xcc(r1)
+  026a53e8  mfspr r0,LR
+  026a53ec  stfd f28,0xe0(r1)
+  026a53f0  stfd f29,0xf0(r1)
+  026a53f4  <no instr>
+  026a53f8  <no instr>
+  026a53fc  <no instr>
+  026a5400  <no instr>
+  026a5404  <no instr>
+  026a5408  <no instr>
+  026a540c  <no instr>
+  026a5410  <no instr>
+  026a5414  <no instr>
+  026a5418  <no instr>
+  026a541c  <no instr>
+  026a5420  <no instr>
+  026a5424  <no instr>
+  026a5428  <no instr>
+  026a542c  <no instr>
+  026a5430  <no instr>
+  026a5434  <no instr>
+  026a5438  <no instr>
+  026a543c  <no instr>
+  026a5440  <no instr>
+  026a5444  <no instr>
+  026a5448  <no instr>
+  026a544c  <no instr>
+  026a5450  <no instr>
+  026a5454  <no instr>
+  026a5458  <no instr>
+  026a545c  <no instr>
+  026a5460  <no instr>
+  026a5464  <no instr>
+  026a5468  <no instr>
+  026a546c  <no instr>
+  026a5470  <no instr>
+  026a5474  <no instr>
+  026a5478  <no instr>
+  026a547c  <no instr>
+
+--- decompile per-draw flag landmark FUN_024AF330 : FUN_024af330 [[024af330, 024af7b3]] ---
+
+void FUN_024af330(int param_1,int param_2,int *param_3)
+
+{
+  char cVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int iVar4;
+  int iVar5;
+  uint uVar6;
+  ushort uVar7;
+  int iVar8;
+  int iVar9;
+  int iVar10;
+  int iVar11;
+  longlong lVar12;
+  undefined4 local_40;
+  undefined4 local_3c;
+  
+  iVar5 = FUN_024a5e28();
+  iVar5 = *(int *)(iVar5 + 0x1d4);
+  if (iVar5 != 0) {
+    if ((*(char *)(param_1 + 0xaf4) == '\0') && (*(int *)(param_1 + 0xaf0) == 2)) {
+      uVar6 = 0;
+      lVar12 = 4;
+      iVar8 = 0;
+      do {
+        iVar9 = *(int *)(iVar5 + 0x903c);
+        if (uVar6 < *(uint *)(iVar5 + 0x9038)) {
+          iVar9 = iVar9 + iVar8;
+        }
+        *(char *)(iVar9 + 0x2dd) = (char)((int)uVar6 >> 1) + ((int)uVar6 < 0 && (uVar6 & 1) != 0);
+        uVar6 = uVar6 + 1;
+        iVar8 = iVar8 + 0x2e0;
+        *(undefined1 *)(iVar5 + 0x9041) = 2;
+        lVar12 = lVar12 + -1;
+      } while (lVar12 != 0);
+    }
+    else {
+      uVar6 = 0;
+      iVar8 = 0;
+      lVar12 = 5;
+      do {
+        iVar9 = *(int *)(iVar5 + 0x903c);
+        if (uVar6 < *(uint *)(iVar5 + 0x9038)) {
+          iVar9 = iVar9 + iVar8;
+        }
+        *(undefined1 *)(iVar9 + 0x2dd) = 0xff;
+        uVar6 = uVar6 + 1;
+        iVar8 = iVar8 + 0x2e0;
+        *(undefined1 *)(iVar5 + 0x9041) = 1;
+        lVar12 = lVar12 + -1;
+      } while (lVar12 != 0);
+    }
+    if ((param_2 != 0) && (*(char *)(*(int *)(iVar5 + 0x90) + 0x748) != '\0')) {
+      *(undefined1 *)(param_1 + 0x873) = 0;
+      uVar2 = DAT_100c2f0c;
+      *(undefined4 *)(param_1 + 0x884) = DAT_100c2f08;
+      *(undefined1 *)(param_1 + 0x870) = 0;
+      *(undefined4 *)(param_1 + 0x888) = uVar2;
+      *(undefined4 *)(param_1 + 0x878) = 2;
+      *(undefined1 *)(param_1 + 0x871) = 0;
+      *(undefined1 *)(param_1 + 0x872) = 0;
+      *(undefined1 *)(param_1 + 0x874) = 0;
+      iVar8 = *(int *)(DAT_10187d6c + 0x4c);
+      iVar9 = *param_3;
+      if ((*(int *)(iVar8 + 0x14) == 0) ||
+         (((*(int *)(iVar8 + 0x18) == 0 || (iVar9 < 0)) ||
+          ((int)(uint)*(ushort *)(iVar8 + 0x20) <= iVar9)))) {
+        cVar1 = *(char *)(param_1 + 0xaf4);
+        iVar8 = iVar8 + 0x28;
+      }
+      else {
+        cVar1 = *(char *)(param_1 + 0xaf4);
+        iVar8 = *(int *)(iVar8 + 0x18) + iVar9 * 0x20;
+      }
+      if (cVar1 == '\0') {
+        iVar9 = *(int *)(param_1 + 0xaf0);
+        if (iVar9 == 0) {
+          if (*(char *)(iVar8 + 2) != '\0') {
+            *(undefined1 *)(param_1 + 0x872) = 1;
+            *(undefined4 *)(param_1 + 0x884) = *(undefined4 *)(iVar8 + 8);
+            *(undefined4 *)(param_1 + 0x888) = *(undefined4 *)(iVar8 + 4);
+          }
+        }
+        else {
+          if (iVar9 == 1) {
+            *(undefined1 *)(param_1 + 0x870) = 1;
+            *(undefined1 *)(param_1 + 0x871) = 1;
+            *(undefined1 *)(param_1 + 0x873) = 1;
+            iVar9 = *(int *)(param_1 + 0xaf0);
+          }
+          if ((iVar9 == 2) && (*param_3 == 0x41)) {
+            *(undefined1 *)(param_1 + 0x874) = 1;
+          }
+          uVar3 = DAT_100c2f10;
+          *(undefined1 *)(param_1 + 0x872) = 1;
+          uVar2 = DAT_100c2d94;
+          *(undefined4 *)(param_1 + 0x878) = 1;
+          *(undefined4 *)(param_1 + 0x888) = uVar2;
+          *(undefined4 *)(param_1 + 0x884) = uVar3;
+          if (*(char *)(iVar8 + 3) != '\0') {
+            *(undefined4 *)(param_1 + 0x884) = *(undefined4 *)(iVar8 + 0x10);
+            *(undefined4 *)(param_1 + 0x888) = *(undefined4 *)(iVar8 + 0xc);
+          }
+        }
+      }
+      *(undefined1 *)(*(int *)(iVar5 + 0x90) + 0xb54) = *(undefined1 *)(param_1 + 0x870);
+      if (*(char *)(param_1 + 0x872) == '\0') {
+        uVar7 = *(ushort *)(iVar5 + 0x458c) & 0xfffd;
+        *(ushort *)(iVar5 + 0x458c) = uVar7;
+        cVar1 = *(char *)(param_1 + 0x874);
+      }
+      else {
+        uVar7 = *(ushort *)(iVar5 + 0x458c) | 2;
+        *(ushort *)(iVar5 + 0x458c) = uVar7;
+        cVar1 = *(char *)(param_1 + 0x874);
+      }
+      if (cVar1 == '\0') {
+        uVar6 = 0;
+        iVar9 = param_1 + 0x890;
+        *(ushort *)(iVar5 + 0x458c) = uVar7 & 0xdfff;
+        iVar8 = 0;
+      }
+      else {
+        uVar6 = 0;
+        iVar9 = param_1 + 0x890;
+        *(ushort *)(iVar5 + 0x458c) = uVar7 | 0x2000;
+        iVar8 = 0;
+      }
+      do {
+        iVar11 = iVar8;
+        iVar10 = iVar9;
+        iVar8 = iVar11;
+        do {
+          if (*(char *)(iVar10 + 0x1c) != '\0') {
+            iVar10 = *(int *)(iVar5 + 0x4600);
+            if (uVar6 < *(uint *)(iVar5 + 0x45fc)) {
+              iVar10 = iVar10 + iVar11;
+            }
+            if (iVar10 != 0) {
+              iVar4 = *(int *)(iVar10 + 0x238);
+              if (*(int *)(param_1 + 0x878) < *(int *)(iVar10 + 0x238)) {
+                iVar4 = *(int *)(param_1 + 0x878);
+              }
+              if (iVar4 < 1) {
+                iVar4 = 1;
+              }
+              *(int *)(iVar10 + 0x1cc) = iVar4;
+              if (*(char *)(param_1 + 0x872) != '\0') {
+                *(undefined4 *)(*(int *)(iVar10 + 0x1dc) + *(int *)(iVar10 + 0x1cc) * 4) =
+                     *(undefined4 *)(param_1 + 0x884);
+              }
+              if (*(char *)(param_1 + 0x874) != '\0') {
+                local_40 = 0x800;
+                local_3c = 0x400;
+                FUN_027877e4(iVar10 + 0x240,&local_40);
+              }
+            }
+          }
+          uVar6 = uVar6 + 1;
+          iVar8 = iVar8 + 0xdac;
+          iVar9 = iVar9 + 0x20;
+          iVar11 = iVar11 + 0xdac;
+          if (4 < (int)uVar6) {
+            if (*(char *)(param_1 + 0xaf8) == '\0') {
+              iVar8 = *(int *)(iVar5 + 0x4600);
+              *(undefined4 *)(param_1 + 0x87c) = **(undefined4 **)(iVar8 + 0x1dc);
+              *(undefined4 *)(param_1 + 0x880) = *(undefined4 *)(*(int *)(iVar8 + 0x1dc) + 4);
+            }
+            iVar8 = *(int *)(iVar5 + 0x4584);
+            if (iVar8 != 0) {
+              *(undefined4 *)(iVar8 + 0x490) = *(undefined4 *)(param_1 + 0x888);
+              *(undefined4 *)(iVar8 + 0x4a0) = *(undefined4 *)(param_1 + 0x884);
+              if (*(char *)(param_1 + 0x871) != '\0') {
+                *(undefined4 *)(iVar8 + 0x3d0) = 1;
+                *(undefined4 *)(iVar8 + 0x3c0) = 1;
+                iVar5 = *(int *)(iVar5 + 0x84d4);
+                goto joined_r0x024af744;
+              }
+              *(undefined4 *)(iVar8 + 0x3c0) = 0;
+              *(undefined4 *)(iVar8 + 0x3d0) = 0;
+            }
+            iVar5 = *(int *)(iVar5 + 0x84d4);
+joined_r0x024af744:
+            if (iVar5 != 0) {
+              if (*(char *)(param_1 + 0x873) == '\0') {
+                *(uint *)(iVar5 + 0x194) = *(uint *)(iVar5 + 0x194) & 0xfffffff7;
+                cVar1 = *(char *)(param_1 + 0x873);
+                uVar2 = DAT_100c2f18;
+              }
+              else {
+                *(uint *)(iVar5 + 0x194) = *(uint *)(iVar5 + 0x194) | 8;
+                cVar1 = *(char *)(param_1 + 0x873);
+                uVar2 = DAT_100c2f18;
+              }
+              DAT_100c2f18 = uVar2;
+              if (cVar1 != '\0') {
+                *(undefined4 *)(iVar5 + 0x1b0) = DAT_100c2f14;
+                *(undefined4 *)(iVar5 + 0x1b4) = uVar2;
+              }
+            }
+            *(undefined1 *)(param_1 + 0xaf8) = 0;
+            return;
+          }
+          iVar10 = param_1 + 0x890;
+        } while (4 < uVar6);
+      } while( true );
+    }
+  }
+  return;
+}
+
+
+
+--- decompile uniform offset calc FUN_0269E4CC : FUN_0269e4cc [[0269e4cc, 0269e4db]] ---
+
+undefined4 FUN_0269e4cc(undefined4 param_1,int param_2,int param_3)
+
+{
+  return *(undefined4 *)(param_3 * 4 + *(int *)(param_2 + 0x30));
+}
+
+
+
+--- disasmfunc FUN_020A5DB4 frame render : FUN_020a5db4 [[020a5db4, 020a5ef7]] ---
+  020a5db4  mfspr r0,LR
+  020a5db8  stwu r1,-0x20(r1)
+  020a5dbc  stw r31,0x1c(r1)
+  020a5dc0  stw r30,0x18(r1)
+  020a5dc4  or r30,r4,r4
+  020a5dc8  or r31,r3,r3
+  020a5dcc  stw r29,0x14(r1)
+  020a5dd0  stw r0,0x24(r1)
+  020a5dd4  bl 0x024ce59c
+  020a5dd8  cmpwi r30,0x0
+  020a5ddc  beq 0x020a5e34
+  020a5de0  cmpwi r3,0x0
+  020a5de4  beq 0x020a5dec
+  020a5de8  lwz r3,0x2bc(r3)
+  020a5dec  li r0,0x3
+  020a5df0  addi r4,r1,0x8
+  020a5df4  stw r0,0x8(r1)
+  020a5df8  bl 0x0250e8e8
+  020a5dfc  lwz r0,0xdc(r31)
+  020a5e00  cmpwi r0,0x0
+  020a5e04  li r3,0x0
+  020a5e08  beq 0x020a5e14
+  020a5e0c  lwz r8,0xe4(r31)
+  020a5e10  lwz r3,0x0(r8)
+  020a5e14  li r5,0x1
+  020a5e18  li r4,0x0
+  020a5e1c  bl 0x020a2290
+  020a5e20  lwz r0,0x54(r31)
+  020a5e24  li r29,0x0
+  020a5e28  cmpw r29,r0
+  020a5e2c  bge 0x020a5eb4
+  020a5e30  b 0x020a5e84
+  020a5e34  cmpwi r3,0x0
+  020a5e38  beq 0x020a5e40
+  020a5e3c  lwz r3,0x2bc(r3)
+  020a5e40  li r9,0x5
+  020a5e44  addi r4,r1,0xc
+  020a5e48  stw r9,0xc(r1)
+  020a5e4c  bl 0x0250e8e8
+  020a5e50  lwz r0,0xdc(r31)
+  020a5e54  cmpwi r0,0x0
+  020a5e58  li r3,0x0
+  020a5e5c  beq 0x020a5e68
+  020a5e60  lwz r11,0xe4(r31)
+  020a5e64  lwz r3,0x0(r11)
+  020a5e68  li r4,0x1
+  020a5e6c  or r5,r4,r4
+  020a5e70  bl 0x020a2290
+  020a5e74  lwz r0,0x54(r31)
+  020a5e78  li r29,0x0
+  020a5e7c  cmpw r29,r0
+  020a5e80  bge 0x020a5eb4
+  020a5e84  li r30,0x0
+  020a5e88  cmplw r29,r0
+  020a5e8c  li r3,0x0
+  020a5e90  bge 0x020a5e9c
+  020a5e94  lwz r10,0x5c(r31)
+  020a5e98  lwzx r3,r10,r30
+  020a5e9c  bl 0x0209f8a4
+  020a5ea0  lwz r0,0x54(r31)
+  020a5ea4  addi r29,r29,0x1
+  020a5ea8  cmpw r29,r0
+  020a5eac  addi r30,r30,0x4
+  020a5eb0  blt 0x020a5e88
+  020a5eb4  lis r12,0x1019
+  020a5eb8  lwz r12,-0x7ad0(r12)
+  020a5ebc  lwz r3,0x44(r12)
+  020a5ec0  bl 0x02116b60
+  020a5ec4  li r11,0x1
+  020a5ec8  or r3,r31,r31
+  020a5ecc  stb r11,0xf4(r31)
+  020a5ed0  bl 0x020a5d14
+  020a5ed4  li r4,0x0
+  020a5ed8  bl 0x020a5d94
+  020a5edc  lwz r29,0x14(r1)
+  020a5ee0  lwz r0,0x24(r1)
+  020a5ee4  lwz r30,0x18(r1)
+  020a5ee8  mtspr LR,r0
+  020a5eec  lwz r31,0x1c(r1)
+  020a5ef0  addi r1,r1,0x20
+

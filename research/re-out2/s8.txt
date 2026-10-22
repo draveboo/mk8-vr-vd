@@ -1,0 +1,247 @@
+--- decompile uniform reg id helper FUN_02695660 : FUN_02695660 [[02695660, 02695673]] ---
+
+void FUN_02695660(int param_1,undefined4 param_2)
+
+{
+  FUN_0269e4cc(*(int *)(param_1 + 0xa8) + 0x25c,*(undefined4 *)(param_1 + 0xbc),param_2);
+  return;
+}
+
+
+
+==== callers of FUN_02695674 (16-reg matrix upload) ====
+  caller FUN_026a5d98 [[026a5d98, 026a5f17]]  @026a5e98
+      (no refs to 26a5d98)
+--- decompile record driver FUN_026A5D98 : FUN_026a5d98 [[026a5d98, 026a5f17]] ---
+
+void FUN_026a5d98(int param_1,int param_2,undefined4 param_3,int param_4,int param_5,
+                 undefined4 param_6,undefined4 param_7)
+
+{
+  uint uVar1;
+  undefined4 uVar2;
+  undefined4 local_48;
+  undefined4 local_44;
+  undefined4 local_40;
+  float local_3c;
+  undefined4 local_38;
+  undefined4 uStack_34;
+  undefined4 local_30;
+  undefined4 local_2c;
+  undefined4 local_28;
+  undefined4 local_24;
+  
+  if ((*(byte *)(param_1 + 0x35) & 2) != 0) {
+    FUN_026a4700(param_1,param_2,param_6,param_7);
+    FUN_026a5158(param_1,param_2);
+    return;
+  }
+  uVar1 = *(uint *)(param_1 + 0xc) >> 0x1e;
+  if (3 < uVar1) {
+    uVar1 = 3;
+  }
+  *(uint *)(param_2 + 0xb8) = uVar1;
+  FUN_02695720(param_2,*(int *)(param_1 + 0x14) + param_4 * 0x31);
+  if (param_4 != 1) {
+    uVar2 = FUN_02695660(param_2,8);
+    local_38 = 0x43300000;
+    local_44 = DAT_100f3fbc;
+    local_40 = DAT_100f3fbc;
+    local_3c = DAT_100f3fb8 * (float)((double)CONCAT44(0x43300000,param_3) - DAT_100f3f40);
+    local_48 = DAT_100f3fbc;
+    uStack_34 = param_3;
+    func_0x04008be0(uVar2,4,&local_48);
+  }
+  FUN_02695674(param_2);
+  if (param_5 != 0) {
+    uVar2 = FUN_02695660(param_2,10);
+    local_30 = 0;
+    local_28 = 0;
+    local_24 = 0;
+    local_2c = 0;
+    func_0x04008be0(uVar2,4,&local_30);
+  }
+  FUN_026a4700(param_1,param_2,param_6,param_7);
+  FUN_026a5158(param_1,param_2);
+  FUN_026a53e0(param_1,param_2);
+  FUN_026a599c(param_1);
+  return;
+}
+
+
+
+==== callers of FUN_024af8f4 (eye-rect select) ====
+  caller FUN_024b0060 [[024b0060, 024b03e7]]  @024b03c8
+      caller FUN_0250e364 [[0250e364, 0250e41b]]  @0250e380
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e734
+          caller FUN_020a64e4 [[020a64e4, 020a659f]]  @020a6580
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e4c4
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e5c8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e6e8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e648
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e6c8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e52c
+      caller FUN_024a835c [[024a835c, 024a8467]]  @024a83a4
+          (no refs to 24a835c)
+      caller FUN_0252d908 [[0252d908, 0252da8b]]  @0252da4c
+          (no refs to 252d908)
+      caller FUN_0252d1d8 [[0252d1d8, 0252d1ff]]  @0252d1fc
+          caller FUN_0246adc4 [[0246adc4, 0246ae47]]  @0246ae2c
+==== callers of FUN_024afd28 (rect to +0x440) ====
+  caller FUN_020a0654 [[020a0654, 020a06e7]]  @020a06bc
+      ref thunk_FUN_020a0654 [[020a06e8, 020a06eb]]  @020a06e8
+  caller FUN_020a2eb0 [[020a2eb0, 020a2f67]]  @020a2f50
+      (no refs to 20a2eb0)
+  caller FUN_024b0060 [[024b0060, 024b03e7]]  @024b03d0
+      caller FUN_0250e364 [[0250e364, 0250e41b]]  @0250e380
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e734
+          caller FUN_020a64e4 [[020a64e4, 020a659f]]  @020a6580
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e4c4
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e5c8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e6e8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e648
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e6c8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e52c
+      caller FUN_024a835c [[024a835c, 024a8467]]  @024a83a4
+          (no refs to 24a835c)
+      caller FUN_0252d908 [[0252d908, 0252da8b]]  @0252da4c
+          (no refs to 252d908)
+      caller FUN_0252d1d8 [[0252d1d8, 0252d1ff]]  @0252d1fc
+          caller FUN_0246adc4 [[0246adc4, 0246ae47]]  @0246ae2c
+==== callers of FUN_024aee78 ====
+  caller FUN_024b0060 [[024b0060, 024b03e7]]  @024b038c
+      caller FUN_0250e364 [[0250e364, 0250e41b]]  @0250e380
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e734
+          caller FUN_020a64e4 [[020a64e4, 020a659f]]  @020a6580
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e4c4
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e5c8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e6e8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e648
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e6c8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  @0250e52c
+      caller FUN_024a835c [[024a835c, 024a8467]]  @024a83a4
+          (no refs to 24a835c)
+      caller FUN_0252d908 [[0252d908, 0252da8b]]  @0252da4c
+          (no refs to 252d908)
+      caller FUN_0252d1d8 [[0252d1d8, 0252d1ff]]  @0252d1fc
+          caller FUN_0246adc4 [[0246adc4, 0246ae47]]  @0246ae2c
+--- decompile FUN_025326DC (calls big record) : FUN_025326dc [[025326dc, 025327f7]] ---
+
+void FUN_025326dc(int param_1,int param_2)
+
+{
+  int local_40;
+  int local_3c;
+  int local_38;
+  int local_34;
+  int local_30;
+  undefined4 local_2c [2];
+  undefined4 local_24;
+  undefined4 local_20;
+  int *local_1c;
+  
+  FUN_02695d9c();
+  local_3c = 0;
+  local_40 = 0;
+  local_34 = 0;
+  local_38 = 0;
+  local_30 = 0;
+  FUN_0253cca8(local_2c);
+  local_2c[0] = *(undefined4 *)(param_2 + 0x1c);
+  local_24 = 0xffffffff;
+  local_20 = 4;
+  local_1c = &local_40;
+  local_3c = (**(code **)(*(int *)(DAT_1018a18c + 0xa4) + 0x1c))(DAT_1018a18c,local_2c);
+  local_38 = local_3c + local_40;
+  local_2c[0] = *(undefined4 *)(param_2 + 0x20);
+  local_34 = (**(code **)(*(int *)(DAT_1018a18c + 0xa4) + 0x1c))(DAT_1018a18c,local_2c);
+  local_30 = local_34 + local_40;
+  FUN_027ad540(DAT_1018ca7c);
+  FUN_026a0ea8(param_1 + 0x128,*(undefined4 *)(param_2 + 0x24),&local_3c);
+  FUN_026a04e4(param_1 + 0x58c,param_1 + 0x128,&local_34);
+  FUN_027ad5a0(DAT_1018ca7c);
+  FUN_025325a4(param_1,param_1 + 4);
+  return;
+}
+
+
+
+--- decompile FUN_02539408 : FUN_02539408 [[02539408, 02539603]] ---
+
+void FUN_02539408(undefined4 *param_1,int *param_2)
+
+{
+  int iVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  undefined4 uVar4;
+  
+  DAT_1018a18c = param_1;
+  *param_1 = param_2;
+  iVar3 = *param_2;
+  param_1[7] = iVar3;
+  iVar1 = 1;
+  param_1[8] = param_2[1];
+  if (iVar3 != 0) {
+    iVar1 = FUN_0273d448(DAT_1018c7ec);
+  }
+  puVar2 = (undefined4 *)FUN_02721868(0xbc);
+  if (puVar2 != (undefined4 *)0x0) {
+    *puVar2 = 0;
+  }
+  param_1[9] = puVar2;
+  (**(code **)(param_1[0x29] + 0x34))(param_1);
+  if (param_1[1] == 0) {
+    iVar3 = FUN_02721868(0xa24);
+    uVar4 = 0;
+    if (iVar3 != 0) {
+      uVar4 = FUN_025324f0();
+    }
+    param_1[1] = uVar4;
+  }
+  if (param_1[2] == 0) {
+    uVar4 = FUN_0254203c(0,param_2[2]);
+    param_1[2] = uVar4;
+  }
+  if (param_1[3] == 0) {
+    uVar4 = FUN_0253bd48(0,param_2[3]);
+    param_1[3] = uVar4;
+  }
+  if (param_1[4] == 0) {
+    uVar4 = FUN_02540148(0,param_2[4],param_2[6]);
+    param_1[4] = uVar4;
+  }
+  if (param_1[5] == 0) {
+    iVar3 = FUN_02721868(0x14);
+    uVar4 = 0;
+    if (iVar3 != 0) {
+      uVar4 = FUN_02541410();
+    }
+    param_1[5] = uVar4;
+  }
+  if (param_1[6] == 0) {
+    puVar2 = (undefined4 *)FUN_02721868(4);
+    if (puVar2 != (undefined4 *)0x0) {
+      FUN_02679fbc(puVar2);
+      *puVar2 = &DAT_100d0b74;
+    }
+    param_1[6] = puVar2;
+  }
+  if (param_1[0x15] == 0) {
+    uVar4 = FUN_02538f7c(0,param_2[4],param_2[5]);
+    param_1[0x15] = uVar4;
+  }
+  FUN_025326dc(param_1[1],param_2);
+  (**(code **)(param_1[0x29] + 0x3c))(param_1);
+  (**(code **)(param_1[0x29] + 0x44))(param_1);
+  (**(code **)(param_1[0x29] + 0x4c))(param_1);
+  (**(code **)(param_1[0x29] + 0x54))(param_1);
+  if (iVar1 != 1) {
+    FUN_0273d448(DAT_1018c7ec,iVar1);
+  }
+  *param_1 = 0;
+  return;
+}
+
+
+

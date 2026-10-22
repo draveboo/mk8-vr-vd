@@ -1,0 +1,70 @@
+Program: Turbo_v42_fixed.rpx
+ImageBase: 00000000
+Function count: 0
+Memory blocks:
+  .entry 02000000-02000007 r=true w=false x=true
+  .text 02000020-02557737 r=true w=false x=true
+  .rodata 10000000-10069f99 r=true w=true x=false
+  .data 10180600-1019ac08 r=true w=true x=false
+  .sdata 101aa220-101aa2f9 r=true w=true x=false
+  .sbss 101aa500-10248a4b r=true w=true x=false
+  .symtab c0000000-c0000f8f r=true w=false x=false
+  .strtab c0003010-c00045a7 r=true w=false x=false
+  .shstrtab c0007dc8-c0007f0f r=true w=false x=false
+  .imp10 c0008040-c0008065 r=true w=false x=true
+  .imp11 c0008500-c000851e r=true w=false x=false
+  .imp12 c0008580-c000859e r=true w=false x=true
+  .imp13 c0008640-c000865e r=true w=false x=true
+  .imp14 c0008700-c000871d r=true w=false x=true
+  .imp15 c0008800-c000881e r=true w=false x=true
+  .imp16 c0008c40-c0008c60 r=true w=false x=true
+  .imp17 c0008e80-c0008e9e r=true w=false x=true
+  .imp18 c0008ec0-c0008edd r=true w=false x=true
+  .imp19 c0008f00-c0008f1a r=true w=false x=true
+  .imp20 c0008f40-c0008f57 r=true w=false x=true
+  .imp21 c0008f80-c0008f9d r=true w=false x=true
+  .imp22 c0008fc0-c0008fdb r=true w=false x=true
+  .imp23 c0009000-c000900f r=true w=false x=true
+  .imp24 c0009040-c000905c r=true w=false x=true
+  .imp25 c0009100-c000910f r=true w=false x=false
+  .imp26 c0009140-c000915e r=true w=false x=true
+  .imp27 c0009280-c000928f r=true w=false x=false
+  .imp28 c00092c0-c00092dd r=true w=false x=true
+  .imp29 c0009340-c000935b r=true w=false x=true
+  .imp30 c0009440-c0009465 r=true w=false x=true
+  .imp31 c0009780-c000979d r=true w=false x=true
+  .imp32 c00097c0-c00097dc r=true w=false x=true
+  .imp33 c0009800-c0009819 r=true w=false x=true
+  .imp34 c0009880-c000989e r=true w=false x=true
+  .imp35 c00098c0-c00098de r=true w=false x=false
+  .imp36 c0009940-c000995b r=true w=false x=true
+  .imp37 c0009a40-c0009a4f r=true w=false x=false
+  .imp38 c0009a80-c0009a9c r=true w=false x=true
+  .imp39 c0009b00-c0009b1c r=true w=false x=true
+  .imp40 c0009b80-c0009b9c r=true w=false x=true
+  .rela7 .rela7::00000000-.rela7::000fa57e r=false w=false x=false
+  .rela8 .rela8::00000000-.rela8::00002e7f r=false w=false x=false
+  .rela9 .rela9::00000000-.rela9::0007e9e5 r=false w=false x=false
+  .rpl_imports .rpl_imports::00000000-.rpl_imports::000000da r=false w=false x=false
+  .rpl_info .rpl_info::00000000-.rpl_info::000000b7 r=false w=false x=false
+  _elfHeader _elfHeader::00000000-_elfHeader::00000033 r=false w=false x=false
+  _elfSectionHeaders _elfSectionHeaders::00000000-_elfSectionHeaders::0000072f r=false w=false x=false
+  unallocated_0 unallocated_0::00000000-unallocated_0::00000127 r=false w=false x=false
+--- anchor 024aef70 ---
+createFunction: FUN_024aef70 [[024aef70, 024aef70]]
+=== instructions around 024aef70 ===
+024aef60  lfsu f5,-0x6ce2(r19)
+--- anchor 024af384 ---
+createFunction: FUN_024af384 [[024af384, 024af384]]
+=== instructions around 024af384 ===
+024af374  stfs f3,-0x23c8(r26)
+024af378  bla 0xfee3d2b8
+024af37c  stw r22,-0x21e2(r7)
+024af380  rlwnm r24,r24,r6,0x1d,0x12
+024af384  rlwnm r18,r1,r18,0xf,0x4
+024af388  stbu r27,-0x2331(r31)
+024af38c  stdu r12,0x32c(r30)
+024af390  rlwinm r6,r30,0x15,0x1d,0xc
+024af394  stfdu f5,-0x1738(r24)
+024af398  lfdu f31,-0x793a(r5)
+024af39c  stmw r11,-0x7227(r30)

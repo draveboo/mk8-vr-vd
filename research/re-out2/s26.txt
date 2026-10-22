@@ -1,0 +1,12 @@
+==== DAT_101d62fc region (per-mode/target camera descriptor table) ====
+  dump@101d62fc: ERR ghidra.program.model.mem.MemoryAccessException: Unable to read bytes at ram:101d62fc
+
+==== refs to 101d62fc : DAT_101d62fc ====
+  WRITE from 024b125c in ?
+
+==== DAT_101d6944 / DAT_1018999c / DAT_101d693c ====
+  dump@101d6944: ERR ghidra.program.model.mem.MemoryAccessException: Unable to read bytes at ram:101d6944
+  1018999c: 00000000 00000000 00000000 100C1CAC 100C20D4 100C2128 100C20E0 100C2134 
+  dump@101d693c: ERR ghidra.program.model.mem.MemoryAccessException: Unable to read bytes at ram:101d693c
+==== DAT_10188530 + 0x124 chain (rect tables) ====
+  *10188530+0x124 = 616E756B

@@ -1,0 +1,427 @@
+==== import stub bodies (.imp15) ====
+  no instruction at c0008860
+
+==== decompiles ====
+--- decompile KEY parent (calls both landmarks) : FUN_024b0060 [[024b0060, 024b03e7]] ---
+
+void FUN_024b0060(int param_1)
+
+{
+  uint uVar1;
+  bool bVar2;
+  uint uVar3;
+  int iVar4;
+  int iVar5;
+  undefined1 uVar6;
+  undefined1 uVar7;
+  uint uVar8;
+  uint *puVar9;
+  int iVar10;
+  undefined1 uVar11;
+  int iVar12;
+  int iVar13;
+  undefined1 uVar14;
+  int iVar15;
+  uint *puVar16;
+  undefined4 uVar17;
+  undefined4 local_48;
+  undefined4 local_44;
+  undefined4 local_40;
+  undefined4 local_3c;
+  undefined4 local_38;
+  undefined4 local_34;
+  
+  iVar4 = FUN_024ce59c();
+  iVar5 = 0;
+  if (iVar4 != 0) {
+    iVar5 = *(int *)(iVar4 + 700);
+  }
+  bVar2 = false;
+  puVar16 = (uint *)(iVar5 + 0x9c);
+  uVar8 = 0;
+  iVar4 = 0;
+  do {
+    puVar9 = (uint *)((int)puVar16 + iVar4);
+    iVar12 = iVar4;
+    do {
+      if (*puVar9 != 0xffffffff) {
+        if (uVar8 < 5) {
+          uVar3 = *(uint *)((int)puVar16 + iVar12);
+          if (4 < uVar3) goto LAB_024b00d4;
+LAB_024b00e8:
+          iVar10 = iVar5 + 0x24 + uVar3 * 0x18;
+        }
+        else {
+          uVar3 = *puVar16;
+          if (uVar3 < 5) goto LAB_024b00e8;
+LAB_024b00d4:
+          iVar10 = iVar5 + 0x24;
+        }
+        if (*(int *)(iVar10 + 8) != 3) goto LAB_024b0124;
+        iVar4 = *(int *)(iVar5 + 0xbc);
+        bVar2 = true;
+        if (iVar4 == 0) goto LAB_024b0170;
+        if (iVar4 == 1) goto LAB_024b0110;
+LAB_024b0148:
+        if (iVar4 == 2) {
+          if (bVar2) {
+            *(undefined4 *)(param_1 + 0xaf0) = 3;
+            local_38 = *(undefined4 *)(param_1 + 0xaf0);
+          }
+          else {
+            *(undefined4 *)(param_1 + 0xaf0) = 2;
+            local_34 = *(undefined4 *)(param_1 + 0xaf0);
+          }
+LAB_024b01b0:
+          iVar12 = param_1 + 0x890;
+          uVar17 = 0;
+          uVar8 = 0;
+          iVar4 = 0;
+        }
+        else {
+          iVar12 = param_1 + 0x890;
+          uVar17 = 0;
+          uVar8 = 0;
+          iVar4 = 0;
+        }
+        goto LAB_024b01d8;
+      }
+LAB_024b0124:
+      uVar8 = uVar8 + 1;
+      iVar12 = iVar12 + 4;
+      iVar4 = iVar4 + 4;
+      if (4 < (int)uVar8) {
+        iVar4 = *(int *)(iVar5 + 0xbc);
+        if (iVar4 == 0) {
+LAB_024b0170:
+          *(undefined4 *)(param_1 + 0xaf0) = 0;
+          local_40 = *(undefined4 *)(param_1 + 0xaf0);
+        }
+        else {
+          if (iVar4 != 1) goto LAB_024b0148;
+LAB_024b0110:
+          *(undefined4 *)(param_1 + 0xaf0) = 1;
+          local_3c = *(undefined4 *)(param_1 + 0xaf0);
+        }
+        goto LAB_024b01b0;
+      }
+      puVar9 = puVar16;
+    } while (4 < uVar8);
+  } while( true );
+LAB_024b01d8:
+  iVar15 = iVar4;
+  iVar10 = iVar12;
+  iVar4 = iVar15;
+  do {
+    if (uVar8 < 5) {
+      uVar3 = *(uint *)((int)puVar16 + iVar15);
+      *(uint *)(iVar10 + 4) = uVar3;
+      if (4 < uVar8) goto LAB_024b0248;
+LAB_024b0238:
+      uVar1 = *(uint *)((int)puVar16 + iVar15);
+    }
+    else {
+      uVar3 = *puVar16;
+      *(uint *)(iVar10 + 4) = uVar3;
+      if (uVar8 < 5) goto LAB_024b0238;
+LAB_024b0248:
+      uVar1 = *puVar16;
+    }
+    uVar6 = 0;
+    uVar7 = 0;
+    uVar11 = 0;
+    uVar14 = 0;
+    if (uVar1 != 0xffffffff) {
+      uVar14 = 0;
+      uVar11 = 0;
+      uVar6 = 0;
+      iVar13 = iVar5 + 0x24;
+      if (uVar3 < 5) {
+        iVar13 = iVar13 + uVar3 * 0x18;
+      }
+      uVar3 = *(uint *)(iVar13 + 8);
+      if (uVar3 == 0) {
+        uVar6 = 0;
+        uVar11 = 0;
+        uVar7 = (undefined1)((uint)LZCOUNT(*(uint *)(iVar13 + 0xc) ^ 2) >> 5);
+      }
+      else if (uVar3 == 1) {
+        uVar6 = 1;
+        uVar11 = 1;
+        uVar17 = 1;
+        uVar7 = (undefined1)((uint)LZCOUNT(*(uint *)(iVar13 + 0xc) ^ 2) >> 5);
+      }
+      else if (uVar3 < 3) {
+        uVar6 = 0;
+        uVar11 = 1;
+        uVar7 = (undefined1)((uint)LZCOUNT(*(uint *)(iVar13 + 0xc) ^ 2) >> 5);
+      }
+      else if (uVar3 == 3) {
+        uVar6 = 1;
+        uVar11 = 1;
+        uVar14 = 1;
+        uVar7 = (undefined1)((uint)LZCOUNT(*(uint *)(iVar13 + 0xc) ^ 2) >> 5);
+      }
+      else {
+        uVar7 = (undefined1)((uint)LZCOUNT(*(uint *)(iVar13 + 0xc) ^ 2) >> 5);
+      }
+    }
+    *(undefined1 *)(iVar10 + 0x1f) = uVar7;
+    *(undefined1 *)(iVar10 + 0x1c) = uVar6;
+    *(undefined1 *)(iVar10 + 0x1e) = uVar14;
+    *(undefined1 *)(iVar10 + 0x1d) = uVar11;
+    iVar13 = *(int *)((int)&DAT_101d62fc + iVar15 + *(int *)(param_1 + 0xaf0) * 0x14);
+    *(int *)(iVar10 + 0x18) = iVar13;
+    if ((iVar13 == 0) && ((*(char *)(iVar10 + 0x1c) != '\0' || (*(char *)(iVar10 + 0x1d) != '\0'))))
+    {
+      *(undefined1 *)(iVar10 + 0x1d) = 0;
+      *(undefined1 *)(iVar10 + 0x1c) = 0;
+    }
+    uVar8 = uVar8 + 1;
+    iVar4 = iVar4 + 4;
+    iVar12 = iVar12 + 0x20;
+    iVar15 = iVar15 + 4;
+    if (4 < (int)uVar8) {
+      *(bool *)(param_1 + 0xaf4) = bVar2;
+      *(bool *)(param_1 + 0xaf5) = *(int *)(iVar5 + 0xc0) == 1;
+      FUN_024aee78(param_1);
+      local_48 = *(undefined4 *)(*(int *)(DAT_101d6944 + 0x148) + 0x16c);
+      local_44 = local_48;
+      FUN_024af330(param_1,uVar17,&local_48);
+      FUN_024af7b4(param_1);
+      FUN_024af8f4(param_1);
+      FUN_024afd28(param_1);
+      return;
+    }
+    iVar10 = param_1 + 0x890;
+  } while (4 < uVar8);
+  goto LAB_024b01d8;
+}
+
+
+
+--- decompile clear func : FUN_0273929c [[0273929c, 02739423]] ---
+
+void FUN_0273929c(int param_1,undefined4 param_2,undefined1 param_3)
+
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  ulonglong in_r4;
+  
+  uVar1 = *(undefined4 *)(param_1 + 0x1c);
+  uVar2 = *(undefined4 *)(param_1 + 0x20);
+  if ((in_r4 & 1) == 0) {
+    if (((in_r4 & 2) != 0) && ((in_r4 & 4) != 0)) {
+      func_0x04008868(uVar2,param_3,3);
+      func_0x04008a18(*(undefined4 *)(DAT_1018c7c0 + 0x138));
+      return;
+    }
+    if ((in_r4 & 2) == 0) {
+      if ((in_r4 & 4) != 0) {
+        func_0x04008868(uVar2,param_3,2);
+      }
+      func_0x04008a18(*(undefined4 *)(DAT_1018c7c0 + 0x138));
+    }
+    else {
+      func_0x04008868(uVar2,param_3,1);
+      func_0x04008a18(*(undefined4 *)(DAT_1018c7c0 + 0x138));
+    }
+  }
+  else if (((in_r4 & 2) == 0) || ((in_r4 & 4) == 0)) {
+    if ((in_r4 & 2) == 0) {
+      if ((in_r4 & 4) == 0) {
+        func_0x04008860();
+        func_0x04008a18(*(undefined4 *)(DAT_1018c7c0 + 0x138));
+      }
+      else {
+        func_0x04008858(uVar1,uVar2,param_3,2);
+        func_0x04008a18(*(undefined4 *)(DAT_1018c7c0 + 0x138));
+      }
+    }
+    else {
+      func_0x04008858(uVar1,uVar2,param_3,1);
+      func_0x04008a18(*(undefined4 *)(DAT_1018c7c0 + 0x138));
+    }
+  }
+  else {
+    func_0x04008858(uVar1,uVar2,param_3,3);
+    func_0x04008a18(*(undefined4 *)(DAT_1018c7c0 + 0x138));
+  }
+  return;
+}
+
+
+
+--- decompile clear func2 : FUN_027afe24 [[027afe24, 027afe3f] [027affc0, 027b0037]] ---
+
+void FUN_027afe24(void)
+
+{
+  int iVar1;
+  int unaff__r27;
+  ulonglong unaff_r28;
+  int *unaff__r29;
+  uint unaff__r30;
+  
+  func_0x04008860();
+  FUN_0275eae8(DAT_1018c8c0);
+  if (unaff__r30 < 8) {
+    iVar1 = unaff__r29[unaff__r30];
+  }
+  else {
+    iVar1 = *unaff__r29;
+  }
+  if ((iVar1 != 0) && ((unaff_r28 & 1) != 0)) {
+    if (unaff__r30 < 8) {
+      unaff__r29 = unaff__r29 + unaff__r30;
+    }
+    FUN_027acf04(*unaff__r29);
+  }
+  if ((*(int *)(unaff__r27 + 0x3c) != 0) && ((unaff_r28 & 6) != 0)) {
+    FUN_027ad170();
+  }
+  instructionSynchronize();
+  return;
+}
+
+
+
+--- decompile DrawDone func : FUN_024d4c58 [[024d4c58, 024d4cc7]] ---
+
+void FUN_024d4c58(int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = *(int *)(param_1 + 0x3cc);
+  if (iVar1 != 0) {
+    if ((*(ushort *)(iVar1 + 0x24) & 1) != 0) {
+      func_0x04008888();
+      FUN_024e258c(*(undefined4 *)(param_1 + 0x3cc));
+      return;
+    }
+    if ((*(ushort *)(iVar1 + 0x24) >> 1 & 1) != 0) {
+      FUN_024e2688();
+    }
+  }
+  return;
+}
+
+
+
+--- decompile SetTVBuffer func : FUN_027396e4 [[027396e4, 027397b3]] ---
+
+void FUN_027396e4(void)
+
+{
+  float fVar1;
+  int iVar2;
+  float *unaff__r31;
+  double dVar3;
+  double in_f31;
+  
+  func_0x04008b80();
+  dVar3 = (double)*unaff__r31;
+  if (in_f31 <= dVar3) {
+    fVar1 = unaff__r31[1];
+    iVar2 = (int)(dVar3 - in_f31) + -0x80000000;
+  }
+  else {
+    iVar2 = (int)*unaff__r31;
+    fVar1 = unaff__r31[1];
+  }
+  if (in_f31 <= (double)fVar1) {
+    func_0x04008b98(iVar2,(int)((double)fVar1 - in_f31) + -0x80000000);
+    instructionSynchronize();
+    return;
+  }
+  func_0x04008b98(iVar2,(int)fVar1);
+  instructionSynchronize();
+  return;
+}
+
+
+
+
+==== callers of present/clear funcs ====
+callers of FUN_027afb74 (CopyToScan heavy) depth3:
+  (no call refs to 027afb74)
+callers of FUN_02739424 (CopyToScan small) depth3:
+  (no call refs to 02739424)
+callers of FUN_024d4ee0 (flip/swap TV) depth3:
+  (no call refs to 024d4ee0)
+callers of FUN_02734c3c (flip/swap clone) depth3:
+  (no call refs to 02734c3c)
+callers of FUN_0273929c (clears) depth2:
+  (no call refs to 0273929c)
+callers of FUN_027396e4 (SetTVBuffer) depth2:
+  (no call refs to 027396e4)
+
+==== callers of higher chain ====
+callers of FUN_024b0060 depth3:
+  caller FUN_0250e364 [[0250e364, 0250e41b]]  call@0250e380
+      caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e734
+          caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+      caller FUN_020a64e4 [[020a64e4, 020a659f]]  call@020a6580
+          caller FUN_026438a8 [[026438a8, 02643bcb]]  call@02643ba4
+          caller FUN_02644360 [[02644360, 0264440f]]  call@026443ec
+      caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e4c4
+          caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+      caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e5c8
+          caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+      caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e6e8
+          caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+      caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e648
+          caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+      caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e6c8
+          caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+      caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e52c
+          caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+  caller FUN_024a835c [[024a835c, 024a8467]]  call@024a83a4
+      (no call refs to 024a835c)
+  caller FUN_0252d908 [[0252d908, 0252da8b]]  call@0252da4c
+      (no call refs to 0252d908)
+  caller FUN_0252d1d8 [[0252d1d8, 0252d1ff]]  call@0252d1fc
+      caller FUN_0246adc4 [[0246adc4, 0246ae47]]  call@0246ae2c
+          caller FUN_0246ae48 [[0246ae48, 0246af67]]  call@0246af08
+          caller FUN_0246bc88 [[0246bc88, 0246bf33]]  call@0246bd90
+          caller FUN_0246bc88 [[0246bc88, 0246bf33]]  call@0246bef4
+          caller FUN_02662090 [[02662090, 02662157]]  call@0266211c
+callers of FUN_0250e74c depth2:
+  caller FUN_0250e8e8 [[0250e8e8, 0250e937]]  call@0250e90c
+      caller FUN_020a5db4 [[020a5db4, 020a5ef7]]  call@020a5df8
+      caller FUN_020a5db4 [[020a5db4, 020a5ef7]]  call@020a5e4c
+      caller FUN_020a5ef8 [[020a5ef8, 020a5f63]]  call@020a5f28
+      caller FUN_020a5f84 [[020a5f84, 020a5fd7]]  call@020a5fb8
+      caller FUN_02433cbc [[02433cbc, 02433d63]]  call@02433d14
+      caller FUN_024cffac [[024cffac, 024d001b]]  call@024cffe4
+      caller FUN_024cffac [[024cffac, 024d001b]]  call@024d0008
+      caller FUN_02614fa4 [[02614fa4, 026150d7]]  call@026150b8
+      caller FUN_025d7884 [[025d7884, 025d8f83]]  call@025d8bbc
+      caller FUN_025d7884 [[025d7884, 025d8f83]]  call@025d8c0c
+      caller FUN_025d7884 [[025d7884, 025d8f83]]  call@025d8c3c
+      caller FUN_025dba10 [[025dba10, 025dbc87]]  call@025dba98
+      caller FUN_025e051c [[025e051c, 025e153f]]  call@025e0da0
+      caller FUN_025e051c [[025e051c, 025e153f]]  call@025e0e34
+      caller FUN_025e051c [[025e051c, 025e153f]]  call@025e0ea8
+      caller FUN_025e2c70 [[025e2c70, 025e30d7]]  call@025e2cf8
+      caller FUN_0261bf6c [[0261bf6c, 0261c88f]]  call@0261c0f0
+  caller FUN_0250e8e8 [[0250e8e8, 0250e937]]  call@0250e934
+      caller FUN_020a5db4 [[020a5db4, 020a5ef7]]  call@020a5df8
+      caller FUN_020a5db4 [[020a5db4, 020a5ef7]]  call@020a5e4c
+      caller FUN_020a5ef8 [[020a5ef8, 020a5f63]]  call@020a5f28
+      caller FUN_020a5f84 [[020a5f84, 020a5fd7]]  call@020a5fb8
+      caller FUN_02433cbc [[02433cbc, 02433d63]]  call@02433d14
+      caller FUN_024cffac [[024cffac, 024d001b]]  call@024cffe4
+      caller FUN_024cffac [[024cffac, 024d001b]]  call@024d0008
+      caller FUN_02614fa4 [[02614fa4, 026150d7]]  call@026150b8
+      caller FUN_025d7884 [[025d7884, 025d8f83]]  call@025d8bbc
+      caller FUN_025d7884 [[025d7884, 025d8f83]]  call@025d8c0c
+      caller FUN_025d7884 [[025d7884, 025d8f83]]  call@025d8c3c
+      caller FUN_025dba10 [[025dba10, 025dbc87]]  call@025dba98
+      caller FUN_025e051c [[025e051c, 025e153f]]  call@025e0da0
+      caller FUN_025e051c [[025e051c, 025e153f]]  call@025e0e34
+      caller FUN_025e051c [[025e051c, 025e153f]]  call@025e0ea8
+      caller FUN_025e2c70 [[025e2c70, 025e30d7]]  call@025e2cf8
+      caller FUN_0261bf6c [[0261bf6c, 0261c88f]]  call@0261c0f0

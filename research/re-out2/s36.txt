@@ -1,0 +1,106 @@
+S36: the NORMAL slot camera path (MK8 v4.2)
+
+  [ok] FUN_024dd9fc [[024dd9fc, 024ddaa7]]
+  [ok] FUN_024de0d8 [[024de0d8, 024de1a7]]
+=== FUN_024dd9fc prologue from 0x24dd9fc ===
+  024dd9fc  mfspr r0,LR
+  024dda00  stwu r1,-0x10(r1)
+  024dda04  stw r31,0xc(r1)
+  024dda08  or r31,r3,r3
+  024dda0c  stw r30,0x8(r1)
+  024dda10  li r9,0x1
+  024dda14  stw r0,0x14(r1)
+  024dda18  lwz r8,0xb0(r31)
+  024dda1c  li r0,0x0
+  024dda20  stb r9,0x1dc(r31)
+  024dda24  rlwinm r8,r8,0x0,0x0,0x1e
+  024dda28  sth r0,0x1ac(r31)
+  024dda2c  stw r8,0xb0(r31)
+  024dda30  sth r0,0x184(r31)
+  024dda34  or. r30,r4,r4
+  024dda38  stw r0,0x1ec(r31)
+  024dda3c  lwz r7,0x1ec(r31)
+  024dda40  beq 0x024dda90
+  024dda44  addi r3,r31,0xc4
+  024dda48  or r4,r30,r30
+  024dda4c  li r5,0x60
+  024dda50  li r6,0x0
+  024dda54  bl 0x040081f8
+  024dda58  lwz r10,0xb0(r31)
+  024dda5c  addi r3,r31,0x1f0
+  024dda60  or r4,r30,r30
+  024dda64  li r5,0x60
+  024dda68  ori r10,r10,0x1
+  024dda6c  li r6,0x0
+  024dda70  stw r10,0xb0(r31)
+  024dda74  bl 0x040081f8
+  024dda78  li r11,0x1
+  024dda7c  li r4,0x0
+  024dda80  or r3,r31,r31
+  024dda84  stw r11,0x1ec(r31)
+
+=== FUN_024dd9fc (normal camera setup) (0x24dd9fc) ===
+  FUN_024dd9fc [[024dd9fc, 024ddaa7]]
+
+void FUN_024dd9fc(int param_1)
+
+{
+  longlong in_r4;
+  
+  *(undefined1 *)(param_1 + 0x1dc) = 1;
+  *(undefined2 *)(param_1 + 0x1ac) = 0;
+  *(uint *)(param_1 + 0xb0) = *(uint *)(param_1 + 0xb0) & 0xfffffffe;
+  *(undefined2 *)(param_1 + 0x184) = 0;
+  *(undefined4 *)(param_1 + 0x1ec) = 0;
+  if (in_r4 != 0) {
+    func_0x040081f8(param_1 + 0xc4,(int)in_r4,0x60,0,*(undefined4 *)(param_1 + 0x1ec));
+    *(uint *)(param_1 + 0xb0) = *(uint *)(param_1 + 0xb0) | 1;
+    func_0x040081f8(param_1 + 0x1f0,(int)in_r4,0x60,0);
+    *(undefined4 *)(param_1 + 0x1ec) = 1;
+    FUN_024dd8e8(param_1,0);
+  }
+  return;
+}
+
+
+
+=== FUN_024de0d8 (0x24de0d8) ===
+  FUN_024de0d8 [[024de0d8, 024de1a7]]
+
+int FUN_024de0d8(int param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar2 = FUN_024ce59c();
+  uVar1 = *(uint *)(param_1 + 0x1d4);
+  iVar3 = 0;
+  if (iVar2 != 0) {
+    iVar3 = *(int *)(iVar2 + 0x2c4);
+  }
+  iVar2 = iVar3 + 0x6a58;
+  if (uVar1 < 0xc) {
+    iVar4 = iVar2 + uVar1 * 0x11a4;
+    iVar4 = *(int *)(iVar4 + *(int *)(iVar4 + 0x11a0) * 0x8d0 + 0x24);
+  }
+  else {
+    iVar4 = *(int *)(iVar2 + *(int *)(iVar3 + 0x7bf8) * 0x8d0 + 0x24);
+  }
+  if (iVar4 == 0) {
+    iVar3 = iVar3 + 0x98;
+    if (uVar1 < 0xc) {
+      iVar3 = iVar3 + uVar1 * 0x8d0;
+    }
+    return iVar3;
+  }
+  if (uVar1 < 0xc) {
+    iVar2 = iVar2 + uVar1 * 0x11a4;
+  }
+  return iVar2 + *(int *)(iVar2 + 0x11a0) * 0x8d0;
+}
+
+
+

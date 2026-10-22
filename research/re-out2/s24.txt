@@ -1,0 +1,208 @@
+FUN @250e364 = FUN_0250e364 [[0250e364, 0250e41b]]
+FUN @250dac4 = FUN_0250dac4 [[0250dac4, 0250dceb]]
+FUN @250dcec = FUN_0250dcec [[0250dcec, 0250dd2f]]
+FUN @250d9e0 = FUN_0250d9e0 [[0250d9e0, 0250dac3]]
+
+--- decompile FUN_0250E364 (camera/viewport update) (250e364) ---
+  function FUN_0250e364 [[0250e364, 0250e41b]]
+
+void FUN_0250e364(void)
+
+{
+  int iVar1;
+  
+  if (DAT_1018999c != 0) {
+    FUN_024b0060();
+  }
+  if (DAT_10182dec != 0) {
+    FUN_0207ed58();
+  }
+  if (DAT_10188544 != 0) {
+    FUN_020a61c4();
+  }
+  if (DAT_10188538 != 0) {
+    FUN_0218f78c();
+  }
+  if (DAT_10188534 != 0) {
+    FUN_022c74e4();
+  }
+  if (DAT_10188540 != 0) {
+    FUN_02101b68();
+  }
+  if (DAT_1018854c != 0) {
+    FUN_020eadb4();
+  }
+  iVar1 = FUN_02043b54();
+  if (iVar1 != 0) {
+    FUN_02044bac();
+  }
+  return;
+}
+
+
+
+==== calls inside FUN_0250E364 ====
+  0250e380  bl 0x024b0060
+  0250e394  bl 0x0207ed58
+  0250e3a8  bl 0x020a61c4
+  0250e3bc  bl 0x0218f78c
+  0250e3d0  bl 0x022c74e4
+  0250e3e4  bl 0x02101b68
+  0250e3f8  bl 0x020eadb4
+  0250e3fc  bl 0x02043b54
+  0250e408  bl 0x02044bac
+  total calls=9
+
+--- decompile FUN_0250DAC4 (250dac4) ---
+  function FUN_0250dac4 [[0250dac4, 0250dceb]]
+
+void FUN_0250dac4(int param_1)
+
+{
+  byte *pbVar1;
+  int iVar2;
+  int iVar3;
+  uint *puVar4;
+  uint uVar5;
+  uint uVar6;
+  int iVar7;
+  byte *pbVar8;
+  int iVar9;
+  int iVar10;
+  
+  puVar4 = (uint *)(param_1 + 0x9c);
+  *puVar4 = 0xffffffff;
+  uVar6 = 1;
+  do {
+    while (uVar6 < 5) {
+      uVar5 = uVar6 + 1;
+      puVar4[uVar6] = 0xffffffff;
+      uVar6 = uVar5;
+      if (4 < (int)uVar5) goto LAB_0250db20;
+    }
+    uVar6 = uVar6 + 1;
+    *puVar4 = 0xffffffff;
+  } while ((int)uVar6 < 5);
+LAB_0250db20:
+  iVar10 = param_1 + 0x24;
+  uVar6 = 0;
+  iVar2 = iVar10;
+  iVar7 = iVar10;
+  iVar3 = iVar10;
+  if (*(int *)(param_1 + 0x2c) != 0) goto LAB_0250db6c;
+LAB_0250dbac:
+  uVar6 = uVar6 + 1;
+  if ((int)uVar6 < 5) {
+    while( true ) {
+      iVar2 = iVar3 + 0x18;
+      if (uVar6 < 5) {
+        iVar9 = *(int *)(iVar3 + 0x20);
+        iVar7 = iVar2;
+      }
+      else {
+        iVar9 = *(int *)(param_1 + 0x2c);
+        iVar7 = iVar10;
+      }
+      iVar3 = iVar2;
+      if (iVar9 == 0) goto LAB_0250dbac;
+LAB_0250db6c:
+      uVar5 = *(uint *)(iVar7 + 4);
+      iVar3 = iVar2;
+      if (uVar5 == 0xffffffff) goto LAB_0250dbac;
+      if ((*(int *)(iVar7 + 8) == 0) || (4 < uVar5)) break;
+      puVar4[uVar5] = uVar6;
+      uVar6 = uVar6 + 1;
+      if (4 < (int)uVar6) goto LAB_0250dbbc;
+    }
+    *puVar4 = uVar6;
+    goto LAB_0250dbac;
+  }
+LAB_0250dbbc:
+  pbVar1 = (byte *)(param_1 + 0xb0);
+  uVar6 = 1;
+  *pbVar1 = 0;
+  do {
+    while (uVar6 < 0xc) {
+      pbVar8 = pbVar1 + uVar6;
+      uVar6 = uVar6 + 1;
+      *pbVar8 = 0;
+      if (0xb < (int)uVar6) goto LAB_0250dc18;
+    }
+    uVar6 = uVar6 + 1;
+    *pbVar1 = 0;
+  } while ((int)uVar6 < 0xc);
+LAB_0250dc18:
+  iVar7 = *(int *)(param_1 + 0x2c);
+  uVar6 = 0;
+  iVar2 = iVar10;
+  iVar3 = iVar10;
+  do {
+    if ((iVar7 == 1) || (iVar7 == 3)) {
+      uVar5 = *(uint *)(iVar2 + 0x14);
+      if (uVar5 != 0xffffffff) {
+        if (uVar5 < 0xc) {
+          pbVar1[uVar5] = pbVar1[uVar5] | (byte)(1 << (uVar6 & 0x3f));
+          if (4 < (int)(uVar6 + 1)) {
+            return;
+          }
+          goto LAB_0250dc38;
+        }
+        *pbVar1 = *pbVar1 | (byte)(1 << (uVar6 & 0x3f));
+      }
+      if (4 < (int)(uVar6 + 1)) {
+        return;
+      }
+    }
+    else if (4 < (int)(uVar6 + 1)) {
+      return;
+    }
+LAB_0250dc38:
+    iVar9 = iVar3 + 0x18;
+    uVar6 = uVar6 + 1;
+    if (uVar6 < 5) {
+      iVar7 = *(int *)(iVar3 + 0x20);
+      iVar2 = iVar9;
+      iVar3 = iVar9;
+    }
+    else {
+      iVar7 = *(int *)(param_1 + 0x2c);
+      iVar2 = iVar10;
+      iVar3 = iVar9;
+    }
+  } while( true );
+}
+
+
+
+==== calls inside FUN_0250DAC4 ====
+  total calls=0
+
+--- decompile FUN_0250DCEC (250dcec) ---
+  function FUN_0250dcec [[0250dcec, 0250dd2f]]
+
+void FUN_0250dcec(int param_1,uint param_2,undefined4 param_3,undefined4 *param_4)
+
+{
+  int iVar1;
+  
+  iVar1 = param_1 + 0x24;
+  if (param_2 < 5) {
+    *(undefined4 *)(iVar1 + param_2 * 0x18 + 8) = *param_4;
+    iVar1 = iVar1 + param_2 * 0x18;
+  }
+  else {
+    *(undefined4 *)(param_1 + 0x2c) = *param_4;
+  }
+  *(undefined4 *)(iVar1 + 4) = param_3;
+  FUN_0250dac4();
+  return;
+}
+
+
+
+==== refs to 24b0060 : callers of FUN_024B0060 ====
+  UNCONDITIONAL_CALL from 0250e380 in FUN_0250e364
+  UNCONDITIONAL_CALL from 024a83a4 in FUN_024a835c
+  UNCONDITIONAL_CALL from 0252da4c in FUN_0252d908
+  UNCONDITIONAL_CALL from 0252d1fc in FUN_0252d1d8
+

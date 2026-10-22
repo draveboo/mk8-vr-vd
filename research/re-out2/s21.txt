@@ -1,0 +1,112 @@
+--- decompile calc+record+submit FUN_0250E74C (250e74c) ---
+  function FUN_0250e74c [[0250e74c, 0250e7b3]]
+
+void FUN_0250e74c(int param_1)
+
+{
+  undefined4 local_8 [2];
+  
+  FUN_0274c444(param_1 + 0xcc);
+  if (*(int *)(param_1 + 0xc4) != 0) {
+    local_8[0] = *(undefined4 *)(param_1 + 0xc4);
+    FUN_0250e41c(param_1,local_8);
+    *(undefined4 *)(param_1 + 0xc4) = 0;
+    local_8[0] = *(undefined4 *)(param_1 + 0xc4);
+  }
+  FUN_0274c478(param_1 + 0xcc);
+  return;
+}
+
+
+
+---- disasm FUN_0250E74C full [250e74c,250e8e8] ----
+  0250e74c  mfspr r0,LR
+  0250e750  stwu r1,-0x10(r1)
+  0250e754  stw r31,0xc(r1)
+  0250e758  or r31,r3,r3
+  0250e75c  addi r3,r31,0xcc
+  0250e760  stw r0,0x14(r1)
+  0250e764  bl 0x0274c444
+  0250e768  lwz r0,0xc4(r31)
+  0250e76c  cmpwi r0,0x0
+  0250e770  beq 0x0250e798
+  0250e774  lwz r0,0xc4(r31)
+  0250e778  addi r4,r1,0x8
+  0250e77c  or r3,r31,r31
+  0250e780  stw r0,0x8(r1)
+  0250e784  bl 0x0250e41c
+  0250e788  li r0,0x0
+  0250e78c  stw r0,0xc4(r31)
+  0250e790  lwz r12,0xc4(r31)
+  0250e794  stw r12,0x8(r1)
+  0250e798  addi r3,r31,0xcc
+  0250e79c  bl 0x0274c478
+  0250e7a0  lwz r0,0x14(r1)
+  0250e7a4  lwz r31,0xc(r1)
+  0250e7a8  mtspr LR,r0
+  0250e7ac  addi r1,r1,0x10
+  0250e7b0  blr
+  0250e7b8  lbz r11,0x10a(r3)
+  0250e7bc  cmpwi r11,0x0
+  0250e7c0  beqlr
+  0250e7c4  lbz r10,0x108(r3)
+  0250e7c8  cmpwi r10,0x0
+  0250e7cc  li r0,0x1
+  0250e7d0  bne 0x0250e7e4
+  0250e7d4  lbz r11,0x109(r3)
+  0250e7d8  cmpwi r11,0x0
+  0250e7dc  bne 0x0250e7e4
+  0250e7e0  li r0,0x0
+  0250e7e4  lis r11,0x101d
+  0250e7e8  lwz r11,0x6948(r11)
+  0250e7ec  lwz r10,0x74(r11)
+  0250e7f0  rlwinm r0,r0,0x0,0x18,0x1f
+  0250e7f4  rlwinm r12,r10,0x0,0x1f,0x1f
+  0250e7f8  cmplw r12,r0
+  0250e7fc  beq 0x0250e838
+  0250e800  lis r12,0x1019
+  0250e804  lwz r12,-0x2b10(r12)
+  0250e808  cmpwi r0,0x0
+  0250e80c  lwz r10,0x2f0(r12)
+  0250e810  beq 0x0250e828
+  0250e814  ori r10,r10,0x1
+  0250e818  stw r10,0x2f0(r12)
+  0250e81c  lwz r12,0xc8(r3)
+  0250e820  stw r12,0xc4(r3)
+  0250e824  b 0x0250e838
+  0250e828  rlwinm r10,r10,0x0,0x0,0x1e
+  0250e82c  stw r10,0x2f0(r12)
+  0250e830  lwz r12,0xc8(r3)
+  0250e834  stw r12,0xc4(r3)
+  0250e838  li r0,0x0
+  0250e83c  stb r0,0x10a(r3)
+  0250e840  blr
+  0250e844  lis r12,0x101d
+  0250e848  lwz r12,0x6948(r12)
+  0250e84c  lwz r11,0x74(r12)
+  0250e850  rlwinm. r0,r11,0x0,0x1f,0x1f
+  0250e854  li r12,0x1
+  0250e858  bne 0x0250e86c
+  0250e85c  lwz r0,0xbc(r3)
+  0250e860  cmpwi r0,0x2
+  0250e864  beq 0x0250e86c
+  0250e868  li r12,0x0
+  0250e86c  rlwinm r3,r12,0x0,0x18,0x1f
+  0250e870  blr
+  0250e874  lwz r10,0xbc(r3)
+  0250e878  lwz r0,0xc0(r3)
+  0250e87c  xori r9,r0,0x2
+  0250e880  rlwinm r10,r10,0x2,0x0,0x1d
+  0250e884  subic r0,r9,0x1
+  0250e888  addis r12,r10,0x100d
+  0250e88c  subfe r11,r0,r9
+  0250e890  lwz r12,-0x1e64(r12)
+  0250e894  add r3,r12,r11
+  0250e898  blr
+
+==== calls inside FUN_0250E74C (250e74c) ====
+  0250e764  bl 0x0274c444
+  0250e784  bl 0x0250e41c
+  0250e79c  bl 0x0274c478
+  total calls=3
+

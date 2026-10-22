@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,000500021017bd00
+name = Mario Kart 8 VR
+path = "Mario Kart 8/VR"
+description = VR protocol hooks for Mario Kart 8 v4.2 (Milestone 1: mono present in headset). Requires the CEMU VR Vulkan layer (CEMUVR_ENABLE=1); harmless without it.
+version = 8

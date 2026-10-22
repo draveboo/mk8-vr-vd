@@ -1,0 +1,16 @@
+==== refs to 26a5e20 : hook site A ====
+  (none)
+
+==== refs to 26a5e94 : hook site B ====
+  CONDITIONAL_JUMP from 026a5e34 in FUN_026a5d98
+
+==== refs to 26a5d98 : function entry ====
+  (none)
+
+==== branches landing in [26a5d98,26a5f17) : FUN_026A5D98 body ====
+  026a5dcc beq 0x026a5e04 -> 026a5e04 (CONDITIONAL_JUMP)
+  026a5e14 ble 0x026a5e1c -> 026a5e1c (CONDITIONAL_JUMP)
+  026a5e34 beq 0x026a5e94 -> 026a5e94 (CONDITIONAL_JUMP)
+  026a5ea0 beq 0x026a5ed0 -> 026a5ed0 (CONDITIONAL_JUMP)
+  scanned 16 flow instructions
+

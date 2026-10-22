@@ -1,0 +1,24 @@
+﻿# Temporary conservative ignore list
+# Keep game dumps, credentials, and machine-specific runtime data out of source control.
+*.rpx
+*.bin
+*.key
+*.log
+.env
+.env.*
+# Mario Kart 8 VR focused repo
+
+*.rpx
+*.bin
+*.key
+*.log
+*.pdb
+*.dll
+*.exe
+.env
+.env.*
+**/*.bak-*
+**/*.pre-*-backup
+build/
+cmake-build-*/
+dist/

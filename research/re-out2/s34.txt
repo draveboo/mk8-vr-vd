@@ -1,0 +1,21 @@
+S34: FUN_024B0060 tail (MK8 v4.2)
+
+=== disasm 0x024b03a0..0x024b03e7 ===
+  024b03a0  addi r5,r1,0x8
+  024b03a4  stw r4,0xc(r1)
+  024b03a8  lwz r0,0xc(r1)
+  024b03ac  or r4,r30,r30
+  024b03b0  or r3,r31,r31
+  024b03b4  stw r0,0x8(r1)
+  024b03b8  bl 0x024af330
+  024b03bc  or r3,r31,r31
+  024b03c0  bl 0x024af7b4
+  024b03c4  or r3,r31,r31
+  024b03c8  bl 0x024af8f4
+  024b03cc  or r3,r31,r31
+  024b03d0  bl 0x024afd28
+  024b03d4  lmw r21,0x24(r1)
+  024b03d8  lwz r0,0x54(r1)
+  024b03dc  mtspr LR,r0
+  024b03e0  addi r1,r1,0x50
+  024b03e4  blr

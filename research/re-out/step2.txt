@@ -1,0 +1,480 @@
+==== memory blocks c000 range ====
+  .symtab c0000000-c000300f x=false
+  .strtab c0003010-c0007dc7 x=false
+  .shstrtab c0007dc8-c0007f0f x=false
+  .imp10 c0008040-c00084f7 x=true
+  .imp11 c0008500-c0008547 x=false
+  .imp12 c0008580-c000860f x=true
+  .imp13 c0008640-c00086cf x=true
+  .imp14 c0008700-c00087ef x=true
+  .imp15 c0008800-c0008c0f x=true
+  .imp16 c0008c40-c0008e4f x=true
+  .imp17 c0008e80-c0008ebf x=true
+  .imp18 c0008ec0-c0008ef7 x=true
+  .imp19 c0008f00-c0008f2f x=true
+  .imp20 c0008f40-c0008f57 x=true
+  .imp21 c0008f80-c0008fbf x=true
+  .imp22 c0008fc0-c0008fff x=true
+  .imp23 c0009000-c000900f x=true
+  .imp24 c0009040-c00090df x=true
+  .imp25 c0009100-c000910f x=false
+  .imp26 c0009140-c000926f x=true
+  .imp27 c0009280-c000928f x=false
+  .imp28 c00092c0-c000931f x=true
+  .imp29 c0009340-c0009417 x=true
+  .imp30 c0009440-c000977f x=true
+  .imp31 c0009780-c00097bf x=true
+  .imp32 c00097c0-c00097df x=true
+  .imp33 c0009800-c0009847 x=true
+  .imp34 c0009880-c00098a7 x=true
+  .imp35 c00098c0-c0009907 x=false
+  .imp36 c0009940-c0009a3f x=true
+  .imp37 c0009a40-c0009a4f x=false
+  .imp38 c0009a80-c0009ac7 x=true
+  .imp39 c0009b00-c0009b47 x=true
+  .imp40 c0009b80-c0009ba7 x=true
+  EXTERNAL c000a000-c000a003 x=false
+
+==== call sites: instructions + containing funcs ====
+[ CopyToScan@273951c ]
+  func: FUN_02739424 [[02739424, 02739537]]
+    027394ec  lwz r7,0x1c(r30)
+    027394f0  li r3,0x0
+    027394f4  lwz r5,0x4(r7)
+    027394f8  or r4,r3,r3
+    027394fc  lwz r6,0x8(r7)
+    02739500  bl 0x04008b38
+    02739504  lwz r11,0xc(r31)
+    02739508  li r4,0x4
+    0273950c  cmpwi r11,0x0
+    02739510  lwz r3,0x1c(r30)
+    02739514  bne 0x0273951c
+    02739518  li r4,0x1
+    0273951c  bl 0x04008870  <== SITE
+    02739520  lwz r0,0x1c(r1)
+    02739524  lwz r30,0x10(r1)
+    02739528  mtspr LR,r0
+[ CopyToScan@27afd58 ]
+  func: FUN_027afb74 [[027afb74, 027afd9b]]
+    027afd28  lwz r6,0xe4(r1)
+    027afd2c  stw r5,0x30(r1)
+    027afd30  stw r6,0x48(r1)
+    027afd34  lwz r0,0x24(r28)
+    027afd38  stw r0,0x34(r1)
+    027afd3c  lwz r9,0x0(r29)
+    027afd40  lwz r0,0x120(r9)
+    027afd44  stw r0,0x90(r1)
+    027afd48  lwz r0,0x30(r28)
+    027afd4c  or r4,r31,r31
+    027afd50  addi r3,r1,0x10
+    027afd54  stw r0,0x40(r1)
+    027afd58  bl 0x04008870  <== SITE
+    027afd5c  lis r3,0x1019
+    027afd60  lwz r3,-0x3740(r3)
+    027afd64  bl 0x0275eae8
+[ CopyToScan@27afd78 ]
+  func: FUN_027afb74 [[027afb74, 027afd9b]]
+    027afd48  lwz r0,0x30(r28)
+    027afd4c  or r4,r31,r31
+    027afd50  addi r3,r1,0x10
+    027afd54  stw r0,0x40(r1)
+    027afd58  bl 0x04008870
+    027afd5c  lis r3,0x1019
+    027afd60  lwz r3,-0x3740(r3)
+    027afd64  bl 0x0275eae8
+    027afd68  b 0x027afd88
+    027afd6c  lwz r6,0x0(r29)
+    027afd70  or r4,r31,r31
+    027afd74  addi r3,r6,0xa0
+    027afd78  bl 0x04008870  <== SITE
+    027afd7c  lis r3,0x1019
+    027afd80  lwz r3,-0x3740(r3)
+    027afd84  bl 0x0275eae8
+[ Swap@24d4fa8 ]
+  func: FUN_024d4ee0 [[024d4ee0, 024d4fc3]]
+    024d4f78  cmpwi r11,0x0
+    024d4f7c  or r3,r31,r31
+    024d4f80  bne 0x024d4f54
+    024d4f84  bl 0x02734960
+    024d4f88  bl 0x040088b8
+    024d4f8c  lwz r12,0x370(r31)
+    024d4f90  mtspr CTR,r12
+    024d4f94  li r3,0x1
+    024d4f98  bctrl
+    024d4f9c  lwz r0,0x28(r31)
+    024d4fa0  cmpwi r0,0x2
+    024d4fa4  bne 0x024d4fac
+    024d4fa8  bl 0x04008bf8  <== SITE
+    024d4fac  bl 0x04008888
+    024d4fb0  lwz r0,0x14(r1)
+    024d4fb4  lwz r31,0xc(r1)
+[ Swap@2734d04 ]
+  func: FUN_02734c3c [[02734c3c, 02734d1f]]
+    02734cd4  cmpwi r12,0x0
+    02734cd8  or r3,r31,r31
+    02734cdc  bne 0x02734cb0
+    02734ce0  bl 0x02734960
+    02734ce4  bl 0x040088b8
+    02734ce8  lwz r0,0x370(r31)
+    02734cec  mtspr CTR,r0
+    02734cf0  li r3,0x1
+    02734cf4  bctrl
+    02734cf8  lwz r11,0x28(r31)
+    02734cfc  cmpwi r11,0x2
+    02734d00  bne 0x02734d08
+    02734d04  bl 0x04008bf8  <== SITE
+    02734d08  bl 0x04008888
+    02734d0c  lwz r0,0x14(r1)
+    02734d10  lwz r31,0xc(r1)
+[ Swap@27b8928 ]
+  func: FUN_027b88d0 [[027b88d0, 027b8943]]
+    027b88f8  or r30,r5,r5
+    027b88fc  beq 0x027b892c
+    027b8900  mulli r11,r4,0x7a8
+    027b8904  or r4,r30,r30
+    027b8908  addi r10,r31,0x18
+    027b890c  add r3,r10,r11
+    027b8910  bl 0x027d42a4
+    027b8914  cmpwi r30,0x0
+    027b8918  beq 0x027b892c
+    027b891c  lwz r12,0xfcc(r31)
+    027b8920  rlwinm. r0,r12,0xf,0x1f,0x1f
+    027b8924  beq 0x027b892c
+    027b8928  bl 0x04008bf8  <== SITE
+    027b892c  lwz r0,0x14(r1)
+    027b8930  lwz r30,0x8(r1)
+    027b8934  mtspr LR,r0
+[ DrawDone@24d4c84 ]
+  func: FUN_024d4c58 [[024d4c58, 024d4cc7]]
+    024d4c58  mfspr r0,LR
+    024d4c5c  stwu r1,-0x10(r1)
+    024d4c60  stw r31,0xc(r1)
+    024d4c64  or r31,r3,r3
+    024d4c68  stw r0,0x14(r1)
+    024d4c6c  lwz r3,0x3cc(r31)
+    024d4c70  cmpwi r3,0x0
+    024d4c74  beq 0x024d4cb4
+    024d4c78  lhz r0,0x24(r3)
+    024d4c7c  rlwinm. r0,r0,0x0,0x1f,0x1f
+    024d4c80  beq 0x024d4ca4
+    024d4c84  bl 0x04008888  <== SITE
+    024d4c88  lwz r3,0x3cc(r31)
+    024d4c8c  bl 0x024e258c
+    024d4c90  lwz r0,0x14(r1)
+    024d4c94  lwz r31,0xc(r1)
+[ DrawDone@24d4f20 ]
+  func: FUN_024d4ee0 [[024d4ee0, 024d4fc3]]
+    024d4ef0  stw r0,0x14(r1)
+    024d4ef4  lwz r11,0x74(r31)
+    024d4ef8  rlwinm. r0,r11,0x0,0x1f,0x1f
+    024d4efc  beq 0x024d4f08
+    024d4f00  rlwinm. r11,r11,0x1f,0x1f,0x1f
+    024d4f04  bne 0x024d4fb0
+    024d4f08  lwz r0,0x370(r31)
+    024d4f0c  cmpwi r0,0x0
+    024d4f10  beq 0x024d4f9c
+    024d4f14  mtspr CTR,r0
+    024d4f18  li r3,0x0
+    024d4f1c  bctrl
+    024d4f20  bl 0x04008888  <== SITE
+    024d4f24  lbz r12,0x374(r31)
+    024d4f28  cmpwi r12,0x0
+    024d4f2c  beq 0x024d4f74
+[ DrawDone@24d4fac ]
+  func: FUN_024d4ee0 [[024d4ee0, 024d4fc3]]
+    024d4f7c  or r3,r31,r31
+    024d4f80  bne 0x024d4f54
+    024d4f84  bl 0x02734960
+    024d4f88  bl 0x040088b8
+    024d4f8c  lwz r12,0x370(r31)
+    024d4f90  mtspr CTR,r12
+    024d4f94  li r3,0x1
+    024d4f98  bctrl
+    024d4f9c  lwz r0,0x28(r31)
+    024d4fa0  cmpwi r0,0x2
+    024d4fa4  bne 0x024d4fac
+    024d4fa8  bl 0x04008bf8
+    024d4fac  bl 0x04008888  <== SITE
+    024d4fb0  lwz r0,0x14(r1)
+    024d4fb4  lwz r31,0xc(r1)
+    024d4fb8  mtspr LR,r0
+[ ClearColor@2739368 ]
+  func: FUN_0273929c [[0273929c, 02739423]]
+    02739338  bl 0x04008a18
+    0273933c  b 0x02739414
+    02739340  rlwinm. r0,r0,0x0,0x1d,0x1d
+    02739344  beq 0x02739368
+    02739348  rlwinm r5,r6,0x0,0x18,0x1f
+    0273934c  li r6,0x2
+    02739350  bl 0x04008858
+    02739354  lis r12,0x1019
+    02739358  lwz r12,-0x3840(r12)
+    0273935c  lwz r3,0x138(r12)
+    02739360  bl 0x04008a18
+    02739364  b 0x02739414
+    02739368  bl 0x04008860  <== SITE
+    0273936c  lis r12,0x1019
+    02739370  lwz r12,-0x3840(r12)
+    02739374  lwz r3,0x138(r12)
+[ ClearColor@27afe24 ]
+  func: FUN_027afe24 [[027afe24, 027afe3f] [027affc0, 027b0037]]
+    027afe24  bl 0x04008860  <== SITE
+    027afe28  lis r3,0x1019
+    027afe2c  lwz r3,-0x3740(r3)
+    027afe30  bl 0x0275eae8
+    027afe34  cmplwi r30,0x8
+    027afe38  blt 0x027affc0
+    027afe3c  b 0x027affd4
+    027affc0  rlwinm r9,r30,0x2,0x0,0x1d
+    027affc4  lwzx r10,r29,r9
+    027affc8  cmpwi r10,0x0
+    027affcc  beq 0x027b0000
+    027affd0  b 0x027affe0
+    027affd4  lwz r10,0x0(r29)
+    027affd8  cmpwi r10,0x0
+    027affdc  beq 0x027b0000
+    027affe0  rlwinm. r0,r28,0x0,0x1f,0x1f
+[ SetTVBuffer@27396e4 ]
+  func: FUN_027396e4 [[027396e4, 027397b3]]
+    027396e4  bl 0x04008b80  <== SITE
+    027396e8  lfs f0,0x0(r31)
+    027396ec  fcmpu cr0,f0,f31
+    027396f0  bge 0x02739754
+    027396f4  fctiwz f0,f0
+    027396f8  addi r9,r1,0x8
+    027396fc  stfiwx f0,0,r9
+    02739700  lfs f0,0x4(r31)
+    02739704  fcmpu cr0,f0,f31
+    02739708  lwz r3,0x8(r1)
+    0273970c  blt 0x02739778
+    02739710  fsubs f0,f0,f31
+    02739714  fctiwz f0,f0
+    02739718  addi r0,r1,0x8
+    0273971c  stfiwx f0,0,r0
+    02739720  lwz r12,0x8(r1)
+
+==== caller chains ====
+callers of FUN_024af330 (frame landmark, depth 4):
+  caller FUN_024b0060 [[024b0060, 024b03e7]]  call@024b03b8
+      caller FUN_0250e364 [[0250e364, 0250e41b]]  call@0250e380
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e734
+              caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+          caller FUN_020a64e4 [[020a64e4, 020a659f]]  call@020a6580
+              caller FUN_026438a8 [[026438a8, 02643bcb]]  call@02643ba4
+              caller FUN_02644360 [[02644360, 0264440f]]  call@026443ec
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e4c4
+              caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e5c8
+              caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e6e8
+              caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e648
+              caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e6c8
+              caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e52c
+              caller FUN_0250e74c [[0250e74c, 0250e7b3]]  call@0250e784
+      caller FUN_024a835c [[024a835c, 024a8467]]  call@024a83a4
+          (no call refs to 024a835c)
+      caller FUN_0252d908 [[0252d908, 0252da8b]]  call@0252da4c
+          (no call refs to 0252d908)
+      caller FUN_0252d1d8 [[0252d1d8, 0252d1ff]]  call@0252d1fc
+          caller FUN_0246adc4 [[0246adc4, 0246ae47]]  call@0246ae2c
+              caller FUN_0246ae48 [[0246ae48, 0246af67]]  call@0246af08
+              caller FUN_0246bc88 [[0246bc88, 0246bf33]]  call@0246bd90
+              caller FUN_0246bc88 [[0246bc88, 0246bf33]]  call@0246bef4
+              caller FUN_02662090 [[02662090, 02662157]]  call@0266211c
+callers of FUN_024aee78 (projection landmark, depth 3):
+  caller FUN_024b0060 [[024b0060, 024b03e7]]  call@024b038c
+      caller FUN_0250e364 [[0250e364, 0250e41b]]  call@0250e380
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e734
+          caller FUN_020a64e4 [[020a64e4, 020a659f]]  call@020a6580
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e4c4
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e5c8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e6e8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e648
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e6c8
+          caller FUN_0250e41c [[0250e41c, 0250e74b]]  call@0250e52c
+      caller FUN_024a835c [[024a835c, 024a8467]]  call@024a83a4
+          (no call refs to 024a835c)
+      caller FUN_0252d908 [[0252d908, 0252da8b]]  call@0252da4c
+          (no call refs to 0252d908)
+      caller FUN_0252d1d8 [[0252d1d8, 0252d1ff]]  call@0252d1fc
+          caller FUN_0246adc4 [[0246adc4, 0246ae47]]  call@0246ae2c
+
+==== decompiles ====
+--- decompile CopyToScan caller 0x27afd58 : FUN_027afb74 [[027afb74, 027afd9b]] ---
+
+/* WARNING: Type propagation algorithm not settling */
+
+void FUN_027afb74(int param_1,int param_2)
+
+{
+  undefined4 uVar1;
+  uint uVar2;
+  int iVar3;
+  uint *puVar4;
+  uint *puVar5;
+  int iVar6;
+  longlong lVar7;
+  uint auStack_12c [7];
+  int local_110;
+  undefined4 local_10c;
+  undefined4 local_108;
+  undefined4 local_104;
+  undefined4 local_fc;
+  undefined4 local_f8;
+  undefined4 local_f4;
+  undefined4 local_f0;
+  undefined4 local_b4;
+  undefined4 local_b0;
+  undefined4 local_ac;
+  undefined4 local_a8;
+  uint uStack_90;
+  uint local_8c [6];
+  int local_74;
+  undefined4 local_70;
+  undefined4 local_6c;
+  undefined4 local_54;
+  
+  if (DAT_101aaf34 == 0) {
+    DAT_101aaf34 = 1;
+    DAT_101b39d0 = &DAT_101276d8;
+  }
+  if ((param_2 == 0) || (iVar3 = (**(code **)(*(int *)(param_2 + 8) + 0xc))(param_2), iVar3 == 0)) {
+    param_2 = 0;
+  }
+  FUN_027acf04(*(undefined4 *)(param_1 + 0x1c));
+  FUN_027b4e38(*(undefined4 *)(param_1 + 0x1c));
+  iVar6 = 4;
+  iVar3 = *(int *)(param_1 + 0x1c);
+  if (*(int *)(param_2 + 0xc) == 0) {
+    iVar6 = 1;
+  }
+  uVar1 = *(undefined4 *)(iVar3 + 0xa4);
+  uVar2 = *(uint *)(iVar3 + 0xa8);
+  auStack_12c[0] = uVar2 ^ 0x80000000;
+  func_0x04008be8();
+  func_0x04008b38(0,0,uVar1,uVar2);
+  if (iVar6 == 1) {
+    auStack_12c[6] = *(undefined4 *)(iVar3 + 0xb4);
+    iVar6 = *(int *)(iVar3 + 0xb8);
+    auStack_12c[4] = 1;
+    local_fc = 0;
+    local_10c = 0x80000003;
+    local_f8 = 0;
+    local_b4 = 0;
+    local_ac = 1;
+    local_b0 = 0;
+    auStack_12c[5] = 1;
+    local_f4 = 0;
+    auStack_12c[1] = 1;
+    auStack_12c[2] = uVar1;
+    auStack_12c[3] = uVar2;
+    local_110 = iVar6;
+    func_0x04008840(auStack_12c + 1);
+    func_0x04008918(auStack_12c + 1);
+    if (local_110 != iVar6) {
+      puVar4 = auStack_12c;
+      lVar7 = 0x1d;
+      puVar5 = &uStack_90;
+      do {
+        puVar4 = puVar4 + 1;
+        puVar5 = puVar5 + 1;
+        *puVar5 = *puVar4;
+        lVar7 = lVar7 + -1;
+      } while (lVar7 != 0);
+      local_70 = 3;
+      local_74 = iVar6;
+      func_0x04008840(local_8c);
+      local_108 = local_6c;
+      local_f0 = local_54;
+    }
+    local_104 = *(undefined4 *)(iVar3 + 0xc4);
+    local_a8 = *(undefined4 *)(*(int *)(param_1 + 0x1c) + 0x120);
+    local_f8 = *(undefined4 *)(iVar3 + 0xd0);
+    func_0x04008870(auStack_12c + 1,1);
+    FUN_0275eae8(DAT_1018c8c0);
+  }
+  else {
+    func_0x04008870(*(int *)(param_1 + 0x1c) + 0xa0,iVar6);
+    FUN_0275eae8(DAT_1018c8c0);
+  }
+  return;
+}
+
+
+
+--- decompile CopyToScan caller 0x273951c : FUN_02739424 [[02739424, 02739537]] ---
+
+void FUN_02739424(int param_1,int param_2)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  
+  if (DAT_101aaf34 == 0) {
+    DAT_101aaf34 = 1;
+    DAT_101b39d0 = &DAT_10101308;
+  }
+  if ((param_2 == 0) || (iVar1 = (**(code **)(*(int *)(param_2 + 8) + 0xc))(param_2), iVar1 == 0)) {
+    param_2 = 0;
+  }
+  func_0x04008be8();
+  func_0x04008b38(0,0,*(undefined4 *)(*(int *)(param_1 + 0x1c) + 4),
+                  *(undefined4 *)(*(int *)(param_1 + 0x1c) + 8));
+  uVar2 = 4;
+  if (*(int *)(param_2 + 0xc) == 0) {
+    uVar2 = 1;
+  }
+  func_0x04008870(*(undefined4 *)(param_1 + 0x1c),uVar2);
+  return;
+}
+
+
+
+--- decompile Swap caller 0x24d4fa8 : FUN_024d4ee0 [[024d4ee0, 024d4fc3]] ---
+
+void FUN_024d4ee0(int param_1)
+
+{
+  int iVar1;
+  
+  if (((*(uint *)(param_1 + 0x74) & 1) != 0) && ((*(uint *)(param_1 + 0x74) >> 1 & 1) != 0)) {
+    return;
+  }
+  if (*(code **)(param_1 + 0x370) == (code *)0x0) goto LAB_024d4f9c;
+  (**(code **)(param_1 + 0x370))(0);
+  func_0x04008888();
+  if (*(char *)(param_1 + 0x374) == '\0') {
+LAB_024d4f74:
+    iVar1 = *(int *)(param_1 + 200);
+  }
+  else {
+    if (*(int *)(param_1 + 200) != 0) {
+      FUN_02734960();
+      goto LAB_024d4f74;
+    }
+    FUN_027348cc(param_1);
+    iVar1 = *(int *)(param_1 + 200);
+  }
+  if (iVar1 == 0) {
+    FUN_02734960();
+    func_0x040088b8();
+    (**(code **)(param_1 + 0x370))(1);
+  }
+  else {
+    FUN_027348cc(param_1);
+    func_0x040088b8();
+    (**(code **)(param_1 + 0x370))(1);
+  }
+LAB_024d4f9c:
+  if (*(int *)(param_1 + 0x28) == 2) {
+    func_0x04008bf8();
+  }
+  func_0x04008888();
+  return;
+}
+
+
+

@@ -1,0 +1,118 @@
+==== scene render entry FUN_020A5DB4 prologue @ 20a5db4 (14 insns) ====
+020a5db4  7C 08 02 A6                       mfspr r0,LR
+020a5db8  94 21 FF E0                       stwu r1,-0x20(r1)
+020a5dbc  93 E1 00 1C                       stw r31,0x1c(r1)
+020a5dc0  93 C1 00 18                       stw r30,0x18(r1)
+020a5dc4  7C 9E 23 78                       or r30,r4,r4
+020a5dc8  7C 7F 1B 78                       or r31,r3,r3
+020a5dcc  93 A1 00 14                       stw r29,0x14(r1)
+020a5dd0  90 01 00 24                       stw r0,0x24(r1)
+020a5dd4  48 42 87 C9                       bl 0x024ce59c
+020a5dd8  2C 1E 00 00                       cmpwi r30,0x0
+020a5ddc  41 82 00 58                       beq 0x020a5e34
+020a5de0  2C 03 00 00                       cmpwi r3,0x0
+020a5de4  41 82 00 08                       beq 0x020a5dec
+020a5de8  80 63 02 BC                       lwz r3,0x2bc(r3)
+
+==== around frame hook 0x020A5E34 / present 0x020A5EC0 @ 20a5e20 (14 insns) ====
+020a5e20  80 1F 00 54                       lwz r0,0x54(r31)
+020a5e24  3B A0 00 00                       li r29,0x0
+020a5e28  7C 1D 00 00                       cmpw r29,r0
+020a5e2c  40 80 00 88                       bge 0x020a5eb4
+020a5e30  48 00 00 54                       b 0x020a5e84
+020a5e34  2C 03 00 00                       cmpwi r3,0x0
+020a5e38  41 82 00 08                       beq 0x020a5e40
+020a5e3c  80 63 02 BC                       lwz r3,0x2bc(r3)
+020a5e40  39 20 00 05                       li r9,0x5
+020a5e44  38 81 00 0C                       addi r4,r1,0xc
+020a5e48  91 21 00 0C                       stw r9,0xc(r1)
+020a5e4c  48 46 8A 9D                       bl 0x0250e8e8
+020a5e50  80 1F 00 DC                       lwz r0,0xdc(r31)
+020a5e54  2C 00 00 00                       cmpwi r0,0x0
+
+==== record driver FUN_026A5D98 prologue @ 26a5d98 (12 insns) ====
+026a5d98  94 21 FF B0                       stwu r1,-0x50(r1)
+026a5d9c  BF 21 00 34                       stmw r25,0x34(r1)
+026a5da0  7C 08 02 A6                       mfspr r0,LR
+026a5da4  90 01 00 54                       stw r0,0x54(r1)
+026a5da8  7C BD 2B 78                       or r29,r5,r5
+026a5dac  7C 7B 1B 78                       or r27,r3,r3
+026a5db0  7D 3A 4B 78                       or r26,r9,r9
+026a5db4  89 3B 00 35                       lbz r9,0x35(r27)
+026a5db8  7C 9C 23 78                       or r28,r4,r4
+026a5dbc  7C DE 33 78                       or r30,r6,r6
+026a5dc0  7C FF 3B 78                       or r31,r7,r7
+026a5dc4  55 20 07 BD                       rlwinm. r0,r9,0x0,0x1e,0x1e
+
+==== record driver tail: matrix upload branch target 0x026A5E94 @ 26a5e44 (32 insns) ====
+026a5e44  93 A1 00 1C                       stw r29,0x1c(r1)
+026a5e48  3C 00 43 30                       lis r0,0x4330
+026a5e4c  3D 00 10 0F                       lis r8,0x100f
+026a5e50  90 01 00 18                       stw r0,0x18(r1)
+026a5e54  C8 01 00 18                       lfd f0,0x18(r1)
+026a5e58  3C E0 10 0F                       lis r7,0x100f
+026a5e5c  C9 A8 3F 40                       lfd f13,0x3f40(r8)
+026a5e60  3C C0 10 0F                       lis r6,0x100f
+026a5e64  C1 87 3F BC                       lfs f12,0x3fbc(r7)
+026a5e68  FD A0 68 28                       fsub f13,f0,f13
+026a5e6c  C0 06 3F B8                       lfs f0,0x3fb8(r6)
+026a5e70  D1 81 00 0C                       stfs f12,0xc(r1)
+026a5e74  FD A0 68 18                       frsp f13,f13
+026a5e78  D1 81 00 10                       stfs f12,0x10(r1)
+026a5e7c  EC 00 03 72                       fmuls f0,f0,f13
+026a5e80  D1 81 00 08                       stfs f12,0x8(r1)
+026a5e84  38 80 00 04                       li r4,0x4
+026a5e88  38 A1 00 08                       addi r5,r1,0x8
+026a5e8c  D0 01 00 14                       stfs f0,0x14(r1)
+026a5e90  49 96 2D 51                       bl 0x04008be0
+026a5e94  7F 83 E3 78                       or r3,r28,r28
+026a5e98  4B FE F7 DD                       bl 0x02695674
+026a5e9c  2C 1F 00 00                       cmpwi r31,0x0
+026a5ea0  41 82 00 30                       beq 0x026a5ed0
+026a5ea4  38 80 00 0A                       li r4,0xa
+026a5ea8  7F 83 E3 78                       or r3,r28,r28
+026a5eac  4B FE F7 B5                       bl 0x02695660
+026a5eb0  38 00 00 00                       li r0,0x0
+026a5eb4  90 01 00 20                       stw r0,0x20(r1)
+026a5eb8  38 80 00 04                       li r4,0x4
+026a5ebc  90 01 00 28                       stw r0,0x28(r1)
+026a5ec0  90 01 00 2C                       stw r0,0x2c(r1)
+
+==== record driver around eye-id 0x026A5E04 and matrix bl 0x026A5E98 @ 26a5df0 (24 insns) ====
+026a5df0  BB 21 00 34                       lmw r25,0x34(r1)
+026a5df4  80 01 00 54                       lwz r0,0x54(r1)
+026a5df8  7C 08 03 A6                       mtspr LR,r0
+026a5dfc  38 21 00 50                       addi r1,r1,0x50
+026a5e00  4E 80 00 20                       blr
+026a5e04  80 1B 00 0C                       lwz r0,0xc(r27)
+026a5e08  1D 7E 00 31                       mulli r11,r30,0x31
+026a5e0c  54 00 17 BE                       rlwinm r0,r0,0x2,0x1e,0x1f
+026a5e10  28 00 00 03                       cmplwi r0,0x3
+026a5e14  40 81 00 08                       ble 0x026a5e1c
+026a5e18  38 00 00 03                       li r0,0x3
+026a5e1c  90 1C 00 B8                       stw r0,0xb8(r28)
+026a5e20  81 9B 00 14                       lwz r12,0x14(r27)
+026a5e24  7F 83 E3 78                       or r3,r28,r28
+026a5e28  7C 8C 5A 14                       add r4,r12,r11
+026a5e2c  4B FE F8 F5                       bl 0x02695720
+026a5e30  2C 1E 00 01                       cmpwi r30,0x1
+026a5e34  41 82 00 60                       beq 0x026a5e94
+026a5e38  7F 83 E3 78                       or r3,r28,r28
+026a5e3c  38 80 00 08                       li r4,0x8
+026a5e40  4B FE F8 21                       bl 0x02695660
+026a5e44  93 A1 00 1C                       stw r29,0x1c(r1)
+026a5e48  3C 00 43 30                       lis r0,0x4330
+026a5e4c  3D 00 10 0F                       lis r8,0x100f
+
+==== TV path mode-5 dispatch FUN_0250E8E8 @ 250e8e8 (10 insns) ====
+0250e8e8  3D 80 10 1D                       lis r12,0x101d
+0250e8ec  81 8C 69 3C                       lwz r12,0x693c(r12)
+0250e8f0  81 4C 00 00                       lwz r10,0x0(r12)
+0250e8f4  80 0A 01 34                       lwz r0,0x134(r10)
+0250e8f8  54 00 07 7B                       rlwinm. r0,r0,0x0,0x1d,0x1d
+0250e8fc  40 82 00 14                       bne 0x0250e910
+0250e900  81 84 00 00                       lwz r12,0x0(r4)
+0250e904  39 60 00 00                       li r11,0x0
+0250e908  91 83 00 C4                       stw r12,0xc4(r3)
+0250e90c  4B FF FE 40                       b 0x0250e74c
+

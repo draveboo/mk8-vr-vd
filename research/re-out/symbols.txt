@@ -1,0 +1,769 @@
+  0                                val=0x00000000 sz=0 info=00 shndx=0
+  1 $TEXT                          val=0x02000000 sz=0 info=03 shndx=1
+  2 $DATA                          val=0x10000000 sz=0 info=03 shndx=3
+  3 $UNDEF                         val=0x00000000 sz=0 info=11 shndx=0
+  4 .syscall                       val=0x02000000 sz=8 info=03 shndx=1
+  5 .text                          val=0x02000020 sz=11542748 info=03 shndx=2
+  6 .rodata                        val=0x10000000 sz=1574388 info=03 shndx=3
+  7 .data                          val=0x10180600 sz=171012 info=03 shndx=4
+  8 .module_id                     val=0x101aa220 sz=608 info=03 shndx=5
+  9 .bss                           val=0x101aa500 sz=648524 info=03 shndx=6
+ 10 .rela.text                     val=0x00000000 sz=2790912 info=03 shndx=7
+ 11 .rela.data                     val=0x00000000 sz=31548 info=03 shndx=8
+ 12 .rela.rodata                   val=0x00000000 sz=1352532 info=03 shndx=9
+ 13 .fimport_coreinit              val=0xc0008040 sz=9752 info=03 shndx=10
+ 14 .dimport_coreinit              val=0xc0008500 sz=144 info=03 shndx=11
+ 15 .fimport_padscore              val=0xc0008580 sz=2208 info=03 shndx=12
+ 16 .fimport_nlibcurl              val=0xc0008640 sz=456 info=03 shndx=13
+ 17 .fimport_nsysnet               val=0xc0008700 sz=1376 info=03 shndx=14
+ 18 .fimport_gx2                   val=0xc0008800 sz=2944 info=03 shndx=15
+ 19 .fimport_snd_core              val=0xc0008c40 sz=2160 info=03 shndx=16
+ 20 .fimport_snd_user              val=0xc0008e80 sz=3016 info=03 shndx=17
+ 21 .fimport_proc_ui               val=0xc0008ec0 sz=160 info=03 shndx=18
+ 22 .fimport_vpad                  val=0xc0008f00 sz=624 info=03 shndx=19
+ 23 .fimport_vpadbase              val=0xc0008f40 sz=352 info=03 shndx=20
+ 24 .fimport_zlib125               val=0xc0008f80 sz=288 info=03 shndx=21
+ 25 .fimport_nn_ac                 val=0xc0008fc0 sz=1760 info=03 shndx=22
+ 26 .fimport_nn_acp                val=0xc0009000 sz=1264 info=03 shndx=23
+ 27 .fimport_nn_act                val=0xc0009040 sz=1464 info=03 shndx=24
+ 28 .dimport_nn_act                val=0xc0009100 sz=64 info=03 shndx=25
+ 29 .fimport_nn_boss               val=0xc0009140 sz=2896 info=03 shndx=26
+ 30 .dimport_nn_boss               val=0xc0009280 sz=16 info=03 shndx=27
+ 31 .fimport_nn_save               val=0xc00092c0 sz=536 info=03 shndx=28
+ 32 .fimport_nn_fp                 val=0xc0009340 sz=744 info=03 shndx=29
+ 33 .fimport_nn_olv.rpl            val=0xc0009440 sz=3080 info=03 shndx=30
+ 34 .fimport_nn_temp               val=0xc0009780 sz=232 info=03 shndx=31
+ 35 .fimport_sysapp                val=0xc00097c0 sz=808 info=03 shndx=32
+ 36 .fimport_mic                   val=0xc0009800 sz=72 info=03 shndx=33
+ 37 .fimport_mvplayer              val=0xc0009880 sz=360 info=03 shndx=34
+ 38 .dimport_mvplayer              val=0xc00098c0 sz=200 info=03 shndx=35
+ 39 .fimport_nn_ec                 val=0xc0009940 sz=1464 info=03 shndx=36
+ 40 .dimport_nn_ec                 val=0xc0009a40 sz=96 info=03 shndx=37
+ 41 .fimport_nn_aoc                val=0xc0009a80 sz=120 info=03 shndx=38
+ 42 .fimport_nn_nfp                val=0xc0009b00 sz=400 info=03 shndx=39
+ 43 .fimport_nn_ndm                val=0xc0009b80 sz=200 info=03 shndx=40
+ 44 COSWarn                        val=0xc0008048 sz=0 info=12 shndx=10
+ 45 DCFlushRange                   val=0xc0008050 sz=0 info=12 shndx=10
+ 46 DCFlushRangeNoSync             val=0xc0008058 sz=0 info=12 shndx=10
+ 47 DCInvalidateRange              val=0xc0008060 sz=0 info=12 shndx=10
+ 48 DCZeroRange                    val=0xc0008068 sz=0 info=12 shndx=10
+ 49 ENVGetEnvironmentVariable      val=0xc0008070 sz=0 info=12 shndx=10
+ 50 FSAddClient                    val=0xc0008078 sz=0 info=12 shndx=10
+ 51 FSCloseDir                     val=0xc0008080 sz=0 info=12 shndx=10
+ 52 FSCloseFile                    val=0xc0008088 sz=0 info=12 shndx=10
+ 53 FSDelClient                    val=0xc0008090 sz=0 info=12 shndx=10
+ 54 FSFlushQuota                   val=0xc0008098 sz=0 info=12 shndx=10
+ 55 FSGetCwd                       val=0xc00080a0 sz=0 info=12 shndx=10
+ 56 FSGetErrorCodeForViewer        val=0xc00080a8 sz=0 info=12 shndx=10
+ 57 FSGetLastError                 val=0xc00080b0 sz=0 info=12 shndx=10
+ 58 FSGetLastErrorCodeForViewer    val=0xc00080b8 sz=0 info=12 shndx=10
+ 59 FSGetMountSource               val=0xc00080c0 sz=0 info=12 shndx=10
+ 60 FSGetStat                      val=0xc00080c8 sz=0 info=12 shndx=10
+ 61 FSGetStatFile                  val=0xc00080d0 sz=0 info=12 shndx=10
+ 62 FSInit                         val=0xc00080d8 sz=0 info=12 shndx=10
+ 63 FSInitCmdBlock                 val=0xc00080e0 sz=0 info=12 shndx=10
+ 64 FSMount                        val=0xc00080e8 sz=0 info=12 shndx=10
+ 65 FSOpenDir                      val=0xc00080f0 sz=0 info=12 shndx=10
+ 66 FSOpenFile                     val=0xc00080f8 sz=0 info=12 shndx=10
+ 67 FSReadDir                      val=0xc0008100 sz=0 info=12 shndx=10
+ 68 FSReadFile                     val=0xc0008108 sz=0 info=12 shndx=10
+ 69 FSReadFileWithPos              val=0xc0008110 sz=0 info=12 shndx=10
+ 70 FSSetCmdPriority               val=0xc0008118 sz=0 info=12 shndx=10
+ 71 FSSetPosFile                   val=0xc0008120 sz=0 info=12 shndx=10
+ 72 FSSetStateChangeNotification   val=0xc0008128 sz=0 info=12 shndx=10
+ 73 FSShutdown                     val=0xc0008130 sz=0 info=12 shndx=10
+ 74 FSUnmount                      val=0xc0008138 sz=0 info=12 shndx=10
+ 75 FSWriteFile                    val=0xc0008140 sz=0 info=12 shndx=10
+ 76 LCAlloc                        val=0xc0008148 sz=0 info=12 shndx=10
+ 77 LCDealloc                      val=0xc0008150 sz=0 info=12 shndx=10
+ 78 LCDisableDMA                   val=0xc0008158 sz=0 info=12 shndx=10
+ 79 LCEnableDMA                    val=0xc0008160 sz=0 info=12 shndx=10
+ 80 LCGetUnallocated               val=0xc0008168 sz=0 info=12 shndx=10
+ 81 LCIsDMAEnabled                 val=0xc0008170 sz=0 info=12 shndx=10
+ 82 LCLoadDMABlocks                val=0xc0008178 sz=0 info=12 shndx=10
+ 83 LCStoreDMABlocks               val=0xc0008180 sz=0 info=12 shndx=10
+ 84 LCWaitDMAQueue                 val=0xc0008188 sz=0 info=12 shndx=10
+ 85 MCP_Close                      val=0xc0008190 sz=0 info=12 shndx=10
+ 86 MCP_GetSysProdSettings         val=0xc0008198 sz=0 info=12 shndx=10
+ 87 MCP_Open                       val=0xc00081a0 sz=0 info=12 shndx=10
+ 88 MEMAllocFromExpHeapEx          val=0xc00081a8 sz=0 info=12 shndx=10
+ 89 MEMAllocFromFrmHeapEx          val=0xc00081b0 sz=0 info=12 shndx=10
+ 90 MEMCreateExpHeapEx             val=0xc00081b8 sz=0 info=12 shndx=10
+ 91 MEMCreateFrmHeapEx             val=0xc00081c0 sz=0 info=12 shndx=10
+ 92 MEMDestroyExpHeap              val=0xc00081c8 sz=0 info=12 shndx=10
+ 93 MEMDestroyFrmHeap              val=0xc00081d0 sz=0 info=12 shndx=10
+ 94 MEMFreeToExpHeap               val=0xc00081d8 sz=0 info=12 shndx=10
+ 95 MEMGetAllocatableSizeForExpHeapEx val=0xc00081e0 sz=0 info=12 shndx=10
+ 96 MEMGetBaseHeapHandle           val=0xc00081e8 sz=0 info=12 shndx=10
+ 97 MEMGetTotalFreeSizeForExpHeap  val=0xc00081f0 sz=0 info=12 shndx=10
+ 98 OSBlockMove                    val=0xc00081f8 sz=0 info=12 shndx=10
+ 99 OSBlockSet                     val=0xc0008200 sz=0 info=12 shndx=10
+100 OSCancelAlarm                  val=0xc0008208 sz=0 info=12 shndx=10
+101 OSCancelAlarms                 val=0xc0008210 sz=0 info=12 shndx=10
+102 OSCoherencyBarrier             val=0xc0008218 sz=0 info=12 shndx=10
+103 OSConsoleWrite                 val=0xc0008220 sz=0 info=12 shndx=10
+104 OSCreateAlarm                  val=0xc0008228 sz=0 info=12 shndx=10
+105 OSCreateThread                 val=0xc0008230 sz=0 info=12 shndx=10
+106 OSDisableInterrupts            val=0xc0008238 sz=0 info=12 shndx=10
+107 OSDriver_Register              val=0xc0008240 sz=0 info=12 shndx=10
+108 OSDynLoad_Acquire              val=0xc0008248 sz=0 info=12 shndx=10
+109 OSDynLoad_FindExport           val=0xc0008250 sz=0 info=12 shndx=10
+110 OSDynLoad_GetAllocator         val=0xc0008258 sz=0 info=12 shndx=10
+111 OSDynLoad_Release              val=0xc0008260 sz=0 info=12 shndx=10
+112 OSDynLoad_SetAllocator         val=0xc0008268 sz=0 info=12 shndx=10
+113 OSEnableHomeButtonMenu         val=0xc0008270 sz=0 info=12 shndx=10
+114 OSEnforceInorderIO             val=0xc0008278 sz=0 info=12 shndx=10
+115 OSExitThread                   val=0xc0008280 sz=0 info=12 shndx=10
+116 OSFastMutex_Init               val=0xc0008288 sz=0 info=12 shndx=10
+117 OSFastMutex_Lock               val=0xc0008290 sz=0 info=12 shndx=10
+118 OSFastMutex_TryLock            val=0xc0008298 sz=0 info=12 shndx=10
+119 OSFastMutex_Unlock             val=0xc00082a0 sz=0 info=12 shndx=10
+120 OSGetAlarmUserData             val=0xc00082a8 sz=0 info=12 shndx=10
+121 OSGetCoreId                    val=0xc00082b0 sz=0 info=12 shndx=10
+122 OSGetCurrentThread             val=0xc00082b8 sz=0 info=12 shndx=10
+123 OSGetSecurityLevel             val=0xc00082c0 sz=0 info=12 shndx=10
+124 OSGetSharedData                val=0xc00082c8 sz=0 info=12 shndx=10
+125 OSGetSystemInfo                val=0xc00082d0 sz=0 info=12 shndx=10
+126 OSGetSystemTime                val=0xc00082d8 sz=0 info=12 shndx=10
+127 OSGetThreadPriority            val=0xc00082e0 sz=0 info=12 shndx=10
+128 OSGetThreadSpecific            val=0xc00082e8 sz=0 info=12 shndx=10
+129 OSGetTick                      val=0xc00082f0 sz=0 info=12 shndx=10
+130 OSGetTime                      val=0xc00082f8 sz=0 info=12 shndx=10
+131 OSInitCond                     val=0xc0008300 sz=0 info=12 shndx=10
+132 OSInitEvent                    val=0xc0008308 sz=0 info=12 shndx=10
+133 OSInitMessageQueue             val=0xc0008310 sz=0 info=12 shndx=10
+134 OSInitMutex                    val=0xc0008318 sz=0 info=12 shndx=10
+135 OSInitRendezvous               val=0xc0008320 sz=0 info=12 shndx=10
+136 OSInitThreadQueue              val=0xc0008328 sz=0 info=12 shndx=10
+137 OSIsAddressRangeDCValid        val=0xc0008330 sz=0 info=12 shndx=10
+138 OSIsDebuggerInitialized        val=0xc0008338 sz=0 info=12 shndx=10
+139 OSIsDebuggerPresent            val=0xc0008340 sz=0 info=12 shndx=10
+140 OSIsHomeButtonMenuEnabled      val=0xc0008348 sz=0 info=12 shndx=10
+141 OSJoinThread                   val=0xc0008350 sz=0 info=12 shndx=10
+142 OSLockMutex                    val=0xc0008358 sz=0 info=12 shndx=10
+143 OSMemoryBarrier                val=0xc0008360 sz=0 info=12 shndx=10
+144 OSPanic                        val=0xc0008368 sz=0 info=12 shndx=10
+145 OSReadRegister16               val=0xc0008370 sz=0 info=12 shndx=10
+146 OSReceiveMessage               val=0xc0008378 sz=0 info=12 shndx=10
+147 OSReport                       val=0xc0008380 sz=0 info=12 shndx=10
+148 OSResetEvent                   val=0xc0008388 sz=0 info=12 shndx=10
+149 OSRestoreInterrupts            val=0xc0008390 sz=0 info=12 shndx=10
+150 OSResumeThread                 val=0xc0008398 sz=0 info=12 shndx=10
+151 OSSavesDone_ReadyToRelease     val=0xc00083a0 sz=0 info=12 shndx=10
+152 OSSendMessage                  val=0xc00083a8 sz=0 info=12 shndx=10
+153 OSSetAlarm                     val=0xc00083b0 sz=0 info=12 shndx=10
+154 OSSetAlarmUserData             val=0xc00083b8 sz=0 info=12 shndx=10
+155 OSSetPeriodicAlarm             val=0xc00083c0 sz=0 info=12 shndx=10
+156 OSSetThreadAffinity            val=0xc00083c8 sz=0 info=12 shndx=10
+157 OSSetThreadName                val=0xc00083d0 sz=0 info=12 shndx=10
+158 OSSetThreadPriority            val=0xc00083d8 sz=0 info=12 shndx=10
+159 OSSetThreadSpecific            val=0xc00083e0 sz=0 info=12 shndx=10
+160 OSSignalCond                   val=0xc00083e8 sz=0 info=12 shndx=10
+161 OSSignalEvent                  val=0xc00083f0 sz=0 info=12 shndx=10
+162 OSSleepTicks                   val=0xc00083f8 sz=0 info=12 shndx=10
+163 OSTicksToCalendarTime          val=0xc0008400 sz=0 info=12 shndx=10
+164 OSTryLockMutex                 val=0xc0008408 sz=0 info=12 shndx=10
+165 OSUnlockMutex                  val=0xc0008410 sz=0 info=12 shndx=10
+166 OSVReport                      val=0xc0008418 sz=0 info=12 shndx=10
+167 OSWaitCond                     val=0xc0008420 sz=0 info=12 shndx=10
+168 OSWaitEvent                    val=0xc0008428 sz=0 info=12 shndx=10
+169 OSWaitEventWithTimeout         val=0xc0008430 sz=0 info=12 shndx=10
+170 OSWaitRendezvous               val=0xc0008438 sz=0 info=12 shndx=10
+171 OSWriteRegister16              val=0xc0008440 sz=0 info=12 shndx=10
+172 OSYieldThread                  val=0xc0008448 sz=0 info=12 shndx=10
+173 UCClose                        val=0xc0008450 sz=0 info=12 shndx=10
+174 UCOpen                         val=0xc0008458 sz=0 info=12 shndx=10
+175 UCReadSysConfig                val=0xc0008460 sz=0 info=12 shndx=10
+176 _Exit                          val=0xc0008468 sz=0 info=12 shndx=10
+177 __OSReadRegister32Ex           val=0xc0008470 sz=0 info=12 shndx=10
+178 __OSWriteRegister32Ex          val=0xc0008478 sz=0 info=12 shndx=10
+179 __gh_set_errno                 val=0xc0008480 sz=0 info=12 shndx=10
+180 __ghsLock                      val=0xc0008488 sz=0 info=12 shndx=10
+181 __ghsUnlock                    val=0xc0008490 sz=0 info=12 shndx=10
+182 __ghs_flock_file               val=0xc0008498 sz=0 info=12 shndx=10
+183 __ghs_flock_ptr                val=0xc00084a0 sz=0 info=12 shndx=10
+184 __ghs_funlock_file             val=0xc00084a8 sz=0 info=12 shndx=10
+185 __ghs_mtx_dst                  val=0xc00084b0 sz=0 info=12 shndx=10
+186 __ghs_mtx_init                 val=0xc00084b8 sz=0 info=12 shndx=10
+187 __ghs_mtx_lock                 val=0xc00084c0 sz=0 info=12 shndx=10
+188 __ghs_mtx_unlock               val=0xc00084c8 sz=0 info=12 shndx=10
+189 bspGetHardwareVersion          val=0xc00084d0 sz=0 info=12 shndx=10
+190 exit                           val=0xc00084d8 sz=0 info=12 shndx=10
+191 memcpy                         val=0xc00084e0 sz=0 info=12 shndx=10
+192 memmove                        val=0xc00084e8 sz=0 info=12 shndx=10
+193 memset                         val=0xc00084f0 sz=0 info=12 shndx=10
+194 MEMAllocFromDefaultHeap        val=0xc0008508 sz=0 info=11 shndx=11
+195 MEMAllocFromDefaultHeapEx      val=0xc0008510 sz=0 info=11 shndx=11
+196 MEMFreeToDefaultHeap           val=0xc0008518 sz=0 info=11 shndx=11
+197 __atexit_cleanup               val=0xc0008520 sz=0 info=11 shndx=11
+198 __cpp_exception_cleanup_ptr    val=0xc0008528 sz=0 info=11 shndx=11
+199 __cpp_exception_init_ptr       val=0xc0008530 sz=0 info=11 shndx=11
+200 __gh_FOPEN_MAX                 val=0xc0008538 sz=0 info=11 shndx=11
+201 _iob                           val=0xc0008540 sz=0 info=11 shndx=11
+202 KPADDisableMpls                val=0xc0008588 sz=0 info=12 shndx=12
+203 KPADEnableMpls                 val=0xc0008590 sz=0 info=12 shndx=12
+204 KPADGetMplsWorkSize            val=0xc0008598 sz=0 info=12 shndx=12
+205 KPADInitEx                     val=0xc00085a0 sz=0 info=12 shndx=12
+206 KPADReadEx                     val=0xc00085a8 sz=0 info=12 shndx=12
+207 KPADSetConnectCallback         val=0xc00085b0 sz=0 info=12 shndx=12
+208 KPADSetMplsWorkarea            val=0xc00085b8 sz=0 info=12 shndx=12
+209 WENCGetEncodeData              val=0xc00085c0 sz=0 info=12 shndx=12
+210 WPADCanSendStreamData          val=0xc00085c8 sz=0 info=12 shndx=12
+211 WPADControlMotor               val=0xc00085d0 sz=0 info=12 shndx=12
+212 WPADControlSpeaker             val=0xc00085d8 sz=0 info=12 shndx=12
+213 WPADDisconnect                 val=0xc00085e0 sz=0 info=12 shndx=12
+214 WPADEnableURCC                 val=0xc00085e8 sz=0 info=12 shndx=12
+215 WPADGetSpeakerVolume           val=0xc00085f0 sz=0 info=12 shndx=12
+216 WPADIsMplsAttached             val=0xc00085f8 sz=0 info=12 shndx=12
+217 WPADProbe                      val=0xc0008600 sz=0 info=12 shndx=12
+218 WPADSendStreamData             val=0xc0008608 sz=0 info=12 shndx=12
+219 curl_easy_cleanup              val=0xc0008648 sz=0 info=12 shndx=13
+220 curl_easy_pause                val=0xc0008650 sz=0 info=12 shndx=13
+221 curl_easy_setopt               val=0xc0008658 sz=0 info=12 shndx=13
+222 curl_formfree                  val=0xc0008660 sz=0 info=12 shndx=13
+223 curl_global_cleanup            val=0xc0008668 sz=0 info=12 shndx=13
+224 curl_global_init_mem           val=0xc0008670 sz=0 info=12 shndx=13
+225 curl_multi_add_handle          val=0xc0008678 sz=0 info=12 shndx=13
+226 curl_multi_cleanup             val=0xc0008680 sz=0 info=12 shndx=13
+227 curl_multi_fdset               val=0xc0008688 sz=0 info=12 shndx=13
+228 curl_multi_info_read           val=0xc0008690 sz=0 info=12 shndx=13
+229 curl_multi_init                val=0xc0008698 sz=0 info=12 shndx=13
+230 curl_multi_perform             val=0xc00086a0 sz=0 info=12 shndx=13
+231 curl_multi_remove_handle       val=0xc00086a8 sz=0 info=12 shndx=13
+232 curl_multi_timeout             val=0xc00086b0 sz=0 info=12 shndx=13
+233 curl_slist_append              val=0xc00086b8 sz=0 info=12 shndx=13
+234 curl_slist_free_all            val=0xc00086c0 sz=0 info=12 shndx=13
+235 mw_curl_easy_init              val=0xc00086c8 sz=0 info=12 shndx=13
+236 NSSLAddServerPKIGroups         val=0xc0008708 sz=0 info=12 shndx=14
+237 NSSLCreateContext              val=0xc0008710 sz=0 info=12 shndx=14
+238 NSSLDestroyContext             val=0xc0008718 sz=0 info=12 shndx=14
+239 NSSLInit                       val=0xc0008720 sz=0 info=12 shndx=14
+240 bind                           val=0xc0008728 sz=0 info=12 shndx=14
+241 freeaddrinfo                   val=0xc0008730 sz=0 info=12 shndx=14
+242 getaddrinfo                    val=0xc0008738 sz=0 info=12 shndx=14
+243 gethostbyname                  val=0xc0008740 sz=0 info=12 shndx=14
+244 getsockname                    val=0xc0008748 sz=0 info=12 shndx=14
+245 htonl                          val=0xc0008750 sz=0 info=12 shndx=14
+246 htons                          val=0xc0008758 sz=0 info=12 shndx=14
+247 inet_ntoa                      val=0xc0008760 sz=0 info=12 shndx=14
+248 inet_pton                      val=0xc0008768 sz=0 info=12 shndx=14
+249 mw_socket                      val=0xc0008770 sz=0 info=12 shndx=14
+250 ntohl                          val=0xc0008778 sz=0 info=12 shndx=14
+251 ntohs                          val=0xc0008780 sz=0 info=12 shndx=14
+252 recv                           val=0xc0008788 sz=0 info=12 shndx=14
+253 recvfrom                       val=0xc0008790 sz=0 info=12 shndx=14
+254 recvfrom_ex                    val=0xc0008798 sz=0 info=12 shndx=14
+255 select                         val=0xc00087a0 sz=0 info=12 shndx=14
+256 send                           val=0xc00087a8 sz=0 info=12 shndx=14
+257 sendto                         val=0xc00087b0 sz=0 info=12 shndx=14
+258 sendto_multi                   val=0xc00087b8 sz=0 info=12 shndx=14
+259 set_resolver_allocator         val=0xc00087c0 sz=0 info=12 shndx=14
+260 setsockopt                     val=0xc00087c8 sz=0 info=12 shndx=14
+261 shutdown                       val=0xc00087d0 sz=0 info=12 shndx=14
+262 socket_lib_init                val=0xc00087d8 sz=0 info=12 shndx=14
+263 socketclose                    val=0xc00087e0 sz=0 info=12 shndx=14
+264 socketlasterr                  val=0xc00087e8 sz=0 info=12 shndx=14
+265 GX2BeginDisplayListEx          val=0xc0008808 sz=0 info=12 shndx=15
+266 GX2CalcColorBufferAuxInfo      val=0xc0008810 sz=0 info=12 shndx=15
+267 GX2CalcDRCSize                 val=0xc0008818 sz=0 info=12 shndx=15
+268 GX2CalcDepthBufferHiZInfo      val=0xc0008820 sz=0 info=12 shndx=15
+269 GX2CalcFetchShaderSizeEx       val=0xc0008828 sz=0 info=12 shndx=15
+270 GX2CalcGeometryShaderInputRingBufferSize val=0xc0008830 sz=0 info=12 shndx=15
+271 GX2CalcGeometryShaderOutputRingBufferSize val=0xc0008838 sz=0 info=12 shndx=15
+272 GX2CalcSurfaceSizeAndAlignment val=0xc0008840 sz=0 info=12 shndx=15
+273 GX2CalcTVSize                  val=0xc0008848 sz=0 info=12 shndx=15
+274 GX2CallDisplayList             val=0xc0008850 sz=0 info=12 shndx=15
+275 GX2ClearBuffersEx              val=0xc0008858 sz=0 info=12 shndx=15
+276 GX2ClearColor                  val=0xc0008860 sz=0 info=12 shndx=15
+277 GX2ClearDepthStencilEx         val=0xc0008868 sz=0 info=12 shndx=15
+278 GX2CopyColorBufferToScanBuffer val=0xc0008870 sz=0 info=12 shndx=15
+279 GX2CopySurface                 val=0xc0008878 sz=0 info=12 shndx=15
+280 GX2DirectCallDisplayList       val=0xc0008880 sz=0 info=12 shndx=15
+281 GX2DrawDone                    val=0xc0008888 sz=0 info=12 shndx=15
+282 GX2DrawEx                      val=0xc0008890 sz=0 info=12 shndx=15
+283 GX2DrawIndexedEx               val=0xc0008898 sz=0 info=12 shndx=15
+284 GX2EndDisplayList              val=0xc00088a0 sz=0 info=12 shndx=15
+285 GX2ExpandAAColorBuffer         val=0xc00088a8 sz=0 info=12 shndx=15
+286 GX2ExpandDepthBuffer           val=0xc00088b0 sz=0 info=12 shndx=15
+287 GX2Flush                       val=0xc00088b8 sz=0 info=12 shndx=15
+288 GX2GPUTimeToCPUTime            val=0xc00088c0 sz=0 info=12 shndx=15
+289 GX2GetContextStateDisplayList  val=0xc00088c8 sz=0 info=12 shndx=15
+290 GX2GetCurrentDisplayList       val=0xc00088d0 sz=0 info=12 shndx=15
+291 GX2GetGeometryShaderGPRs       val=0xc00088d8 sz=0 info=12 shndx=15
+292 GX2GetGeometryShaderStackEntries val=0xc00088e0 sz=0 info=12 shndx=15
+293 GX2GetPixelShaderGPRs          val=0xc00088e8 sz=0 info=12 shndx=15
+294 GX2GetPixelShaderStackEntries  val=0xc00088f0 sz=0 info=12 shndx=15
+295 GX2GetSwapStatus               val=0xc00088f8 sz=0 info=12 shndx=15
+296 GX2GetVertexShaderGPRs         val=0xc0008900 sz=0 info=12 shndx=15
+297 GX2GetVertexShaderStackEntries val=0xc0008908 sz=0 info=12 shndx=15
+298 GX2Init                        val=0xc0008910 sz=0 info=12 shndx=15
+299 GX2InitColorBufferRegs         val=0xc0008918 sz=0 info=12 shndx=15
+300 GX2InitDepthBufferHiZEnable    val=0xc0008920 sz=0 info=12 shndx=15
+301 GX2InitDepthBufferRegs         val=0xc0008928 sz=0 info=12 shndx=15
+302 GX2InitFetchShaderEx           val=0xc0008930 sz=0 info=12 shndx=15
+303 GX2InitSampler                 val=0xc0008938 sz=0 info=12 shndx=15
+304 GX2InitSamplerBorderType       val=0xc0008940 sz=0 info=12 shndx=15
+305 GX2InitSamplerClamping         val=0xc0008948 sz=0 info=12 shndx=15
+306 GX2InitSamplerDepthCompare     val=0xc0008950 sz=0 info=12 shndx=15
+307 GX2InitSamplerLOD              val=0xc0008958 sz=0 info=12 shndx=15
+308 GX2InitSamplerXYFilter         val=0xc0008960 sz=0 info=12 shndx=15
+309 GX2InitSamplerZMFilter         val=0xc0008968 sz=0 info=12 shndx=15
+310 GX2InitTextureRegs             val=0xc0008970 sz=0 info=12 shndx=15
+311 GX2Invalidate                  val=0xc0008978 sz=0 info=12 shndx=15
+312 GX2QueryBegin                  val=0xc0008980 sz=0 info=12 shndx=15
+313 GX2QueryBeginConditionalRender val=0xc0008988 sz=0 info=12 shndx=15
+314 GX2QueryEnd                    val=0xc0008990 sz=0 info=12 shndx=15
+315 GX2QueryEndConditionalRender   val=0xc0008998 sz=0 info=12 shndx=15
+316 GX2SampleBottomGPUCycle        val=0xc00089a0 sz=0 info=12 shndx=15
+317 GX2SampleTopGPUCycle           val=0xc00089a8 sz=0 info=12 shndx=15
+318 GX2SaveStreamOutContext        val=0xc00089b0 sz=0 info=12 shndx=15
+319 GX2SetAlphaTest                val=0xc00089b8 sz=0 info=12 shndx=15
+320 GX2SetAlphaTestReg             val=0xc00089c0 sz=0 info=12 shndx=15
+321 GX2SetAlphaToMask              val=0xc00089c8 sz=0 info=12 shndx=15
+322 GX2SetAttribBuffer             val=0xc00089d0 sz=0 info=12 shndx=15
+323 GX2SetBlendConstantColor       val=0xc00089d8 sz=0 info=12 shndx=15
+324 GX2SetBlendConstantColorReg    val=0xc00089e0 sz=0 info=12 shndx=15
+325 GX2SetBlendControl             val=0xc00089e8 sz=0 info=12 shndx=15
+326 GX2SetBlendControlReg          val=0xc00089f0 sz=0 info=12 shndx=15
+327 GX2SetClearDepthStencil        val=0xc00089f8 sz=0 info=12 shndx=15
+328 GX2SetColorBuffer              val=0xc0008a00 sz=0 info=12 shndx=15
+329 GX2SetColorControl             val=0xc0008a08 sz=0 info=12 shndx=15
+330 GX2SetColorControlReg          val=0xc0008a10 sz=0 info=12 shndx=15
+331 GX2SetContextState             val=0xc0008a18 sz=0 info=12 shndx=15
+332 GX2SetCullOnlyControl          val=0xc0008a20 sz=0 info=12 shndx=15
+333 GX2SetDRCBuffer                val=0xc0008a28 sz=0 info=12 shndx=15
+334 GX2SetDRCEnable                val=0xc0008a30 sz=0 info=12 shndx=15
+335 GX2SetDRCGamma                 val=0xc0008a38 sz=0 info=12 shndx=15
+336 GX2SetDRCScale                 val=0xc0008a40 sz=0 info=12 shndx=15
+337 GX2SetDefaultState             val=0xc0008a48 sz=0 info=12 shndx=15
+338 GX2SetDepthBuffer              val=0xc0008a50 sz=0 info=12 shndx=15
+339 GX2SetDepthOnlyControl         val=0xc0008a58 sz=0 info=12 shndx=15
+340 GX2SetDepthStencilControl      val=0xc0008a60 sz=0 info=12 shndx=15
+341 GX2SetDepthStencilControlReg   val=0xc0008a68 sz=0 info=12 shndx=15
+342 GX2SetFetchShader              val=0xc0008a70 sz=0 info=12 shndx=15
+343 GX2SetGeometrySampler          val=0xc0008a78 sz=0 info=12 shndx=15
+344 GX2SetGeometrySamplerBorderColor val=0xc0008a80 sz=0 info=12 shndx=15
+345 GX2SetGeometryShader           val=0xc0008a88 sz=0 info=12 shndx=15
+346 GX2SetGeometryShaderInputRingBuffer val=0xc0008a90 sz=0 info=12 shndx=15
+347 GX2SetGeometryShaderOutputRingBuffer val=0xc0008a98 sz=0 info=12 shndx=15
+348 GX2SetGeometryTexture          val=0xc0008aa0 sz=0 info=12 shndx=15
+349 GX2SetGeometryUniformBlock     val=0xc0008aa8 sz=0 info=12 shndx=15
+350 GX2SetLineWidth                val=0xc0008ab0 sz=0 info=12 shndx=15
+351 GX2SetMaxTessellationLevel     val=0xc0008ab8 sz=0 info=12 shndx=15
+352 GX2SetMinTessellationLevel     val=0xc0008ac0 sz=0 info=12 shndx=15
+353 GX2SetPixelSampler             val=0xc0008ac8 sz=0 info=12 shndx=15
+354 GX2SetPixelSamplerBorderColor  val=0xc0008ad0 sz=0 info=12 shndx=15
+355 GX2SetPixelShader              val=0xc0008ad8 sz=0 info=12 shndx=15
+356 GX2SetPixelTexture             val=0xc0008ae0 sz=0 info=12 shndx=15
+357 GX2SetPixelUniformBlock        val=0xc0008ae8 sz=0 info=12 shndx=15
+358 GX2SetPixelUniformReg          val=0xc0008af0 sz=0 info=12 shndx=15
+359 GX2SetPointLimits              val=0xc0008af8 sz=0 info=12 shndx=15
+360 GX2SetPointSize                val=0xc0008b00 sz=0 info=12 shndx=15
+361 GX2SetPolygonControl           val=0xc0008b08 sz=0 info=12 shndx=15
+362 GX2SetPolygonControlReg        val=0xc0008b10 sz=0 info=12 shndx=15
+363 GX2SetPolygonOffset            val=0xc0008b18 sz=0 info=12 shndx=15
+364 GX2SetPolygonOffsetReg         val=0xc0008b20 sz=0 info=12 shndx=15
+365 GX2SetPrimitiveRestartIndex    val=0xc0008b28 sz=0 info=12 shndx=15
+366 GX2SetRasterizerClipControl    val=0xc0008b30 sz=0 info=12 shndx=15
+367 GX2SetScissor                  val=0xc0008b38 sz=0 info=12 shndx=15
+368 GX2SetShaderModeEx             val=0xc0008b40 sz=0 info=12 shndx=15
+369 GX2SetStencilMask              val=0xc0008b48 sz=0 info=12 shndx=15
+370 GX2SetStencilMaskReg           val=0xc0008b50 sz=0 info=12 shndx=15
+371 GX2SetStreamOutBuffer          val=0xc0008b58 sz=0 info=12 shndx=15
+372 GX2SetStreamOutContext         val=0xc0008b60 sz=0 info=12 shndx=15
+373 GX2SetStreamOutEnable          val=0xc0008b68 sz=0 info=12 shndx=15
+374 GX2SetSurfaceSwizzle           val=0xc0008b70 sz=0 info=12 shndx=15
+375 GX2SetSwapInterval             val=0xc0008b78 sz=0 info=12 shndx=15
+376 GX2SetTVBuffer                 val=0xc0008b80 sz=0 info=12 shndx=15
+377 GX2SetTVEnable                 val=0xc0008b88 sz=0 info=12 shndx=15
+378 GX2SetTVGamma                  val=0xc0008b90 sz=0 info=12 shndx=15
+379 GX2SetTVScale                  val=0xc0008b98 sz=0 info=12 shndx=15
+380 GX2SetTargetChannelMasks       val=0xc0008ba0 sz=0 info=12 shndx=15
+381 GX2SetTargetChannelMasksReg    val=0xc0008ba8 sz=0 info=12 shndx=15
+382 GX2SetTessellation             val=0xc0008bb0 sz=0 info=12 shndx=15
+383 GX2SetVertexSampler            val=0xc0008bb8 sz=0 info=12 shndx=15
+384 GX2SetVertexSamplerBorderColor val=0xc0008bc0 sz=0 info=12 shndx=15
+385 GX2SetVertexShader             val=0xc0008bc8 sz=0 info=12 shndx=15
+386 GX2SetVertexTexture            val=0xc0008bd0 sz=0 info=12 shndx=15
+387 GX2SetVertexUniformBlock       val=0xc0008bd8 sz=0 info=12 shndx=15
+388 GX2SetVertexUniformReg         val=0xc0008be0 sz=0 info=12 shndx=15
+389 GX2SetViewport                 val=0xc0008be8 sz=0 info=12 shndx=15
+390 GX2SetupContextStateEx         val=0xc0008bf0 sz=0 info=12 shndx=15
+391 GX2SwapScanBuffers             val=0xc0008bf8 sz=0 info=12 shndx=15
+392 GX2TempGetGPUVersion           val=0xc0008c00 sz=0 info=12 shndx=15
+393 GX2WaitForVsync                val=0xc0008c08 sz=0 info=12 shndx=15
+394 AXAcquireVoice                 val=0xc0008c48 sz=0 info=12 shndx=16
+395 AXAcquireVoiceEx               val=0xc0008c50 sz=0 info=12 shndx=16
+396 AXComputeLpfCoefs              val=0xc0008c58 sz=0 info=12 shndx=16
+397 AXDecodeAdpcmData              val=0xc0008c60 sz=0 info=12 shndx=16
+398 AXDeregisterAppFrameCallback   val=0xc0008c68 sz=0 info=12 shndx=16
+399 AXFreeVoice                    val=0xc0008c70 sz=0 info=12 shndx=16
+400 AXGetAuxCallback               val=0xc0008c78 sz=0 info=12 shndx=16
+401 AXGetDeviceFinalMixCallback    val=0xc0008c80 sz=0 info=12 shndx=16
+402 AXGetDeviceMode                val=0xc0008c88 sz=0 info=12 shndx=16
+403 AXGetDeviceUpsampleStage       val=0xc0008c90 sz=0 info=12 shndx=16
+404 AXGetSwapProfile               val=0xc0008c98 sz=0 info=12 shndx=16
+405 AXGetVoiceCurrentOffsetEx      val=0xc0008ca0 sz=0 info=12 shndx=16
+406 AXGetVoiceLoopCount            val=0xc0008ca8 sz=0 info=12 shndx=16
+407 AXGetVoiceOffsets              val=0xc0008cb0 sz=0 info=12 shndx=16
+408 AXInit                         val=0xc0008cb8 sz=0 info=12 shndx=16
+409 AXInitProfile                  val=0xc0008cc0 sz=0 info=12 shndx=16
+410 AXQuit                         val=0xc0008cc8 sz=0 info=12 shndx=16
+411 AXRegisterAppFrameCallback     val=0xc0008cd0 sz=0 info=12 shndx=16
+412 AXRegisterAuxCallback          val=0xc0008cd8 sz=0 info=12 shndx=16
+413 AXRegisterDeviceFinalMixCallback val=0xc0008ce0 sz=0 info=12 shndx=16
+414 AXRegisterFrameCallback        val=0xc0008ce8 sz=0 info=12 shndx=16
+415 AXRmtAdvancePtr                val=0xc0008cf0 sz=0 info=12 shndx=16
+416 AXRmtGetSamples                val=0xc0008cf8 sz=0 info=12 shndx=16
+417 AXRmtGetSamplesLeft            val=0xc0008d00 sz=0 info=12 shndx=16
+418 AXSetAuxReturnVolume           val=0xc0008d08 sz=0 info=12 shndx=16
+419 AXSetDRCVSDownmixBalance       val=0xc0008d10 sz=0 info=12 shndx=16
+420 AXSetDRCVSLC                   val=0xc0008d18 sz=0 info=12 shndx=16
+421 AXSetDRCVSMode                 val=0xc0008d20 sz=0 info=12 shndx=16
+422 AXSetDRCVSOutputGain           val=0xc0008d28 sz=0 info=12 shndx=16
+423 AXSetDRCVSSpeakerPosition      val=0xc0008d30 sz=0 info=12 shndx=16
+424 AXSetDRCVSSurroundDepth        val=0xc0008d38 sz=0 info=12 shndx=16
+425 AXSetDRCVSSurroundLevelGain    val=0xc0008d40 sz=0 info=12 shndx=16
+426 AXSetDefaultMixerSelect        val=0xc0008d48 sz=0 info=12 shndx=16
+427 AXSetDeviceCompressor          val=0xc0008d50 sz=0 info=12 shndx=16
+428 AXSetDeviceLinearUpsampler     val=0xc0008d58 sz=0 info=12 shndx=16
+429 AXSetDeviceUpsampleStage       val=0xc0008d60 sz=0 info=12 shndx=16
+430 AXSetDeviceVolume              val=0xc0008d68 sz=0 info=12 shndx=16
+431 AXSetMaxVoices                 val=0xc0008d70 sz=0 info=12 shndx=16
+432 AXSetVoiceAdpcm                val=0xc0008d78 sz=0 info=12 shndx=16
+433 AXSetVoiceAdpcmLoop            val=0xc0008d80 sz=0 info=12 shndx=16
+434 AXSetVoiceBiquad               val=0xc0008d88 sz=0 info=12 shndx=16
+435 AXSetVoiceBiquadCoefs          val=0xc0008d90 sz=0 info=12 shndx=16
+436 AXSetVoiceDeviceMix            val=0xc0008d98 sz=0 info=12 shndx=16
+437 AXSetVoiceEndOffsetEx          val=0xc0008da0 sz=0 info=12 shndx=16
+438 AXSetVoiceLoop                 val=0xc0008da8 sz=0 info=12 shndx=16
+439 AXSetVoiceLoopOffsetEx         val=0xc0008db0 sz=0 info=12 shndx=16
+440 AXSetVoiceLpf                  val=0xc0008db8 sz=0 info=12 shndx=16
+441 AXSetVoiceLpfCoefs             val=0xc0008dc0 sz=0 info=12 shndx=16
+442 AXSetVoiceMixerSelect          val=0xc0008dc8 sz=0 info=12 shndx=16
+443 AXSetVoiceOffsets              val=0xc0008dd0 sz=0 info=12 shndx=16
+444 AXSetVoicePriority             val=0xc0008dd8 sz=0 info=12 shndx=16
+445 AXSetVoiceRmtIIR               val=0xc0008de0 sz=0 info=12 shndx=16
+446 AXSetVoiceRmtIIRCoefs          val=0xc0008de8 sz=0 info=12 shndx=16
+447 AXSetVoiceRmtOn                val=0xc0008df0 sz=0 info=12 shndx=16
+448 AXSetVoiceSrc                  val=0xc0008df8 sz=0 info=12 shndx=16
+449 AXSetVoiceSrcRatio             val=0xc0008e00 sz=0 info=12 shndx=16
+450 AXSetVoiceSrcType              val=0xc0008e08 sz=0 info=12 shndx=16
+451 AXSetVoiceState                val=0xc0008e10 sz=0 info=12 shndx=16
+452 AXSetVoiceType                 val=0xc0008e18 sz=0 info=12 shndx=16
+453 AXSetVoiceVe                   val=0xc0008e20 sz=0 info=12 shndx=16
+454 AXUserBegin                    val=0xc0008e28 sz=0 info=12 shndx=16
+455 AXUserEnd                      val=0xc0008e30 sz=0 info=12 shndx=16
+456 AXUserIsProtected              val=0xc0008e38 sz=0 info=12 shndx=16
+457 DRCVS_Process                  val=0xc0008e40 sz=0 info=12 shndx=16
+458 DRCVS_SetOutputMode            val=0xc0008e48 sz=0 info=12 shndx=16
+459 MIXAssignChannel               val=0xc0008e88 sz=0 info=12 shndx=17
+460 MIXInit                        val=0xc0008e90 sz=0 info=12 shndx=17
+461 MIXInitDeviceControl           val=0xc0008e98 sz=0 info=12 shndx=17
+462 MIXInitInputControl            val=0xc0008ea0 sz=0 info=12 shndx=17
+463 MIXSetDeviceFader              val=0xc0008ea8 sz=0 info=12 shndx=17
+464 MIXSetDeviceSoundMode          val=0xc0008eb0 sz=0 info=12 shndx=17
+465 MIXUpdateSettings              val=0xc0008eb8 sz=0 info=12 shndx=17
+466 ProcUIDrawDoneRelease          val=0xc0008ec8 sz=0 info=12 shndx=18
+467 ProcUIInShutdown               val=0xc0008ed0 sz=0 info=12 shndx=18
+468 ProcUIInit                     val=0xc0008ed8 sz=0 info=12 shndx=18
+469 ProcUIProcessMessages          val=0xc0008ee0 sz=0 info=12 shndx=18
+470 ProcUIRegisterCallback         val=0xc0008ee8 sz=0 info=12 shndx=18
+471 ProcUIShutdown                 val=0xc0008ef0 sz=0 info=12 shndx=18
+472 VPADControlMotor               val=0xc0008f08 sz=0 info=12 shndx=19
+473 VPADGetTPCalibratedPoint       val=0xc0008f10 sz=0 info=12 shndx=19
+474 VPADRead                       val=0xc0008f18 sz=0 info=12 shndx=19
+475 VPADSetStickOrigin             val=0xc0008f20 sz=0 info=12 shndx=19
+476 VPADStopMotor                  val=0xc0008f28 sz=0 info=12 shndx=19
+477 VPADBASEGetHeadphoneStatus     val=0xc0008f48 sz=0 info=12 shndx=20
+478 deflate                        val=0xc0008f88 sz=0 info=12 shndx=21
+479 deflateBound                   val=0xc0008f90 sz=0 info=12 shndx=21
+480 deflateEnd                     val=0xc0008f98 sz=0 info=12 shndx=21
+481 deflateInit2_                  val=0xc0008fa0 sz=0 info=12 shndx=21
+482 inflate                        val=0xc0008fa8 sz=0 info=12 shndx=21
+483 inflateEnd                     val=0xc0008fb0 sz=0 info=12 shndx=21
+484 inflateInit2_                  val=0xc0008fb8 sz=0 info=12 shndx=21
+485 Close__Q2_2nn2acFv             val=0xc0008fc8 sz=0 info=12 shndx=22
+486 Connect__Q2_2nn2acFv           val=0xc0008fd0 sz=0 info=12 shndx=22
+487 GetAssignedAddress__Q2_2nn2acFPUl val=0xc0008fd8 sz=0 info=12 shndx=22
+488 GetAssignedSubnet__Q2_2nn2acFPUl val=0xc0008fe0 sz=0 info=12 shndx=22
+489 GetLastErrorCode__Q2_2nn2acFPUi val=0xc0008fe8 sz=0 info=12 shndx=22
+490 Initialize__Q2_2nn2acFv        val=0xc0008ff0 sz=0 info=12 shndx=22
+491 IsApplicationConnected__Q2_2nn2acFPb val=0xc0008ff8 sz=0 info=12 shndx=22
+492 AcquireNexServiceToken__Q2_2nn3actFP26ACTNexAuthenticationResultUi val=0xc0009048 sz=0 info=12 shndx=24
+493 Finalize__Q2_2nn3actFv         val=0xc0009050 sz=0 info=12 shndx=24
+494 GetAccountId__Q2_2nn3actFPc    val=0xc0009058 sz=0 info=12 shndx=24
+495 GetErrorCode__Q2_2nn3actFRCQ2_2nn6Result val=0xc0009060 sz=0 info=12 shndx=24
+496 GetMiiEx__Q2_2nn3actFP12FFLStoreDataUc val=0xc0009068 sz=0 info=12 shndx=24
+497 GetNumOfAccounts__Q2_2nn3actFv val=0xc0009070 sz=0 info=12 shndx=24
+498 GetPrincipalIdEx__Q2_2nn3actFPUiUc val=0xc0009078 sz=0 info=12 shndx=24
+499 GetPrincipalId__Q2_2nn3actFv   val=0xc0009080 sz=0 info=12 shndx=24
+500 GetSimpleAddressIdEx__Q2_2nn3actFPUiUc val=0xc0009088 sz=0 info=12 shndx=24
+501 GetSimpleAddressId__Q2_2nn3actFv val=0xc0009090 sz=0 info=12 shndx=24
+502 GetSlotNo__Q2_2nn3actFv        val=0xc0009098 sz=0 info=12 shndx=24
+503 GetTransferableIdEx__Q2_2nn3actFPULUiUc val=0xc00090a0 sz=0 info=12 shndx=24
+504 GetUtcOffset__Q2_2nn3actFv     val=0xc00090a8 sz=0 info=12 shndx=24
+505 GetUuidEx__Q2_2nn3actFP7ACTUuidUc val=0xc00090b0 sz=0 info=12 shndx=24
+506 GetUuid__Q2_2nn3actFP7ACTUuid  val=0xc00090b8 sz=0 info=12 shndx=24
+507 HasNfsAccount__Q2_2nn3actFv    val=0xc00090c0 sz=0 info=12 shndx=24
+508 Initialize__Q2_2nn3actFv       val=0xc00090c8 sz=0 info=12 shndx=24
+509 IsNetworkAccountEx__Q2_2nn3actFUc val=0xc00090d0 sz=0 info=12 shndx=24
+510 IsSlotOccupied__Q2_2nn3actFUc  val=0xc00090d8 sz=0 info=12 shndx=24
+511 GetBossState__Q2_2nn4bossFv    val=0xc0009148 sz=0 info=12 shndx=26
+512 GetCreatedTime__Q3_2nn4boss6NsDataCFv val=0xc0009150 sz=0 info=12 shndx=26
+513 GetDataList__Q3_2nn4boss7StorageCFPQ3_2nn4boss8DataNameUiPUiT2 val=0xc0009158 sz=0 info=12 shndx=26
+514 GetDeleteProtectionFlag__Q3_2nn4boss6NsDataCFv val=0xc0009160 sz=0 info=12 shndx=26
+515 GetMemo__Q3_2nn4boss6NsDataCFv val=0xc0009168 sz=0 info=12 shndx=26
+516 GetPosition__Q3_2nn4boss6NsDataCFv val=0xc0009170 sz=0 info=12 shndx=26
+517 GetReadFlag__Q3_2nn4boss6NsDataCFv val=0xc0009178 sz=0 info=12 shndx=26
+518 GetResult__Q3_2nn4boss4TaskCFPUi val=0xc0009180 sz=0 info=12 shndx=26
+519 GetSize__Q3_2nn4boss6NsDataCFv val=0xc0009188 sz=0 info=12 shndx=26
+520 GetTurnState__Q3_2nn4boss4TaskCFPUi val=0xc0009190 sz=0 info=12 shndx=26
+521 Initialize__Q2_2nn4bossFv      val=0xc0009198 sz=0 info=12 shndx=26
+522 Initialize__Q3_2nn4boss15NbdlTaskSettingFPCcLT1 val=0xc00091a0 sz=0 info=12 shndx=26
+523 Initialize__Q3_2nn4boss17PlayReportSettingFPvUi val=0xc00091a8 sz=0 info=12 shndx=26
+524 Initialize__Q3_2nn4boss4TaskFPCc val=0xc00091b0 sz=0 info=12 shndx=26
+525 Initialize__Q3_2nn4boss4TaskFPCcUi val=0xc00091b8 sz=0 info=12 shndx=26
+526 Initialize__Q3_2nn4boss6NsDataFRCQ3_2nn4boss7StoragePCc val=0xc00091c0 sz=0 info=12 shndx=26
+527 Initialize__Q3_2nn4boss7StorageFPCcQ3_2nn4boss11StorageKind val=0xc00091c8 sz=0 info=12 shndx=26
+528 IsRegistered__Q3_2nn4boss4TaskCFv val=0xc00091d0 sz=0 info=12 shndx=26
+529 Read__Q3_2nn4boss6NsDataFPLPvUi val=0xc00091d8 sz=0 info=12 shndx=26
+530 Register__Q3_2nn4boss4TaskFRQ3_2nn4boss11TaskSetting val=0xc00091e0 sz=0 info=12 shndx=26
+531 SetReadFlag__Q3_2nn4boss6NsDataFb val=0xc00091e8 sz=0 info=12 shndx=26
+532 Set__Q3_2nn4boss17PlayReportSettingFPCcUi val=0xc00091f0 sz=0 info=12 shndx=26
+533 StartScheduling__Q3_2nn4boss4TaskFb val=0xc00091f8 sz=0 info=12 shndx=26
+534 Unregister__Q3_2nn4boss4TaskFv val=0xc0009200 sz=0 info=12 shndx=26
+535 UpdateIntervalSec__Q3_2nn4boss4TaskFUi val=0xc0009208 sz=0 info=12 shndx=26
+536 UpdateLifeTimeSec__Q3_2nn4boss4TaskFL val=0xc0009210 sz=0 info=12 shndx=26
+537 Wait__Q3_2nn4boss4TaskFQ3_2nn4boss13TaskWaitState val=0xc0009218 sz=0 info=12 shndx=26
+538 __ct__Q3_2nn4boss15NbdlTaskSettingFv val=0xc0009220 sz=0 info=12 shndx=26
+539 __ct__Q3_2nn4boss17PlayReportSettingFv val=0xc0009228 sz=0 info=12 shndx=26
+540 __ct__Q3_2nn4boss4TaskFv       val=0xc0009230 sz=0 info=12 shndx=26
+541 __ct__Q3_2nn4boss5TitleFv      val=0xc0009238 sz=0 info=12 shndx=26
+542 __ct__Q3_2nn4boss6NsDataFv     val=0xc0009240 sz=0 info=12 shndx=26
+543 __ct__Q3_2nn4boss7StorageFv    val=0xc0009248 sz=0 info=12 shndx=26
+544 __ct__Q3_2nn4boss8DataNameFv   val=0xc0009250 sz=0 info=12 shndx=26
+545 __dt__Q3_2nn4boss15NbdlTaskSettingFv val=0xc0009258 sz=0 info=12 shndx=26
+546 __dt__Q3_2nn4boss4TaskFv       val=0xc0009260 sz=0 info=12 shndx=26
+547 __opPCc__Q3_2nn4boss8DataNameCFv val=0xc0009268 sz=0 info=12 shndx=26
+548 SAVEFlushQuota                 val=0xc00092c8 sz=0 info=12 shndx=28
+549 SAVEGetFreeSpaceSize           val=0xc00092d0 sz=0 info=12 shndx=28
+550 SAVEGetSharedDataTitlePath     val=0xc00092d8 sz=0 info=12 shndx=28
+551 SAVEGetSharedSaveDataPath      val=0xc00092e0 sz=0 info=12 shndx=28
+552 SAVEGetStat                    val=0xc00092e8 sz=0 info=12 shndx=28
+553 SAVEInit                       val=0xc00092f0 sz=0 info=12 shndx=28
+554 SAVEInitSaveDir                val=0xc00092f8 sz=0 info=12 shndx=28
+555 SAVEOpenDir                    val=0xc0009300 sz=0 info=12 shndx=28
+556 SAVEOpenFile                   val=0xc0009308 sz=0 info=12 shndx=28
+557 SAVERemove                     val=0xc0009310 sz=0 info=12 shndx=28
+558 SAVEShutdown                   val=0xc0009318 sz=0 info=12 shndx=28
+559 AddFriendRequestAsync__Q2_2nn2fpFUiUcPCwT2T3PFQ2_2nn6ResultPv_vPv val=0xc0009348 sz=0 info=12 shndx=29
+560 AddRecentPlayRecord__Q2_2nn2fpFPCQ3_2nn2fp16RecentPlayRecordUi val=0xc0009350 sz=0 info=12 shndx=29
+561 GetFriendAccountId__Q2_2nn2fpFPA17_cPCUiUi val=0xc0009358 sz=0 info=12 shndx=29
+562 GetFriendListAll__Q2_2nn2fpFPUiT1UiT3 val=0xc0009360 sz=0 info=12 shndx=29
+563 GetFriendMii__Q2_2nn2fpFP12FFLStoreDataPCUiUi val=0xc0009368 sz=0 info=12 shndx=29
+564 GetFriendPresence__Q2_2nn2fpFPQ3_2nn2fp14FriendPresencePCUiUi val=0xc0009370 sz=0 info=12 shndx=29
+565 GetFriendProfile__Q2_2nn2fpFPQ3_2nn2fp7ProfilePCUiUi val=0xc0009378 sz=0 info=12 shndx=29
+566 GetFriendRelationship__Q2_2nn2fpFPUcPCUiUi val=0xc0009380 sz=0 info=12 shndx=29
+567 GetFriendRequestList__Q2_2nn2fpFPUiT1UiT3 val=0xc0009388 sz=0 info=12 shndx=29
+568 GetFriendScreenName__Q2_2nn2fpFPA11_wPCUiUibPUc val=0xc0009390 sz=0 info=12 shndx=29
+569 GetMyAccountId__Q2_2nn2fpFPc   val=0xc0009398 sz=0 info=12 shndx=29
+570 GetMyPreference__Q2_2nn2fpFPQ3_2nn2fp10Preference val=0xc00093a0 sz=0 info=12 shndx=29
+571 GetMyPresence__Q2_2nn2fpFPQ3_2nn2fp10MyPresence val=0xc00093a8 sz=0 info=12 shndx=29
+572 GetMyProfile__Q2_2nn2fpFPQ3_2nn2fp7Profile val=0xc00093b0 sz=0 info=12 shndx=29
+573 GetMyScreenName__Q2_2nn2fpFPw  val=0xc00093b8 sz=0 info=12 shndx=29
+574 Initialize__Q2_2nn2fpFv        val=0xc00093c0 sz=0 info=12 shndx=29
+575 IsFriendRequestAllowed__Q2_2nn2fpFv val=0xc00093c8 sz=0 info=12 shndx=29
+576 IsInitialized__Q2_2nn2fpFv     val=0xc00093d0 sz=0 info=12 shndx=29
+577 IsJoinable__Q2_2nn2fpFPCQ3_2nn2fp14FriendPresenceUL val=0xc00093d8 sz=0 info=12 shndx=29
+578 IsOnline__Q2_2nn2fpFv          val=0xc00093e0 sz=0 info=12 shndx=29
+579 LoginAsync__Q2_2nn2fpFPFQ2_2nn6ResultPv_vPv val=0xc00093e8 sz=0 info=12 shndx=29
+580 Logout__Q2_2nn2fpFv            val=0xc00093f0 sz=0 info=12 shndx=29
+581 RegisterAccountAsync__Q2_2nn2fpFPFQ2_2nn6ResultPv_vPv val=0xc00093f8 sz=0 info=12 shndx=29
+582 ResultToErrorCode__Q2_2nn2fpFQ2_2nn6Result val=0xc0009400 sz=0 info=12 shndx=29
+583 SetNotificationHandler__Q2_2nn2fpFUiPFQ3_2nn2fp16NotificationTypeUiPv_vPv val=0xc0009408 sz=0 info=12 shndx=29
+584 UpdateGameMode__Q2_2nn2fpFPCQ3_2nn2fp8GameModePCwUi val=0xc0009410 sz=0 info=12 shndx=29
+585 AddCommonData__Q3_2nn3olv15UploadParamBaseFUiPCUcT1 val=0xc0009448 sz=0 info=12 shndx=30
+586 Cancel__Q2_2nn3olvFv           val=0xc0009450 sz=0 info=12 shndx=30
+587 DownloadCommentDataList__Q2_2nn3olvFPQ3_2nn3olv21DownloadedCommentDataPUiUiPCQ3_ val=0xc0009458 sz=0 info=12 shndx=30
+588 DownloadCommunityDataList__Q2_2nn3olvFPQ3_2nn3olv23DownloadedCommunityDataPUiUiP val=0xc0009460 sz=0 info=12 shndx=30
+589 DownloadPostDataList__Q2_2nn3olvFPQ3_2nn3olv19DownloadedTopicDataPQ3_2nn3olv18Do val=0xc0009468 sz=0 info=12 shndx=30
+590 GetAppDataSize__Q3_2nn3olv23DownloadedCommunityDataCFv val=0xc0009470 sz=0 info=12 shndx=30
+591 GetAppData__Q3_2nn3olv18DownloadedDataBaseCFPUcPUiUi val=0xc0009478 sz=0 info=12 shndx=30
+592 GetBodyMemo__Q3_2nn3olv18DownloadedDataBaseCFPUcPUiUi val=0xc0009480 sz=0 info=12 shndx=30
+593 GetBodyText__Q3_2nn3olv18DownloadedDataBaseCFPwUi val=0xc0009488 sz=0 info=12 shndx=30
+594 GetCommentCount__Q3_2nn3olv18DownloadedPostDataCFv val=0xc0009490 sz=0 info=12 shndx=30
+595 GetCommentId__Q3_2nn3olv21DownloadedCommentDataCFv val=0xc0009498 sz=0 info=12 shndx=30
+596 GetCommunityCode__Q3_2nn3olv21UploadedCommunityDataCFPcUi val=0xc00094a0 sz=0 info=12 shndx=30
+597 GetCommunityId__Q3_2nn3olv21UploadedCommunityDataCFv val=0xc00094a8 sz=0 info=12 shndx=30
+598 GetCommunityId__Q3_2nn3olv23DownloadedCommunityDataCFv val=0xc00094b0 sz=0 info=12 shndx=30
+599 GetCountryId__Q3_2nn3olv18DownloadedDataBaseCFv val=0xc00094b8 sz=0 info=12 shndx=30
+600 GetDataTypeNum__Q3_2nn3olv15UploadParamBaseCFUi val=0xc00094c0 sz=0 info=12 shndx=30
+601 GetEmpathyCount__Q3_2nn3olv18DownloadedPostDataCFv val=0xc00094c8 sz=0 info=12 shndx=30
+602 GetErrorCode__Q2_2nn3olvFRCQ2_2nn6Result val=0xc00094d0 sz=0 info=12 shndx=30
+603 GetFeeling__Q3_2nn3olv18DownloadedDataBaseCFv val=0xc00094d8 sz=0 info=12 shndx=30
+604 GetLanguageId__Q3_2nn3olv18DownloadedDataBaseCFv val=0xc00094e0 sz=0 info=12 shndx=30
+605 GetMiiData__Q3_2nn3olv18DownloadedDataBaseCFP12FFLStoreData val=0xc00094e8 sz=0 info=12 shndx=30
+606 GetMiiNickname__Q3_2nn3olv18DownloadedDataBaseCFv val=0xc00094f0 sz=0 info=12 shndx=30
+607 GetPostDate__Q3_2nn3olv18DownloadedDataBaseCFv val=0xc00094f8 sz=0 info=12 shndx=30
+608 GetPostId__Q3_2nn3olv16UploadedPostDataCFv val=0xc0009500 sz=0 info=12 shndx=30
+609 GetPostId__Q3_2nn3olv18DownloadedPostDataCFv val=0xc0009508 sz=0 info=12 shndx=30
+610 GetReportTypes__Q3_2nn3olv6ReportFv val=0xc0009510 sz=0 info=12 shndx=30
+611 GetResultByPostApp__Q2_2nn3olvFv val=0xc0009518 sz=0 info=12 shndx=30
+612 GetResultWithUploadedPostDataByPostApp__Q2_2nn3olvFPQ3_2nn3olv16UploadedPostData val=0xc0009520 sz=0 info=12 shndx=30
+613 GetTopicTag__Q3_2nn3olv18DownloadedDataBaseCFv val=0xc0009528 sz=0 info=12 shndx=30
+614 GetUserPid__Q3_2nn3olv18DownloadedDataBaseCFv val=0xc0009530 sz=0 info=12 shndx=30
+615 Initialize__Q2_2nn3olvFPCQ3_2nn3olv15InitializeParam val=0xc0009538 sz=0 info=12 shndx=30
+616 IsInitialized__Q2_2nn3olvFv    val=0xc0009540 sz=0 info=12 shndx=30
+617 SetAppData__Q3_2nn3olv15UploadParamBaseFPCUcUi val=0xc0009548 sz=0 info=12 shndx=30
+618 SetAppData__Q3_2nn3olv24UploadCommunityDataParamFPCUcUi val=0xc0009550 sz=0 info=12 shndx=30
+619 SetBodyMemo__Q3_2nn3olv15UploadParamBaseFPCUcUi val=0xc0009558 sz=0 info=12 shndx=30
+620 SetBodyTextMaxLength__Q3_2nn3olv28UploadPostDataByPostAppParamFUi val=0xc0009560 sz=0 info=12 shndx=30
+621 SetBodyText__Q3_2nn3olv15UploadParamBaseFPCw val=0xc0009568 sz=0 info=12 shndx=30
+622 SetCommentDataMaxNum__Q3_2nn3olv28DownloadCommentDataListParamFUi val=0xc0009570 sz=0 info=12 shndx=30
+623 SetCommunityDataMaxNum__Q3_2nn3olv30DownloadCommunityDataListParamFUi val=0xc0009578 sz=0 info=12 shndx=30
+624 SetCommunityId__Q3_2nn3olv19StartPortalAppParamFUi val=0xc0009580 sz=0 info=12 shndx=30
+625 SetCommunityId__Q3_2nn3olv19UploadPostDataParamFUi val=0xc0009588 sz=0 info=12 shndx=30
+626 SetCommunityId__Q3_2nn3olv24UploadCommunityDataParamFUi val=0xc0009590 sz=0 info=12 shndx=30
+627 SetCommunityId__Q3_2nn3olv25DownloadPostDataListParamFUi val=0xc0009598 sz=0 info=12 shndx=30
+628 SetCommunityId__Q3_2nn3olv34UploadFavoriteToCommunityDataParamFUi val=0xc00095a0 sz=0 info=12 shndx=30
+629 SetDescriptionText__Q3_2nn3olv24UploadCommunityDataParamFPCw val=0xc00095a8 sz=0 info=12 shndx=30
+630 SetExternalImageData__Q3_2nn3olv15UploadParamBaseFPCUcUi val=0xc00095b0 sz=0 info=12 shndx=30
+631 SetFeeling__Q3_2nn3olv15UploadParamBaseFQ3_2nn3olv7Feeling val=0xc00095b8 sz=0 info=12 shndx=30
+632 SetFlags__Q3_2nn3olv24UploadCommunityDataParamFUi val=0xc00095c0 sz=0 info=12 shndx=30
+633 SetFlags__Q3_2nn3olv25DownloadPostDataListParamFUi val=0xc00095c8 sz=0 info=12 shndx=30
+634 SetFlags__Q3_2nn3olv28DownloadCommentDataListParamFUi val=0xc00095d0 sz=0 info=12 shndx=30
+635 SetFlags__Q3_2nn3olv28UploadEmpathyToPostDataParamFUi val=0xc00095d8 sz=0 info=12 shndx=30
+636 SetFlags__Q3_2nn3olv30DownloadCommunityDataListParamFUi val=0xc00095e0 sz=0 info=12 shndx=30
+637 SetFlags__Q3_2nn3olv34UploadFavoriteToCommunityDataParamFUi val=0xc00095e8 sz=0 info=12 shndx=30
+638 SetIconData__Q3_2nn3olv24UploadCommunityDataParamFPCUcUi val=0xc00095f0 sz=0 info=12 shndx=30
+639 SetLanguageId__Q3_2nn3olv25DownloadPostDataListParamFUc val=0xc00095f8 sz=0 info=12 shndx=30
+640 SetLanguageId__Q3_2nn3olv28DownloadCommentDataListParamFUc val=0xc0009600 sz=0 info=12 shndx=30
+641 SetPostDataMaxNum__Q3_2nn3olv25DownloadPostDataListParamFUi val=0xc0009608 sz=0 info=12 shndx=30
+642 SetPostId__Q3_2nn3olv19StartPortalAppParamFPCc val=0xc0009610 sz=0 info=12 shndx=30
+643 SetPostId__Q3_2nn3olv22UploadCommentDataParamFPCc val=0xc0009618 sz=0 info=12 shndx=30
+644 SetPostId__Q3_2nn3olv25DownloadPostDataListParamFPCcUi val=0xc0009620 sz=0 info=12 shndx=30
+645 SetPostId__Q3_2nn3olv28DownloadCommentDataListParamFPCc val=0xc0009628 sz=0 info=12 shndx=30
+646 SetPostId__Q3_2nn3olv28UploadEmpathyToPostDataParamFPCc val=0xc0009630 sz=0 info=12 shndx=30
+647 SetReportTypes__Q3_2nn3olv15InitializeParamFUi val=0xc0009638 sz=0 info=12 shndx=30
+648 SetSearchKey__Q3_2nn3olv19UploadPostDataParamFPCwUc val=0xc0009640 sz=0 info=12 shndx=30
+649 SetSearchKey__Q3_2nn3olv25DownloadPostDataListParamFPCw val=0xc0009648 sz=0 info=12 shndx=30
+650 SetSearchPid__Q3_2nn3olv25DownloadPostDataListParamFUi val=0xc0009650 sz=0 info=12 shndx=30
+651 SetTitleText__Q3_2nn3olv24UploadCommunityDataParamFPCw val=0xc0009658 sz=0 info=12 shndx=30
+652 SetTopicTag__Q3_2nn3olv19UploadPostDataParamFPCw val=0xc0009660 sz=0 info=12 shndx=30
+653 SetUserPid__Q3_2nn3olv19StartPortalAppParamFUi val=0xc0009668 sz=0 info=12 shndx=30
+654 SetUserPid__Q3_2nn3olv37UploadDirectMessageDataByPostAppParamFUi val=0xc0009670 sz=0 info=12 shndx=30
+655 SetWork__Q3_2nn3olv15InitializeParamFPUcUi val=0xc0009678 sz=0 info=12 shndx=30
+656 SetWork__Q3_2nn3olv28UploadPostDataByPostAppParamFPUcUi val=0xc0009680 sz=0 info=12 shndx=30
+657 SetWork__Q3_2nn3olv31UploadCommentDataByPostAppParamFPUcUi val=0xc0009688 sz=0 info=12 shndx=30
+658 StartPortalApp__Q2_2nn3olvFPCQ3_2nn3olv19StartPortalAppParam val=0xc0009690 sz=0 info=12 shndx=30
+659 UploadCommentDataByPostApp__Q2_2nn3olvFPCQ3_2nn3olv31UploadCommentDataByPostAppP val=0xc0009698 sz=0 info=12 shndx=30
+660 UploadCommunityData__Q2_2nn3olvFPQ3_2nn3olv21UploadedCommunityDataPCQ3_2nn3olv24 val=0xc00096a0 sz=0 info=12 shndx=30
+661 UploadDirectMessageDataByPostApp__Q2_2nn3olvFPCQ3_2nn3olv37UploadDirectMessageDa val=0xc00096a8 sz=0 info=12 shndx=30
+662 UploadEmpathyToPostData__Q2_2nn3olvFPCQ3_2nn3olv28UploadEmpathyToPostDataParam val=0xc00096b0 sz=0 info=12 shndx=30
+663 UploadFavoriteToCommunityData__Q2_2nn3olvFPCQ3_2nn3olv34UploadFavoriteToCommunit val=0xc00096b8 sz=0 info=12 shndx=30
+664 UploadPostDataByPostApp__Q2_2nn3olvFPCQ3_2nn3olv28UploadPostDataByPostAppParam val=0xc00096c0 sz=0 info=12 shndx=30
+665 UploadPostData__Q2_2nn3olvFPQ3_2nn3olv16UploadedPostDataPCQ3_2nn3olv19UploadPost val=0xc00096c8 sz=0 info=12 shndx=30
+666 __ct__Q3_2nn3olv15InitializeParamFv val=0xc00096d0 sz=0 info=12 shndx=30
+667 __ct__Q3_2nn3olv16UploadedPostDataFv val=0xc00096d8 sz=0 info=12 shndx=30
+668 __ct__Q3_2nn3olv18DownloadedPostDataFv val=0xc00096e0 sz=0 info=12 shndx=30
+669 __ct__Q3_2nn3olv19DownloadedTopicDataFv val=0xc00096e8 sz=0 info=12 shndx=30
+670 __ct__Q3_2nn3olv19StartPortalAppParamFv val=0xc00096f0 sz=0 info=12 shndx=30
+671 __ct__Q3_2nn3olv19UploadPostDataParamFv val=0xc00096f8 sz=0 info=12 shndx=30
+672 __ct__Q3_2nn3olv21UploadedCommunityDataFv val=0xc0009700 sz=0 info=12 shndx=30
+673 __ct__Q3_2nn3olv23DownloadedCommunityDataFv val=0xc0009708 sz=0 info=12 shndx=30
+674 __ct__Q3_2nn3olv24UploadCommunityDataParamFv val=0xc0009710 sz=0 info=12 shndx=30
+675 __ct__Q3_2nn3olv25DownloadPostDataListParamFv val=0xc0009718 sz=0 info=12 shndx=30
+676 __ct__Q3_2nn3olv28DownloadCommentDataListParamFv val=0xc0009720 sz=0 info=12 shndx=30
+677 __ct__Q3_2nn3olv28UploadEmpathyToPostDataParamFv val=0xc0009728 sz=0 info=12 shndx=30
+678 __ct__Q3_2nn3olv28UploadPostDataByPostAppParamFv val=0xc0009730 sz=0 info=12 shndx=30
+679 __ct__Q3_2nn3olv30DownloadCommunityDataListParamFv val=0xc0009738 sz=0 info=12 shndx=30
+680 __ct__Q3_2nn3olv31UploadCommentDataByPostAppParamFv val=0xc0009740 sz=0 info=12 shndx=30
+681 __ct__Q3_2nn3olv31UploadedFavoriteToCommunityDataFv val=0xc0009748 sz=0 info=12 shndx=30
+682 __ct__Q3_2nn3olv34UploadFavoriteToCommunityDataParamFv val=0xc0009750 sz=0 info=12 shndx=30
+683 __ct__Q3_2nn3olv37UploadDirectMessageDataByPostAppParamFv val=0xc0009758 sz=0 info=12 shndx=30
+684 __dt__Q3_2nn3olv15UploadParamBaseFv val=0xc0009760 sz=0 info=12 shndx=30
+685 __dt__Q3_2nn3olv16UploadedDataBaseFv val=0xc0009768 sz=0 info=12 shndx=30
+686 __dt__Q3_2nn3olv18DownloadedDataBaseFv val=0xc0009770 sz=0 info=12 shndx=30
+687 __dt__Q3_2nn3olv28UploadPostDataByPostAppParamFv val=0xc0009778 sz=0 info=12 shndx=30
+688 TEMPChangeOthersMode           val=0xc0009788 sz=0 info=12 shndx=31
+689 TEMPCreateAndInitTempDir       val=0xc0009790 sz=0 info=12 shndx=31
+690 TEMPGetFreeSpaceSize           val=0xc0009798 sz=0 info=12 shndx=31
+691 TEMPInit                       val=0xc00097a0 sz=0 info=12 shndx=31
+692 TEMPOpenFile                   val=0xc00097a8 sz=0 info=12 shndx=31
+693 TEMPRemove                     val=0xc00097b0 sz=0 info=12 shndx=31
+694 TEMPShutdownTempDir            val=0xc00097b8 sz=0 info=12 shndx=31
+695 SYSLaunchAccount               val=0xc00097c8 sz=0 info=12 shndx=32
+696 SYSLaunchSettings              val=0xc00097d0 sz=0 info=12 shndx=32
+697 _SYSGetSystemApplicationTitleId val=0xc00097d8 sz=0 info=12 shndx=32
+698 MICClose                       val=0xc0009808 sz=0 info=12 shndx=33
+699 MICGetState                    val=0xc0009810 sz=0 info=12 shndx=33
+700 MICGetStatus                   val=0xc0009818 sz=0 info=12 shndx=33
+701 MICInit                        val=0xc0009820 sz=0 info=12 shndx=33
+702 MICOpen                        val=0xc0009828 sz=0 info=12 shndx=33
+703 MICSetDataConsumed             val=0xc0009830 sz=0 info=12 shndx=33
+704 MICSetState                    val=0xc0009838 sz=0 info=12 shndx=33
+705 MICUninit                      val=0xc0009840 sz=0 info=12 shndx=33
+706 Create__8MVPlayerSFv           val=0xc0009888 sz=0 info=12 shndx=34
+707 Destroy__8MVPlayerSFP8MVPlayer val=0xc0009890 sz=0 info=12 shndx=34
+708 Draw__6MVViewFv                val=0xc0009898 sz=0 info=12 shndx=34
+709 Shutdown__8MVPlayerSFv         val=0xc00098a0 sz=0 info=12 shndx=34
+710 MV_CacheSize                   val=0xc00098c8 sz=0 info=11 shndx=35
+711 MV_H264Frames                  val=0xc00098d0 sz=0 info=11 shndx=35
+712 MV_H264Height                  val=0xc00098d8 sz=0 info=11 shndx=35
+713 MV_H264Level                   val=0xc00098e0 sz=0 info=11 shndx=35
+714 MV_H264Profile                 val=0xc00098e8 sz=0 info=11 shndx=35
+715 MV_H264Width                   val=0xc00098f0 sz=0 info=11 shndx=35
+716 MV_Heap                        val=0xc00098f8 sz=0 info=11 shndx=35
+717 MV_HeapForH264                 val=0xc0009900 sz=0 info=11 shndx=35
+718 CheckDataTitleUpdate__Q2_2nn2ecFPb val=0xc0009948 sz=0 info=12 shndx=36
+719 CheckDownloadable__Q3_2nn2ec4ItemCFv val=0xc0009950 sz=0 info=12 shndx=36
+720 CheckPurchasable__Q3_2nn2ec4ItemCFv val=0xc0009958 sz=0 info=12 shndx=36
+721 Download__Q3_2nn2ec6appletFPCQ3_2nn2ec4Item val=0xc0009960 sz=0 info=12 shndx=36
+722 Finalize__Q2_2nn2ecFv          val=0xc0009968 sz=0 info=12 shndx=36
+723 Finish__Q3_2nn2ec6appletFv     val=0xc0009970 sz=0 info=12 shndx=36
+724 GetAmount__Q3_2nn2ec5MoneyCFv  val=0xc0009978 sz=0 info=12 shndx=36
+725 GetAttribute__Q3_2nn2ec4ItemCFPCc val=0xc0009980 sz=0 info=12 shndx=36
+726 GetErrorCode__Q2_2nn2ecFRCQ2_2nn6Result val=0xc0009988 sz=0 info=12 shndx=36
+727 GetItem__Q3_2nn2ec8ItemListFUi val=0xc0009990 sz=0 info=12 shndx=36
+728 GetLastServerErrorMessage__Q2_2nn2ecFPwT1 val=0xc0009998 sz=0 info=12 shndx=36
+729 GetNumItems__Q3_2nn2ec8ItemListCFv val=0xc00099a0 sz=0 info=12 shndx=36
+730 GetPrice__Q3_2nn2ec4ItemCFv    val=0xc00099a8 sz=0 info=12 shndx=36
+731 GetRegularPrice__Q3_2nn2ec5PriceCFv val=0xc00099b0 sz=0 info=12 shndx=36
+732 GetReturnCode__Q3_2nn2ec6appletFv val=0xc00099b8 sz=0 info=12 shndx=36
+733 Initialize__Q2_2nn2ecFUi       val=0xc00099c0 sz=0 info=12 shndx=36
+734 IsExecuting__Q3_2nn2ec6appletFv val=0xc00099c8 sz=0 info=12 shndx=36
+735 IsPurchased__Q3_2nn2ec4ItemCFv val=0xc00099d0 sz=0 info=12 shndx=36
+736 Login__Q2_2nn2ecFv             val=0xc00099d8 sz=0 info=12 shndx=36
+737 OrderBy__Q3_2nn2ec5QueryFPCcN21 val=0xc00099e0 sz=0 info=12 shndx=36
+738 Purchase__Q3_2nn2ec6appletFPCQ3_2nn2ec4ItemPQ3_2nn2ec5Money val=0xc00099e8 sz=0 info=12 shndx=36
+739 RetrieveAocs__Q3_2nn2ec15ShoppingCatalogFPCQ3_2nn2ec5QueryUiT2 val=0xc00099f0 sz=0 info=12 shndx=36
+740 Select__Q3_2nn2ec5QueryFPPCcUi val=0xc00099f8 sz=0 info=12 shndx=36
+741 SetAllocator__Q2_2nn2ecFPFUii_PvPFPv_v val=0xc0009a00 sz=0 info=12 shndx=36
+742 SetAnchor__Q3_2nn2ec6appletFPCc val=0xc0009a08 sz=0 info=12 shndx=36
+743 SetSalesStatusFilter__Q3_2nn2ec5QueryFQ3_2nn2ec17SalesStatusFilter val=0xc0009a10 sz=0 info=12 shndx=36
+744 SynchronizeAocRights__Q2_2nn2ecFv val=0xc0009a18 sz=0 info=12 shndx=36
+745 UpdateDataTitle__Q3_2nn2ec6appletFv val=0xc0009a20 sz=0 info=12 shndx=36
+746 __ct__Q3_2nn2ec15ShoppingCatalogFv val=0xc0009a28 sz=0 info=12 shndx=36
+747 __ct__Q3_2nn2ec5MoneyFPCcN21   val=0xc0009a30 sz=0 info=12 shndx=36
+748 __ct__Q3_2nn2ec5QueryFv        val=0xc0009a38 sz=0 info=12 shndx=36
+749 AOC_CalculateWorkBufferSize    val=0xc0009a88 sz=0 info=12 shndx=38
+750 AOC_CloseTitle                 val=0xc0009a90 sz=0 info=12 shndx=38
+751 AOC_DebugRealDeviceAccess      val=0xc0009a98 sz=0 info=12 shndx=38
+752 AOC_GetErrorCode               val=0xc0009aa0 sz=0 info=12 shndx=38
+753 AOC_GetPurchaseInfo            val=0xc0009aa8 sz=0 info=12 shndx=38
+754 AOC_Initialize                 val=0xc0009ab0 sz=0 info=12 shndx=38
+755 AOC_ListTitle                  val=0xc0009ab8 sz=0 info=12 shndx=38
+756 AOC_OpenTitle                  val=0xc0009ac0 sz=0 info=12 shndx=38
+757 Finalize__Q2_2nn3nfpFv         val=0xc0009b08 sz=0 info=12 shndx=39
+758 GetNfpReadOnlyInfo__Q2_2nn3nfpFPQ3_2nn3nfp12ReadOnlyInfo val=0xc0009b10 sz=0 info=12 shndx=39
+759 GetNfpState__Q2_2nn3nfpFv      val=0xc0009b18 sz=0 info=12 shndx=39
+760 Initialize__Q2_2nn3nfpFv       val=0xc0009b20 sz=0 info=12 shndx=39
+761 SetActivateEvent__Q2_2nn3nfpFP7OSEvent val=0xc0009b28 sz=0 info=12 shndx=39
+762 SetDeactivateEvent__Q2_2nn3nfpFP7OSEvent val=0xc0009b30 sz=0 info=12 shndx=39
+763 StartDetection__Q2_2nn3nfpFv   val=0xc0009b38 sz=0 info=12 shndx=39
+764 StopDetection__Q2_2nn3nfpFv    val=0xc0009b40 sz=0 info=12 shndx=39
+765 Finalize__Q2_2nn3ndmFv         val=0xc0009b88 sz=0 info=12 shndx=40
+766 Initialize__Q2_2nn3ndmFv       val=0xc0009b90 sz=0 info=12 shndx=40
+767 ResumeDaemons__Q2_2nn3ndmFUi   val=0xc0009b98 sz=0 info=12 shndx=40
+768 SuspendDaemons__Q2_2nn3ndmFUi  val=0xc0009ba0 sz=0 info=12 shndx=40

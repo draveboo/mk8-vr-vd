@@ -1,0 +1,439 @@
+---- disasm scene render entry FUN_020A5DB4 [20a5db4,20a5ef8] ----
+  020a5db4  mfspr r0,LR
+  020a5db8  stwu r1,-0x20(r1)
+  020a5dbc  stw r31,0x1c(r1)
+  020a5dc0  stw r30,0x18(r1)
+  020a5dc4  or r30,r4,r4
+  020a5dc8  or r31,r3,r3
+  020a5dcc  stw r29,0x14(r1)
+  020a5dd0  stw r0,0x24(r1)
+  020a5dd4  bl 0x024ce59c
+  020a5dd8  cmpwi r30,0x0
+  020a5ddc  beq 0x020a5e34
+  020a5de0  cmpwi r3,0x0
+  020a5de4  beq 0x020a5dec
+  020a5de8  lwz r3,0x2bc(r3)
+  020a5dec  li r0,0x3
+  020a5df0  addi r4,r1,0x8
+  020a5df4  stw r0,0x8(r1)
+  020a5df8  bl 0x0250e8e8
+  020a5dfc  lwz r0,0xdc(r31)
+  020a5e00  cmpwi r0,0x0
+  020a5e04  li r3,0x0
+  020a5e08  beq 0x020a5e14
+  020a5e0c  lwz r8,0xe4(r31)
+  020a5e10  lwz r3,0x0(r8)
+  020a5e14  li r5,0x1
+  020a5e18  li r4,0x0
+  020a5e1c  bl 0x020a2290
+  020a5e20  lwz r0,0x54(r31)
+  020a5e24  li r29,0x0
+  020a5e28  cmpw r29,r0
+  020a5e2c  bge 0x020a5eb4
+  020a5e30  b 0x020a5e84
+  020a5e34  cmpwi r3,0x0
+  020a5e38  beq 0x020a5e40
+  020a5e3c  lwz r3,0x2bc(r3)
+  020a5e40  li r9,0x5
+  020a5e44  addi r4,r1,0xc
+  020a5e48  stw r9,0xc(r1)
+  020a5e4c  bl 0x0250e8e8
+  020a5e50  lwz r0,0xdc(r31)
+  020a5e54  cmpwi r0,0x0
+  020a5e58  li r3,0x0
+  020a5e5c  beq 0x020a5e68
+  020a5e60  lwz r11,0xe4(r31)
+  020a5e64  lwz r3,0x0(r11)
+  020a5e68  li r4,0x1
+  020a5e6c  or r5,r4,r4
+  020a5e70  bl 0x020a2290
+  020a5e74  lwz r0,0x54(r31)
+  020a5e78  li r29,0x0
+  020a5e7c  cmpw r29,r0
+  020a5e80  bge 0x020a5eb4
+  020a5e84  li r30,0x0
+  020a5e88  cmplw r29,r0
+  020a5e8c  li r3,0x0
+  020a5e90  bge 0x020a5e9c
+  020a5e94  lwz r10,0x5c(r31)
+  020a5e98  lwzx r3,r10,r30
+  020a5e9c  bl 0x0209f8a4
+  020a5ea0  lwz r0,0x54(r31)
+  020a5ea4  addi r29,r29,0x1
+  020a5ea8  cmpw r29,r0
+  020a5eac  addi r30,r30,0x4
+  020a5eb0  blt 0x020a5e88
+  020a5eb4  lis r12,0x1019
+  020a5eb8  lwz r12,-0x7ad0(r12)
+  020a5ebc  lwz r3,0x44(r12)
+  020a5ec0  bl 0x02116b60
+  020a5ec4  li r11,0x1
+  020a5ec8  or r3,r31,r31
+  020a5ecc  stb r11,0xf4(r31)
+  020a5ed0  bl 0x020a5d14
+  020a5ed4  li r4,0x0
+  020a5ed8  bl 0x020a5d94
+  020a5edc  lwz r29,0x14(r1)
+  020a5ee0  lwz r0,0x24(r1)
+  020a5ee4  lwz r30,0x18(r1)
+  020a5ee8  mtspr LR,r0
+  020a5eec  lwz r31,0x1c(r1)
+  020a5ef0  addi r1,r1,0x20
+  020a5ef4  blr
+
+--- decompile present/flip FUN_02116B60 (2116b60) ---
+  function FUN_02116b60 [[02116b60, 02116b83]]
+
+void FUN_02116b60(int param_1)
+
+{
+  int iVar1;
+  longlong lVar2;
+  
+  iVar1 = 0;
+  lVar2 = 5;
+  do {
+    *(undefined1 *)(param_1 + 0x2c + iVar1) = 0;
+    iVar1 = iVar1 + 1;
+    lVar2 = lVar2 + -1;
+  } while (lVar2 != 0);
+  return;
+}
+
+
+
+---- disasm present FUN_02116B60 [2116b60,2116c40] ----
+  02116b60  li r9,0x5
+  02116b64  li r11,0x0
+  02116b68  addi r12,r3,0x2c
+  02116b6c  mtspr CTR,r9
+  02116b70  or r0,r11,r11
+  02116b74  stbx r0,r12,r11
+  02116b78  addi r11,r11,0x1
+  02116b7c  bdnz 0x02116b74
+  02116b80  blr
+  02116b84  stwu r1,-0x88(r1)
+  02116b88  stfd f31,0x78(r1)
+  02116b8c  mfspr r0,LR
+  02116b90  stmw r26,0x60(r1)
+
+--- decompile scan-target switch FUN_020A2290 (20a2290) ---
+  function FUN_020a2290 [[020a2290, 020a250f]]
+
+undefined4 FUN_020a2290(int param_1,int param_2,int param_3)
+
+{
+  int iVar1;
+  
+  if ((param_3 == 0) && (param_2 == *(int *)(param_1 + 0x1b8))) {
+    return 0;
+  }
+  if (*(int *)(param_1 + 0x1b8) != 0) {
+    (**(code **)(*(int *)(*(int *)(param_1 + *(int *)(param_1 + 0xe8) * 4 + 0x80) + 0x60) + 0x24))()
+    ;
+  }
+  switch(param_2) {
+  case 0:
+    goto LAB_020a2358;
+  case 1:
+LAB_020a2358:
+    *(undefined4 *)(param_1 + 0xe8) = 0;
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+    if (iVar1 != 0) goto LAB_020a24a8;
+    goto LAB_020a2474;
+  case 2:
+    *(undefined4 *)(param_1 + 0xe8) = 1;
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+    break;
+  case 3:
+    *(undefined4 *)(param_1 + 0xe8) = 2;
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+    break;
+  case 4:
+    *(undefined4 *)(param_1 + 0x120) = 0;
+    *(undefined4 *)(param_1 + 0xe8) = 3;
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+    break;
+  case 5:
+    *(undefined4 *)(param_1 + 0xe8) = 4;
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+    break;
+  case 6:
+    *(undefined4 *)(param_1 + 0xe8) = 5;
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+    break;
+  case 7:
+    *(undefined4 *)(param_1 + 0xe8) = 6;
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+    break;
+  case 8:
+    *(undefined4 *)(param_1 + 0xe8) = 7;
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+    break;
+  case 9:
+    *(undefined4 *)(param_1 + 0xe8) = 8;
+  default:
+    iVar1 = FUN_020a2268(param_1,*(undefined4 *)(param_1 + 0x1b8));
+  }
+  if (iVar1 == 0) {
+LAB_020a2474:
+    iVar1 = FUN_020a2268(param_1,param_2);
+    if (iVar1 != 0) {
+      FUN_02117684(*(undefined4 *)(DAT_10188530 + 0x44),1);
+      FUN_02116b60(*(undefined4 *)(DAT_10188530 + 0x44));
+    }
+  }
+LAB_020a24a8:
+  *(int *)(param_1 + 0x1b8) = param_2;
+  FUN_020ad690(*(undefined4 *)(param_1 + 0xcc),2);
+  if (*(int *)(param_1 + 0x1b8) != 0) {
+    iVar1 = *(int *)(param_1 + *(int *)(param_1 + 0xe8) * 4 + 0x80);
+    FUN_0209aef0(iVar1);
+    (**(code **)(*(int *)(iVar1 + 0x60) + 0x1c))(iVar1);
+  }
+  return 1;
+}
+
+
+
+---- disasm FUN_020A2290 [20a2290,20a2340] ----
+  020a2290  mfspr r0,LR
+  020a2294  stwu r1,-0x18(r1)
+  020a2298  stw r30,0x10(r1)
+  020a229c  stw r31,0x14(r1)
+  020a22a0  stw r29,0xc(r1)
+  020a22a4  or r30,r3,r3
+  020a22a8  or r31,r4,r4
+  020a22ac  cmpwi r5,0x0
+  020a22b0  stw r0,0x1c(r1)
+  020a22b4  lwz r0,0x1b8(r30)
+  020a22b8  li r29,0x0
+  020a22bc  bne 0x020a22e8
+  020a22c0  cmplw r31,r0
+  020a22c4  bne 0x020a22e8
+  020a22c8  lwz r29,0xc(r1)
+  020a22cc  lwz r0,0x1c(r1)
+  020a22d0  lwz r30,0x10(r1)
+  020a22d4  mtspr LR,r0
+  020a22d8  lwz r31,0x14(r1)
+  020a22dc  addi r1,r1,0x18
+  020a22e0  li r3,0x0
+  020a22e4  blr
+  020a22e8  cmpwi r0,0x0
+  020a22ec  beq 0x020a2310
+  020a22f0  lwz r8,0xe8(r30)
+  020a22f4  rlwinm r6,r8,0x2,0x0,0x1d
+  020a22f8  add r9,r30,r6
+  020a22fc  lwz r3,0x80(r9)
+  020a2300  lwz r10,0x60(r3)
+  020a2304  lwz r0,0x24(r10)
+  020a2308  mtspr CTR,r0
+  020a230c  bctrl
+  020a2310  or r12,r31,r31
+  020a2314  cmplwi r12,0x9
+  020a2318  bgt 0x020a2460
+  020a231c  rlwinm r12,r12,0x2,0x0,0x1d
+  020a2320  addis r6,r12,0x20a
+  020a2324  addi r6,r6,0x2330
+  020a2328  mtspr CTR,r6
+  020a232c  bctr
+  020a2330  b 0x020a2358
+  020a2334  b 0x020a2358
+  020a2338  b 0x020a2374
+  020a233c  b 0x020a2394
+
+--- decompile TV dispatch FUN_0250E8E8 (250e8e8) ---
+  function FUN_0250e8e8 [[0250e8e8, 0250e937]]
+
+void FUN_0250e8e8(int param_1,undefined4 *param_2)
+
+{
+  int iVar1;
+  
+  if ((*(uint *)(*DAT_101d693c + 0x134) & 4) == 0) {
+    *(undefined4 *)(param_1 + 0xc4) = *param_2;
+    FUN_0250e74c();
+    return;
+  }
+  iVar1 = *DAT_101d693c;
+  *(undefined4 *)(param_1 + 0xc4) = *param_2;
+  if ((iVar1 != 0) && (*(int *)(iVar1 + 0x130) - 3U < 2)) {
+    return;
+  }
+  FUN_0250e74c();
+  return;
+}
+
+
+
+---- disasm FUN_0250E8E8 [250e8e8,250e960] ----
+  0250e8e8  lis r12,0x101d
+  0250e8ec  lwz r12,0x693c(r12)
+  0250e8f0  lwz r10,0x0(r12)
+  0250e8f4  lwz r0,0x134(r10)
+  0250e8f8  rlwinm. r0,r0,0x0,0x1d,0x1d
+  0250e8fc  bne 0x0250e910
+  0250e900  lwz r12,0x0(r4)
+  0250e904  li r11,0x0
+  0250e908  stw r12,0xc4(r3)
+  0250e90c  b 0x0250e74c
+  0250e910  lwz r11,0x0(r12)
+  0250e914  lwz r12,0x0(r4)
+  0250e918  cmpwi r11,0x0
+  0250e91c  stw r12,0xc4(r3)
+  0250e920  beq 0x0250e934
+  0250e924  lwz r12,0x130(r11)
+  0250e928  subi r0,r12,0x3
+  0250e92c  cmplwi r0,0x2
+  0250e930  bltlr
+  0250e934  b 0x0250e74c
+  0250e938  lis r12,0x100d
+  0250e93c  lis r10,0x101d
+  0250e940  lfs f10,-0x1e40(r12)
+  0250e944  lis r12,0x100d
+  0250e948  addi r10,r10,0x7af4
+  0250e94c  lfs f13,-0x1e54(r12)
+  0250e950  lis r12,0x100d
+  0250e954  lis r11,0x101d
+  0250e958  lfs f0,-0x1e58(r12)
+  0250e95c  lis r12,0x100d
+
+--- decompile sub-renderable FUN_0209F8A4 (209f8a4) ---
+  function FUN_0209f8a4 [[0209f8a4, 0209f8cb]]
+
+void FUN_0209f8a4(int param_1)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = DAT_1000dae4;
+  *(undefined4 *)(param_1 + 0xc) = 0xffffffff;
+  *(undefined4 *)(param_1 + 0x10) = uVar1;
+  *(undefined4 *)(param_1 + 4) = 0xffffffff;
+  *(undefined4 *)(param_1 + 0x14) = 0;
+  *(undefined4 *)(param_1 + 8) = 0xffffffff;
+  return;
+}
+
+
+
+---- disasm FUN_0209F8A4 [209f8a4,209f940] ----
+  0209f8a4  lis r11,0x1001
+  0209f8a8  li r0,-0x1
+  0209f8ac  lfs f0,-0x251c(r11)
+  0209f8b0  stw r0,0xc(r3)
+  0209f8b4  stfs f0,0x10(r3)
+  0209f8b8  li r12,0x0
+  0209f8bc  stw r0,0x4(r3)
+  0209f8c0  stw r12,0x14(r3)
+  0209f8c4  stw r0,0x8(r3)
+  0209f8c8  blr
+  0209f8cc  stwu r1,-0x20(r1)
+  0209f8d0  stmw r27,0xc(r1)
+  0209f8d4  mfspr r0,LR
+  0209f8d8  stw r0,0x24(r1)
+  0209f8dc  or r28,r3,r3
+  0209f8e0  lis r31,0x1019
+  0209f8e4  or. r30,r4,r4
+  0209f8e8  lwz r31,-0x7abc(r31)
+  0209f8ec  blt 0x0209f930
+  0209f8f0  lwz r8,0x48(r31)
+  0209f8f4  cmplw r30,r8
+  0209f8f8  li r12,0x0
+  0209f8fc  bge 0x0209f90c
+  0209f900  lwz r0,0x50(r31)
+  0209f904  rlwinm r9,r30,0x2,0x0,0x1d
+  0209f908  lwzx r12,r9,r0
+  0209f90c  lwz r5,0x18(r12)
+  0209f910  lwz r3,0x4c(r5)
+  0209f914  lwz r11,0x48(r3)
+  0209f918  lwz r8,0xc(r11)
+  0209f91c  mtspr CTR,r8
+  0209f920  or r4,r28,r28
+  0209f924  bctrl
+  0209f928  cmpwi r3,0x0
+  0209f92c  bne 0x0209f9c4
+  0209f930  lwz r0,0x48(r31)
+  0209f934  li r29,0x0
+  0209f938  cmpw r29,r0
+  0209f93c  bge 0x0209f9c4
+
+--- decompile frame teardown FUN_020A5D14 (20a5d14) ---
+  function FUN_020a5d14 [[020a5d14, 020a5d93]]
+
+void FUN_020a5d14(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  undefined4 uVar3;
+  longlong lVar4;
+  
+  lVar4 = 4;
+  uVar3 = 0;
+  iVar2 = 0;
+  do {
+    if (-1 < *(int *)(**(int **)(DAT_10188548 + 0x124) + iVar2 + 4)) {
+      iVar1 = *(int *)(param_1 + 0xdc);
+      uVar3 = *(undefined4 *)(**(int **)(DAT_10188548 + 0x124) + iVar2 + 4);
+      goto joined_r0x020a5d5c;
+    }
+    iVar2 = iVar2 + 4;
+    lVar4 = lVar4 + -1;
+  } while (lVar4 != 0);
+  iVar1 = *(int *)(param_1 + 0xdc);
+joined_r0x020a5d5c:
+  iVar2 = 0;
+  if (iVar1 != 0) {
+    iVar2 = **(int **)(param_1 + 0xe4);
+  }
+  *(undefined4 *)(iVar2 + 0x17c) = uVar3;
+  *(undefined1 *)(iVar2 + 0x1b5) = 1;
+  return;
+}
+
+
+
+==== refs to 20a5db4 : callers of scene render entry ====
+  (none)
+
+--- decompile camera mgr FUN_024CE59C (24ce59c) ---
+  function FUN_024ce59c [[024ce59c, 024ce5d3]]
+
+void FUN_024ce59c(void)
+
+{
+  undefined4 local_10 [4];
+  
+  local_10[0] = 0;
+  FUN_024d3054(DAT_101d6944 + 200,local_10);
+  return;
+}
+
+
+
+==== DAT_10188530 region ====
+  dump@10188530: 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 496E7661 6C696420 2C4D6172 696F202C 4C756967 69202C50 65616368 202C4461 69737920 2C596F73 6869202C 4B696E6F 70696F20 
+==== refs to 10188530 : DAT_10188530 ====
+  READ from 020ea184 in FUN_020ea010
+  READ from 021092a8 in FUN_021092a4
+  READ from 02109360 in FUN_0210935c
+  READ from 021093a8 in FUN_021093a4
+  READ from 021093bc in FUN_021093b8
+  READ from 021093d0 in FUN_021093cc
+  READ from 021093e4 in FUN_021093e0
+  READ from 021093f8 in FUN_021093f4
+  READ from 02109420 in FUN_0210941c
+  READ from 02109434 in FUN_02109430
+  READ from 02109448 in FUN_02109444
+  READ from 0210945c in FUN_02109458
+  READ from 02108850 in FUN_0210884c
+  READ from 02108864 in FUN_02108860
+  READ from 02108c10 in FUN_02108c0c
+  READ from 02108c20 in FUN_02108c1c
+  READ from 02108144 in FUN_02108140
+  READ from 022c38c0 in FUN_022c38ac
+  READ from 020a248c in FUN_020a2290
+  READ from 020a249c in FUN_020a2290
+  ...
+

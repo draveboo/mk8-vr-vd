@@ -1,0 +1,65 @@
+FUN_0250DD74 body = [[0250dd74, 0250de07]]
+
+--- decompile per-target record+submit FUN_0250DD74 (250dd74) ---
+  function FUN_0250dd74 [[0250dd74, 0250de07]]
+
+void FUN_0250dd74(int param_1,uint param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,
+                 undefined4 param_6,undefined4 *param_7)
+
+{
+  int iVar1;
+  
+  iVar1 = param_1 + 0x24;
+  if (param_2 < 5) {
+    *(undefined4 *)(iVar1 + param_2 * 0x18 + 0x14) = param_6;
+    *(undefined4 *)(iVar1 + param_2 * 0x18 + 0xc) = *param_7;
+    iVar1 = iVar1 + param_2 * 0x18;
+  }
+  else {
+    *(undefined4 *)(param_1 + 0x38) = param_6;
+    *(undefined4 *)(param_1 + 0x30) = *param_7;
+  }
+  *(undefined4 *)(iVar1 + 0x10) = param_5;
+  FUN_0250dcec();
+  return;
+}
+
+
+
+==== calls inside FUN_0250DD74 (direct calls) ====
+  0250ddf4  bl 0x0250dcec   (in FUN_0250dd74)
+  total calls=1
+
+==== refs to 250dd74 : callers of FUN_0250DD74 ====
+  UNCONDITIONAL_CALL from 0250e094 in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e114 in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e15c in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e1a8 in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e1f8 in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e234 in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e278 in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e2c0 in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e2fc in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e340 in FUN_0250de08
+  UNCONDITIONAL_CALL from 0250e604 in FUN_0250e41c
+  UNCONDITIONAL_CALL from 0250e628 in FUN_0250e41c
+  UNCONDITIONAL_CALL from 0250e684 in FUN_0250e41c
+  UNCONDITIONAL_CALL from 0250e6a8 in FUN_0250e41c
+
+--- decompile sibling FUN_0250DD30 (250dd30) ---
+  function FUN_0250dd30 [[0250dd30, 0250dd73]]
+
+void FUN_0250dd30(int param_1,uint param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+
+{
+  param_1 = param_1 + 0x24;
+  if (param_2 < 5) {
+    param_1 = param_1 + param_2 * 0x18;
+  }
+  *(undefined4 *)(param_1 + 0x14) = param_5;
+  FUN_0250dcec();
+  return;
+}
+
+
+
