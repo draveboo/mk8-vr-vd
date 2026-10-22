@@ -878,3 +878,9 @@ html.js .hero__title.is-in .line__in { transform: none; }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass, .glass-btn, .nav__pill, .mobile-menu { background: rgba(18, 21, 25, 0.94); }
 }
+/* Square-hosted support CTA */
+.hero__support { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:18px; color:rgba(236,237,239,.78); }
+.hero__support span { font-size:.82rem; letter-spacing:.04em; }
+.hero__support small { flex-basis:100%; color:rgba(236,237,239,.52); font-size:.72rem; }
+.glass-btn--support { border-color:rgba(255,205,72,.75); background:linear-gradient(135deg,#ff5b4d,#ffc847); color:#171216; box-shadow:0 0 24px rgba(255,183,58,.3); }
+.glass-btn--support:hover { box-shadow:0 0 34px rgba(255,183,58,.52); transform:translateY(-2px); }
