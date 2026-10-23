@@ -35,6 +35,8 @@
         <label class="check"><input type="checkbox" name="isPublic" checked> <span>Show my Pit Crew card publicly. If unchecked, only people with its private link can view it.</span></label>
         <button type="submit">Create my Pit Crew card</button>
         <p class="status" id="status" aria-live="polite"></p>
+        <a class="download-thanks discord-connect" id="discord-connect" hidden>Connect your Discord</a>
+        <p class="hint" id="discord-setup-note" hidden></p>
       </form>
       <p class="fine">Square processes your payment securely. We never receive or store your card details. For Square receipt or payment-processing help, visit <a href="https://squareup.com/help/us/en" target="_blank" rel="noopener noreferrer">Square Support</a>. VKXR does not offer refunds except where required by law.</p>
     </section>
@@ -66,6 +68,16 @@
       const profileUrl = new URL(payload.profileUrl, location.origin).href;
       shareUrl = profileUrl;
       status.innerHTML = 'Payment verified — thank you! Your supporter card is ready. <a href="' + profileUrl + '">Open your reward card →</a>';
+      const discordConnect = document.querySelector('#discord-connect');
+      discordConnect.href = '/api/discord/start?claim=' + encodeURIComponent(claim);
+      fetch('/api/discord/status').then((response) => response.json()).then(({ready}) => {
+        if (ready) discordConnect.hidden = false;
+        else {
+          const note = document.querySelector('#discord-setup-note');
+          note.textContent = 'Discord is optional and role linking is still being set up. Your Pit Crew card works without Discord.';
+          note.hidden = false;
+        }
+      }).catch(() => {});
       document.querySelectorAll('[data-share]').forEach((link) => {
         const encoded = encodeURIComponent(profileUrl);
         if (link.dataset.share === 'x') link.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('I’m supporting VKXR as a ' + payload.supporter.tier + '!') + '&url=' + encoded;

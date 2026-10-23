@@ -18,7 +18,9 @@
       <div class="tier" id="tier"></div>
       <p class="lede">Keeps the VKXR project moving toward a sharper, more comfortable ride in virtual reality.</p>
       <p class="fine" id="date"></p>
+      <p class="status" id="discord-status" aria-live="polite" hidden></p>
       <nav class="social-links" aria-label="Share this supporter card">
+        <button class="social-link share-card-download" type="button">Download share card</button>
         <a class="social-link" data-share="x" target="_blank" rel="noopener noreferrer">Share on X</a>
         <a class="social-link" data-share="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
         <a class="social-link" data-share="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -32,6 +34,7 @@
   const params = new URLSearchParams(location.search);
   const handle = params.get('handle');
   const token = params.get('token');
+  const discordResult = params.get('discord');
   const error = document.querySelector('#error'), card = document.querySelector('#card');
   fetch('/api/supporter?handle=' + encodeURIComponent(handle || '') + '&token=' + encodeURIComponent(token || '')).then(async r => {
     if (!r.ok) throw new Error(); return r.json();
@@ -41,6 +44,15 @@
     document.querySelector('#handle').textContent = '@' + supporter.handle;
     document.querySelector('#tier').textContent = supporter.tier;
     document.querySelector('#date').textContent = 'Pit Crew since ' + new Intl.DateTimeFormat(undefined, {month:'long', year:'numeric'}).format(new Date(supporter.created_at));
+    const discordStatus = document.querySelector('#discord-status');
+    const discordMessages = {
+      connected: 'Discord linked — your VKXR Pit Crew role has been added.',
+      join_server: 'Join the VKXR Discord server first, then connect again from your supporter return page.',
+      role_setup: 'Discord account linked, but the server role could not be added. Please contact the project owner.',
+      already_linked: 'That Discord account is already linked to another supporter card.',
+      error: 'Discord linking did not finish. Your supporter card is still active.'
+    };
+    if (discordMessages[discordResult]) { discordStatus.textContent = discordMessages[discordResult]; discordStatus.hidden = false; }
     const cardUrl = location.href;
     const encodedUrl = encodeURIComponent(cardUrl);
     document.querySelector('[data-share="x"]').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('I’m part of the VKXR Pit Crew!') + '&url=' + encodedUrl;
@@ -49,6 +61,41 @@
     document.querySelector('.copy-card-link').addEventListener('click', async (event) => {
       try { await navigator.clipboard.writeText(cardUrl); event.currentTarget.textContent = 'Link copied'; }
       catch { event.currentTarget.textContent = 'Copy from address bar'; }
+    });
+    document.querySelector('.share-card-download').addEventListener('click', () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1200; canvas.height = 630;
+      const ctx = canvas.getContext('2d');
+      const background = ctx.createLinearGradient(0, 0, 1200, 630);
+      background.addColorStop(0, '#101c32'); background.addColorStop(.55, '#10101b'); background.addColorStop(1, '#291536');
+      ctx.fillStyle = background; ctx.fillRect(0, 0, 1200, 630);
+      const glow = ctx.createRadialGradient(920, 150, 12, 920, 150, 470);
+      glow.addColorStop(0, 'rgba(255, 205, 91, .23)'); glow.addColorStop(1, 'rgba(255, 205, 91, 0)');
+      ctx.fillStyle = glow; ctx.fillRect(0, 0, 1200, 630);
+      ctx.strokeStyle = 'rgba(255,255,255,.24)'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.roundRect(28, 28, 1144, 574, 34); ctx.stroke();
+      ctx.fillStyle = '#ffd257'; ctx.font = '700 23px Arial'; ctx.letterSpacing = '5px'; ctx.fillText('VKXR  /  PIT CREW', 78, 102);
+      ctx.fillStyle = 'rgba(158,231,255,.85)'; ctx.font = '600 18px Arial'; ctx.letterSpacing = '3px'; ctx.fillText('VERIFIED PROJECT SUPPORTER', 80, 178);
+      let nameSize = 76;
+      ctx.font = `700 ${nameSize}px Arial`;
+      while (ctx.measureText(supporter.display_name).width > 1010 && nameSize > 38) { nameSize -= 2; ctx.font = `700 ${nameSize}px Arial`; }
+      ctx.fillStyle = '#f6f4ef'; ctx.letterSpacing = '0px'; ctx.fillText(supporter.display_name, 78, 285);
+      ctx.fillStyle = '#9ee7ff'; ctx.font = '600 27px Arial'; ctx.fillText('@' + supporter.handle, 82, 336);
+      ctx.fillStyle = 'rgba(255,210,87,.12)'; ctx.beginPath(); ctx.roundRect(78, 390, 470, 62, 31); ctx.fill();
+      ctx.strokeStyle = 'rgba(255,210,87,.7)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.roundRect(78, 390, 470, 62, 31); ctx.stroke();
+      ctx.fillStyle = '#ffd257'; ctx.font = '700 21px Arial'; ctx.letterSpacing = '2px'; ctx.fillText(supporter.tier.toUpperCase(), 103, 430);
+      ctx.fillStyle = 'rgba(246,244,239,.7)'; ctx.font = '500 17px Arial'; ctx.letterSpacing = '1px';
+      ctx.fillText('BACKING THE ROAD TO BETTER VR', 80, 525);
+      ctx.fillStyle = 'rgba(246,244,239,.48)'; ctx.font = '400 14px Arial'; ctx.letterSpacing = '0px';
+      ctx.fillText('Recognition for project support · No product or beta access is implied', 80, 563);
+      canvas.toBlob((blob) => {
+        if (!blob) return;
+        const download = document.createElement('a');
+        download.href = URL.createObjectURL(blob);
+        download.download = `vkxr-pit-crew-${supporter.handle}.png`;
+        download.click();
+        URL.revokeObjectURL(download.href);
+      }, 'image/png');
     });
     card.hidden = false;
   }).catch(() => { error.hidden = false; });
