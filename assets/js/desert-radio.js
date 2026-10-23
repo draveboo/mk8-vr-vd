@@ -57,4 +57,37 @@
   video.addEventListener('play', syncPlayback); video.addEventListener('pause', syncPlayback);
   video.addEventListener('ended', function () { setTrack(index + 1, true); });
   setTrack(0, false);
+
+  /* A user gesture is required for audible media on modern browsers. The small
+     headphone control provides that consent, plays the 4K end-card once, then
+     passes the soundscape to the default Desert Radio track. */
+  var soundButton = document.querySelector('[data-audio-unlock]');
+  var atmosphere = document.getElementById('site-atmosphere');
+  if (soundButton && atmosphere) {
+    soundButton.addEventListener('click', function () {
+      soundButton.disabled = true;
+      soundButton.setAttribute('aria-label', 'Desert Systems intro playing');
+      atmosphere.loop = false;
+      atmosphere.muted = false;
+      atmosphere.volume = 0.42;
+      var startIntro = function () {
+        atmosphere.currentTime = 0;
+        var intro = atmosphere.play();
+        if (intro) intro.catch(function () { soundButton.disabled = false; });
+      };
+      if (atmosphere.dataset.hdSrc && !/desert-systems-endcard-4k\.mp4$/.test(atmosphere.currentSrc || atmosphere.src)) {
+        atmosphere.addEventListener('canplay', startIntro, { once: true });
+        atmosphere.src = atmosphere.dataset.hdSrc;
+        atmosphere.load();
+      } else startIntro();
+      atmosphere.addEventListener('ended', function startDefaultTrack() {
+        atmosphere.muted = true;
+        atmosphere.loop = true;
+        atmosphere.play().catch(function () { /* visual loop remains optional */ });
+        setTrack(0, true);
+        soundButton.classList.add('is-complete');
+        soundButton.setAttribute('aria-label', 'Music enabled');
+      }, { once: true });
+    }, { once: true });
+  }
 })();
