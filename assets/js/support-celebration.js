@@ -28,19 +28,25 @@
     gain.gain.setValueAtTime(.0001, start); gain.gain.linearRampToValueAtTime(volume, start + .006); gain.gain.exponentialRampToValueAtTime(.0001, start + duration);
     source.connect(filter); filter.connect(gain); gain.connect(ctx.destination); source.start(start);
   }
-  function celebrate() {
+  function celebrate(premium) {
     var ctx = getAudio();
     if (ctx) {
       var now = ctx.currentTime;
       tone(ctx, 720, 430, now, .09, 'sine', .12); // soft button click
-      noise(ctx, now + .08, .3, .045, 850); // airy whoosh
-      tone(ctx, 440, 790, now + .1, .48, 'triangle', .075); // short rising whoo
-      for (var i = 0; i < 18; i++) noise(ctx, now + .28 + Math.random() * .62, .045 + Math.random() * .045, .035 + Math.random() * .025, 1150 + Math.random() * 900); // applause-like claps
+      noise(ctx, now + .08, premium ? .48 : .3, premium ? .065 : .045, 850); // airy whoosh
+      tone(ctx, 440, 790, now + .1, premium ? .82 : .48, 'triangle', premium ? .105 : .075); // rising whoo
+      if (premium) {
+        tone(ctx, 554, 988, now + .13, .76, 'sine', .055);
+        tone(ctx, 660, 1180, now + .17, .66, 'triangle', .038);
+        tone(ctx, 150, 72, now + .04, .28, 'sine', .12);
+      }
+      var claps = premium ? 38 : 18;
+      for (var i = 0; i < claps; i++) noise(ctx, now + .28 + Math.random() * (premium ? 1.05 : .62), .045 + Math.random() * .045, (premium ? .045 : .035) + Math.random() * .025, 1150 + Math.random() * 900); // applause-like claps
       tone(ctx, 1040, 1280, now + .2, .22, 'sine', .035);
     }
     if (reduced) return;
     var colors = ['#ffe78c', '#ffd044', '#fff8da', '#ff8d63', '#9ee7ff'];
-    var count = 44;
+    var count = premium ? 76 : 44;
     for (var i = 0; i < count; i++) {
       var bit = document.createElement('i');
       bit.className = 'support-confetti';
@@ -59,7 +65,8 @@
     if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || busy) return;
     event.preventDefault(); busy = true;
     var destination = link.href;
-    celebrate();
-    window.setTimeout(function () { window.location.assign(destination); }, reduced ? 180 : 1050);
+    var premium = new URL(destination).searchParams.get('amount') === '25';
+    celebrate(premium);
+    window.setTimeout(function () { window.location.assign(destination); }, reduced ? 180 : (premium ? 1550 : 1050));
   });
 })();
