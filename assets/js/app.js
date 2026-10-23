@@ -152,4 +152,37 @@
       });
     }
   }
+
+  /* ------------------------ Site atmosphere video ---------------------- */
+  var atmosphere = document.getElementById('site-atmosphere');
+  if (atmosphere) {
+    var atmosphereConn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    var atmosphereSlow = !!(atmosphereConn && (atmosphereConn.saveData || /(^|-)2g|(^|-)3g/.test(atmosphereConn.effectiveType || '')));
+    var playAtmosphere = function () {
+      var atmospherePlay = atmosphere.play();
+      if (atmospherePlay && typeof atmospherePlay.catch === 'function') atmospherePlay.catch(function () { /* poster remains */ });
+    };
+    if (reduceMotion || atmosphereSlow) {
+      atmosphere.removeAttribute('autoplay');
+      atmosphere.pause();
+    } else {
+      playAtmosphere();
+      var supports4k = window.matchMedia('(min-width: 1600px)').matches && (!navigator.deviceMemory || navigator.deviceMemory >= 8);
+      if (supports4k && atmosphere.dataset.hdSrc) {
+        window.setTimeout(function () {
+          var at = atmosphere.currentTime || 0;
+          atmosphere.src = atmosphere.dataset.hdSrc;
+          atmosphere.addEventListener('loadeddata', function () {
+            try { atmosphere.currentTime = at; } catch (ignore) { /* start cleanly if seeking is unavailable */ }
+            playAtmosphere();
+          }, { once: true });
+          atmosphere.load();
+        }, 1800);
+      }
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) atmosphere.pause();
+        else playAtmosphere();
+      });
+    }
+  }
 })();
