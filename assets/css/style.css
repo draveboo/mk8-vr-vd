@@ -884,3 +884,4 @@ html.js .hero__title.is-in .line__in { transform: none; }
 .hero__support small { flex-basis:100%; color:rgba(236,237,239,.52); font-size:.72rem; }
 .glass-btn--support { border-color:rgba(255,205,72,.75); background:linear-gradient(135deg,#ff5b4d,#ffc847); color:#171216; box-shadow:0 0 24px rgba(255,183,58,.3); }
 .glass-btn--support:hover { box-shadow:0 0 34px rgba(255,183,58,.52); transform:translateY(-2px); }
+.glass-btn--support-xl { padding:16px 26px; font-size:1rem; font-weight:700; letter-spacing:.01em; box-shadow:0 0 32px rgba(255,183,58,.38); }
