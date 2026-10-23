@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/support-vkxr.html",
+      "destination": "/support.html",
+      "permanent": true
+    }
+  ]
+}
