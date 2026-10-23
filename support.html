@@ -30,11 +30,13 @@
         <p class="hint">3–24 lowercase letters, numbers, or hyphens. Your card: vkxr.vercel.app/pit-crew.html?handle=…</p>
         <label>Email for priority release updates (optional)<input name="contactEmail" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com"></label>
         <p class="hint">Only used to contact you about supporter feedback and release updates. It will not appear on your public card.</p>
-        <label class="check"><input type="checkbox" name="isPublic" checked> <span>Show this card publicly. You can keep it private instead.</span></label>
+        <label>What should we prioritize? (optional)<textarea name="priorityRequest" maxlength="600" rows="4" placeholder="Tell us what you would most like the project to consider."></textarea></label>
+        <p class="hint">Requests are reviewed by the project owner; replies, features, beta access, and timelines are not guaranteed.</p>
+        <label class="check"><input type="checkbox" name="isPublic" checked> <span>Show my Pit Crew card publicly. If unchecked, only people with its private link can view it.</span></label>
         <button type="submit">Create my Pit Crew card</button>
         <p class="status" id="status" aria-live="polite"></p>
       </form>
-      <p class="fine">Square processes your payment securely. We never receive or store your card details.</p>
+      <p class="fine">Square processes your payment securely. We never receive or store your card details. For Square receipt or payment-processing help, visit <a href="https://squareup.com/help/us/en" target="_blank" rel="noopener noreferrer">Square Support</a>. VKXR does not offer refunds except where required by law.</p>
     </section>
   </main>
 <script>
@@ -57,7 +59,7 @@
     const data = new FormData(form);
     try {
       const response = await fetch('/api/claim', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({
-        claim, transactionId, orderId, displayName: data.get('displayName'), handle: data.get('handle'), contactEmail: data.get('contactEmail'), isPublic: data.get('isPublic') === 'on'
+        claim, transactionId, orderId, displayName: data.get('displayName'), handle: data.get('handle'), contactEmail: data.get('contactEmail'), priorityRequest: data.get('priorityRequest'), isPublic: data.get('isPublic') === 'on'
       })});
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || 'Could not create your card.');

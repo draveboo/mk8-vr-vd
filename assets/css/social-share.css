@@ -1,3 +1,5 @@
 .social-links{position:relative;display:flex;flex-wrap:wrap;gap:9px;margin:14px 0 22px}
 .social-link{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 12px;border:1px solid rgba(158,231,255,.26);border-radius:999px;color:#eafaff;background:rgba(7,12,22,.42);font:600 .76rem 'Space Grotesk';text-decoration:none;cursor:pointer}
 .social-link:hover{border-color:#9ee7ff;background:rgba(158,231,255,.12)}
+textarea{width:100%;margin-top:8px;padding:14px 15px;border:1px solid rgba(255,255,255,.19);border-radius:11px;color:#fff;font:inherit;background:rgba(3,5,11,.48);resize:vertical}
+textarea:focus{outline:2px solid #9ee7ff;outline-offset:2px}

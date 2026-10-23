@@ -44,6 +44,7 @@ async function main() {
       received_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )`;
   await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS contact_email TEXT`;
+  await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS priority_request TEXT`;
   console.log('VKXR supporter tables are ready.');
 }
 

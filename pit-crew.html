@@ -29,9 +29,11 @@
     <section class="card" id="error" hidden><h1>Card unavailable</h1><p class="lede">This Pit Crew card is private or the callsign does not exist.</p><a class="back" href="/">Back to VKXR</a></section>
   </main>
 <script>
-  const handle = new URLSearchParams(location.search).get('handle');
+  const params = new URLSearchParams(location.search);
+  const handle = params.get('handle');
+  const token = params.get('token');
   const error = document.querySelector('#error'), card = document.querySelector('#card');
-  fetch('/api/supporter?handle=' + encodeURIComponent(handle || '')).then(async r => {
+  fetch('/api/supporter?handle=' + encodeURIComponent(handle || '') + '&token=' + encodeURIComponent(token || '')).then(async r => {
     if (!r.ok) throw new Error(); return r.json();
   }).then(({supporter}) => {
     document.title = supporter.display_name + ' — VKXR Pit Crew';

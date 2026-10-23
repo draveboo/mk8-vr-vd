@@ -30,6 +30,7 @@ module.exports = async function handler(req, res) {
           base_price_money: { amount: cents, currency: 'USD' },
         }],
       },
+      payment_note: 'Voluntary VKXR project donation. No refunds except where required by law. Payment processed by Square.',
       checkout_options: { redirect_url: `${siteUrl}/support.html?claim=${encodeURIComponent(claimToken)}` },
     }),
     });
