@@ -251,7 +251,8 @@
     }
   }
 
-  /* A simple world-space glass page in front of the crystal during XR. */
+  /* Layered world-space glass planes establish foreground/midground/background
+     depth in a headset instead of leaving the demo as a flat panel. */
   var glassProg = null, glassVbo = null, glassU = {};
   var glvs = compile(gl.VERTEX_SHADER, [
     '#version 300 es',
@@ -289,8 +290,17 @@
       glassVbo = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, glassVbo);
       gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
-        -1.7, -1.12, -2.15,  1.7, -1.12, -2.15,  1.7, 1.12, -2.15,
-        -1.7, -1.12, -2.15,  1.7,  1.12, -2.15, -1.7, 1.12, -2.15
+        /* rear page */
+        -1.7, -1.12, -4.45,  1.7, -1.12, -4.45,  1.7, 1.12, -4.45,
+        -1.7, -1.12, -4.45,  1.7,  1.12, -4.45, -1.7, 1.12, -4.45,
+        /* raised title slab */
+        -1.25, 0.58, -3.62,  0.58, 0.58, -3.62,  0.58, 0.84, -3.62,
+        -1.25, 0.58, -3.62,  0.58, 0.84, -3.62, -1.25, 0.84, -3.62,
+        /* two floating content cards */
+        -1.28, -0.74, -3.35, -0.12, -0.74, -3.35, -0.12, 0.34, -3.35,
+        -1.28, -0.74, -3.35, -0.12, 0.34, -3.35, -1.28, 0.34, -3.35,
+         0.12, -0.74, -3.08,  1.28, -0.74, -3.08,  1.28, 0.34, -3.08,
+         0.12, -0.74, -3.08,  1.28, 0.34, -3.08,  0.12, 0.34, -3.08
       ]), gl.STATIC_DRAW);
     } else {
       glassProg = null;
@@ -432,6 +442,26 @@
     gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 0, 0);
   }
 
+  /* A soft elliptical shadow grounds the floating crystal in immersive VR. */
+  var shadowProg = null, shadowVbo = null, shadowU = {};
+  var shvs = compile(gl.VERTEX_SHADER, [
+    '#version 300 es', 'precision highp float;', 'in vec3 aPos;',
+    'uniform mat4 uProj;', 'uniform mat4 uView;', 'out vec2 vUv;',
+    'void main() { vUv = vec2(aPos.x, aPos.z + 3.2); gl_Position = uProj * uView * vec4(aPos, 1.0); }'
+  ].join('\n'));
+  var shfs = compile(gl.FRAGMENT_SHADER, [
+    '#version 300 es', 'precision highp float;', 'in vec2 vUv;', 'out vec4 outColor;',
+    'void main() { float a = exp(-dot(vUv * vec2(1.0, 1.7), vUv * vec2(1.0, 1.7)) * 2.4) * 0.46; outColor = vec4(0.0, 0.0, 0.0, a); }'
+  ].join('\n'));
+  if (shvs && shfs) {
+    shadowProg = gl.createProgram(); gl.attachShader(shadowProg, shvs); gl.attachShader(shadowProg, shfs); gl.linkProgram(shadowProg);
+    if (gl.getProgramParameter(shadowProg, gl.LINK_STATUS)) {
+      shadowU.proj = gl.getUniformLocation(shadowProg, 'uProj'); shadowU.view = gl.getUniformLocation(shadowProg, 'uView'); shadowU.pos = gl.getAttribLocation(shadowProg, 'aPos');
+      shadowVbo = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, shadowVbo);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1.25,-1.47,-4.05, 1.25,-1.47,-4.05, 1.25,-1.47,-2.35, -1.25,-1.47,-4.05, 1.25,-1.47,-2.35, -1.25,-1.47,-2.35]), gl.STATIC_DRAW);
+    } else { shadowProg = null; }
+  }
+
   function drawGlass(proj, view) {
     if (!glassProg) return;
     gl.useProgram(glassProg);
@@ -444,10 +474,21 @@
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     gl.disable(gl.CULL_FACE);
     gl.depthMask(false);
-    gl.drawArrays(gl.TRIANGLES, 0, 6);
+    gl.drawArrays(gl.TRIANGLES, 0, 24);
     gl.depthMask(true);
     gl.enable(gl.CULL_FACE);
     gl.disable(gl.BLEND);
+  }
+
+  function drawShadow(proj, view) {
+    if (!shadowProg) return;
+    gl.useProgram(shadowProg);
+    gl.uniformMatrix4fv(shadowU.proj, false, proj); gl.uniformMatrix4fv(shadowU.view, false, view);
+    gl.bindBuffer(gl.ARRAY_BUFFER, shadowVbo); gl.enableVertexAttribArray(shadowU.pos); gl.vertexAttribPointer(shadowU.pos, 3, gl.FLOAT, false, 0, 0);
+    gl.enable(gl.BLEND); gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA); gl.disable(gl.CULL_FACE); gl.depthMask(false);
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
+    gl.depthMask(true); gl.enable(gl.CULL_FACE); gl.disable(gl.BLEND);
+    gl.useProgram(prog); gl.bindBuffer(gl.ARRAY_BUFFER, vbo); gl.enableVertexAttribArray(aPos); gl.vertexAttribPointer(aPos, 3, gl.FLOAT, false, 0, 0);
   }
 
   function beginFrame() {
@@ -567,6 +608,7 @@
       var vp = layer.getViewport(view);
       gl.viewport(vp.x, vp.y, vp.width, vp.height);
       var m = view.transform.matrix;
+      drawShadow(view.projectionMatrix, view.transform.inverse.matrix);
       drawView(view.projectionMatrix, view.transform.inverse.matrix, [m[12], m[13], m[14]], t, -3.2);
       drawGrid(view.projectionMatrix, view.transform.inverse.matrix, 0.85);
       drawGlass(view.projectionMatrix, view.transform.inverse.matrix);
