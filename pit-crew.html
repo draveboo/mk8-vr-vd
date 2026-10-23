@@ -18,6 +18,7 @@
       <div class="tier" id="tier"></div>
       <p class="lede">Keeps the VKXR project moving toward a sharper, more comfortable ride in virtual reality.</p>
       <p class="fine" id="date"></p>
+      <p class="fine">This live profile is the verification source. Downloaded images can be edited; check the name and callsign here.</p>
       <p class="status" id="discord-status" aria-live="polite" hidden></p>
       <nav class="social-links" aria-label="Share this supporter card">
         <button class="social-link share-card-download" type="button">Download share card</button>
@@ -86,8 +87,13 @@
       ctx.fillStyle = '#ffd257'; ctx.font = '700 21px Arial'; ctx.letterSpacing = '2px'; ctx.fillText(supporter.tier.toUpperCase(), 103, 430);
       ctx.fillStyle = 'rgba(246,244,239,.7)'; ctx.font = '500 17px Arial'; ctx.letterSpacing = '1px';
       ctx.fillText('BACKING THE ROAD TO BETTER VR', 80, 525);
-      ctx.fillStyle = 'rgba(246,244,239,.48)'; ctx.font = '400 14px Arial'; ctx.letterSpacing = '0px';
-      ctx.fillText('Recognition for project support · No product or beta access is implied', 80, 563);
+      ctx.fillStyle = 'rgba(158,231,255,.9)'; ctx.font = '600 14px Arial'; ctx.letterSpacing = '0px';
+      const proofLine = token
+        ? 'UNLISTED CARD · VERIFY USING ITS PRIVATE LIVE LINK'
+        : `VERIFY LIVE: vkxr.vercel.app/pit-crew.html?handle=${supporter.handle}`;
+      ctx.fillText(proofLine, 80, 558, 1030);
+      ctx.fillStyle = 'rgba(246,244,239,.48)'; ctx.font = '400 13px Arial';
+      ctx.fillText('Recognition for project support · No product or beta access is implied', 80, 584);
       canvas.toBlob((blob) => {
         if (!blob) return;
         const download = document.createElement('a');
