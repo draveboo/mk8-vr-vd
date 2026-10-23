@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090b12"><title>VKXR Pit Crew</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/supporter.css">
+</head>
+<body>
+  <main class="shell"><a class="brand" href="/">VKXR <span>•</span> PIT CREW</a>
+    <section class="card certificate" id="card" hidden>
+      <p class="eyebrow">Verified project supporter</p><div class="seal">✦</div>
+      <h1 id="name"></h1><p class="callsign" id="handle"></p>
+      <div class="tier" id="tier"></div>
+      <p class="lede">Keeps the VKXR project moving toward a sharper, more comfortable ride in virtual reality.</p>
+      <p class="fine" id="date"></p>
+      <a class="back" href="/">Back to VKXR</a>
+    </section>
+    <section class="card" id="error" hidden><h1>Card unavailable</h1><p class="lede">This Pit Crew card is private or the callsign does not exist.</p><a class="back" href="/">Back to VKXR</a></section>
+  </main>
+<script>
+  const handle = new URLSearchParams(location.search).get('handle');
+  const error = document.querySelector('#error'), card = document.querySelector('#card');
+  fetch('/api/supporter?handle=' + encodeURIComponent(handle || '')).then(async r => {
+    if (!r.ok) throw new Error(); return r.json();
+  }).then(({supporter}) => {
+    document.title = supporter.display_name + ' — VKXR Pit Crew';
+    document.querySelector('#name').textContent = supporter.display_name;
+    document.querySelector('#handle').textContent = '@' + supporter.handle;
+    document.querySelector('#tier').textContent = supporter.tier;
+    document.querySelector('#date').textContent = 'Pit Crew since ' + new Intl.DateTimeFormat(undefined, {month:'long', year:'numeric'}).format(new Date(supporter.created_at));
+    card.hidden = false;
+  }).catch(() => { error.hidden = false; });
+</script>
+</body></html>
