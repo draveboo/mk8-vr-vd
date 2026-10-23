@@ -22,9 +22,12 @@
       <p class="status" id="discord-status" aria-live="polite" hidden></p>
       <nav class="social-links" aria-label="Share this supporter card">
         <button class="social-link share-card-download" type="button">Download share card</button>
+        <button class="social-link" type="button" data-more-share>More apps</button>
         <a class="social-link" data-share="x" target="_blank" rel="noopener noreferrer">Share on X</a>
         <a class="social-link" data-share="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
         <a class="social-link" data-share="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="social-link" data-share="reddit" target="_blank" rel="noopener noreferrer">Reddit</a>
+        <a class="social-link" data-share="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <button class="social-link copy-card-link" type="button">Copy card link</button>
       </nav>
       <a class="back" href="/">Back to VKXR</a>
@@ -59,9 +62,15 @@
     document.querySelector('[data-share="x"]').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('I’m part of the VKXR Pit Crew!') + '&url=' + encodedUrl;
     document.querySelector('[data-share="facebook"]').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
     document.querySelector('[data-share="linkedin"]').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodedUrl;
+    document.querySelector('[data-share="reddit"]').href = 'https://www.reddit.com/submit?url=' + encodedUrl + '&title=' + encodeURIComponent('VKXR Pit Crew supporter');
+    document.querySelector('[data-share="whatsapp"]').href = 'https://api.whatsapp.com/send?text=' + encodeURIComponent('I’m part of the VKXR Pit Crew! ' + cardUrl);
     document.querySelector('.copy-card-link').addEventListener('click', async (event) => {
       try { await navigator.clipboard.writeText(cardUrl); event.currentTarget.textContent = 'Link copied'; }
       catch { event.currentTarget.textContent = 'Copy from address bar'; }
+    });
+    document.querySelector('[data-more-share]').addEventListener('click', async () => {
+      if (navigator.share) { try { await navigator.share({title:'VKXR Pit Crew', text:'I’m part of the VKXR Pit Crew!', url:cardUrl}); } catch (error) { if (error.name !== 'AbortError') document.querySelector('#discord-status').textContent = 'Share unavailable in this browser.'; } }
+      else { try { await navigator.clipboard.writeText(cardUrl); document.querySelector('.copy-card-link').textContent = 'Link copied'; } catch {} }
     });
     document.querySelector('.share-card-download').addEventListener('click', () => {
       const canvas = document.createElement('canvas');

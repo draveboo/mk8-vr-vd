@@ -45,6 +45,7 @@ async function main() {
     )`;
   await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS contact_email TEXT`;
   await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS priority_request TEXT`;
+  await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS email_updates_opt_in BOOLEAN NOT NULL DEFAULT FALSE`;
   await sql`CREATE UNIQUE INDEX IF NOT EXISTS supporters_discord_user_id_unique ON supporters (discord_user_id) WHERE discord_user_id IS NOT NULL`;
   console.log('VKXR supporter tables are ready.');
 }

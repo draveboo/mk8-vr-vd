@@ -48,7 +48,7 @@
     }
     const wrapper = document.createElement('div'); wrapper.className = 'table-wrap';
     const table = document.createElement('table');
-    const headings = ['Donation', 'Supporter', 'Priority request', 'Contact', 'Discord', 'Paid'];
+    const headings = ['Donation', 'Supporter', 'Priority request', 'Contact', 'Updates opt-in', 'Discord', 'Paid'];
     const thead = document.createElement('thead'), headRow = document.createElement('tr');
     headings.forEach((heading) => { const th = document.createElement('th'); th.textContent = heading; headRow.append(th); });
     thead.append(headRow); table.append(thead);
@@ -60,7 +60,7 @@
       tr.append(donation);
       const supporter = cell(row.display_name || 'Card not claimed');
       if (row.handle) { const small = document.createElement('small'); small.textContent = '@' + row.handle; supporter.append(small); }
-      tr.append(supporter, cell(row.priority_request, 'request-cell'), cell(row.contact_email));
+      tr.append(supporter, cell(row.priority_request, 'request-cell'), cell(row.contact_email), cell(row.email_updates_opt_in ? 'Yes' : 'No'));
       const discord = cell(row.discord_user_id ? 'Linked' : 'Not linked'); discord.className = 'pill-status'; tr.append(discord);
       tr.append(cell(row.completed_at ? new Date(row.completed_at).toLocaleDateString() : 'Confirmed'));
       tbody.append(tr);

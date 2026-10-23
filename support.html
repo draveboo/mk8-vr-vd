@@ -19,17 +19,21 @@
       <p class="lede">Square sends a unique order reference back so we can verify your payment. Then create your Pit Crew card so we know which supporter to prioritize for release feedback and updates.</p>
       <a class="download-thanks" href="https://github.com/draveboo/mk8-vr-vd/releases/download/v0.1.0/MarioKart8-VR-v0.1.0-windows-x64.zip">Download VKXR for Windows</a>
       <nav class="social-links" aria-label="Share VKXR">
+        <button class="social-link" type="button" data-more-share>More apps</button>
         <a class="social-link" data-share="x" target="_blank" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=I%27m%20supporting%20VKXR%20and%20its%20push%20toward%206DoF%20VR!&url=https%3A%2F%2Fvkxr.vercel.app%2F">Share on X</a>
         <a class="social-link" data-share="facebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvkxr.vercel.app%2F">Facebook</a>
         <a class="social-link" data-share="linkedin" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fvkxr.vercel.app%2F">LinkedIn</a>
+        <a class="social-link" data-share="reddit" target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/submit?url=https%3A%2F%2Fvkxr.vercel.app%2F">Reddit</a>
+        <a class="social-link" data-share="whatsapp" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?text=https%3A%2F%2Fvkxr.vercel.app%2F">WhatsApp</a>
         <button class="social-link copy-link" type="button">Copy link</button>
       </nav>
       <form id="claim-form" novalidate>
         <label>Display name<input name="displayName" maxlength="48" autocomplete="nickname" required placeholder="Your name"></label>
         <label>Pit Crew callsign<input name="handle" maxlength="24" pattern="[a-z0-9][a-z0-9-]{2,23}" autocapitalize="none" autocomplete="username" required placeholder="rainbow-racer"></label>
         <p class="hint">3–24 lowercase letters, numbers, or hyphens. Your card: vkxr.vercel.app/pit-crew.html?handle=…</p>
-        <label>Email for priority release updates (optional)<input name="contactEmail" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com"></label>
-        <p class="hint">Only used to contact you about supporter feedback and release updates. It will not appear on your public card.</p>
+        <label>Email for your verified supporter record<input name="contactEmail" type="email" maxlength="254" autocomplete="email" required placeholder="you@example.com"></label>
+        <p class="hint">Required to claim your digital Pit Crew reward and link future delivery messages to this verified donation. Kept private; never shown on your public card.</p>
+        <label class="check"><input type="checkbox" name="emailUpdatesOptIn"><span>Email me about future VKXR releases, testing opportunities, and project updates. Optional.</span></label>
         <label>What should we prioritize? (optional)<textarea name="priorityRequest" maxlength="600" rows="4" placeholder="Tell us what you would most like the project to consider."></textarea></label>
         <p class="hint">Requests are reviewed by the project owner; replies, features, beta access, and timelines are not guaranteed.</p>
         <label class="check"><input type="checkbox" name="isPublic" checked> <span>Show my Pit Crew card publicly. If unchecked, only people with its private link can view it.</span></label>
@@ -61,7 +65,7 @@
     const data = new FormData(form);
     try {
       const response = await fetch('/api/claim', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({
-        claim, transactionId, orderId, displayName: data.get('displayName'), handle: data.get('handle'), contactEmail: data.get('contactEmail'), priorityRequest: data.get('priorityRequest'), isPublic: data.get('isPublic') === 'on'
+        claim, transactionId, orderId, displayName: data.get('displayName'), handle: data.get('handle'), contactEmail: data.get('contactEmail'), emailUpdatesOptIn: data.get('emailUpdatesOptIn') === 'on', priorityRequest: data.get('priorityRequest'), isPublic: data.get('isPublic') === 'on'
       })});
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || 'Could not create your card.');
@@ -83,6 +87,8 @@
         if (link.dataset.share === 'x') link.href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('I’m supporting VKXR as a ' + payload.supporter.tier + '!') + '&url=' + encoded;
         if (link.dataset.share === 'facebook') link.href = 'https://www.facebook.com/sharer/sharer.php?u=' + encoded;
         if (link.dataset.share === 'linkedin') link.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encoded;
+        if (link.dataset.share === 'reddit') link.href = 'https://www.reddit.com/submit?url=' + encoded + '&title=' + encodeURIComponent('VKXR Pit Crew supporter');
+        if (link.dataset.share === 'whatsapp') link.href = 'https://api.whatsapp.com/send?text=' + encoded;
       });
       form.reset();
     } catch (error) { status.textContent = error.message; button.disabled = false; }
@@ -90,6 +96,13 @@
   document.querySelector('.copy-link').addEventListener('click', async (event) => {
     try { await navigator.clipboard.writeText(shareUrl); event.currentTarget.textContent = 'Link copied'; }
     catch { status.textContent = 'Copy unavailable in this browser. You can copy the address from the address bar.'; }
+  });
+  document.querySelector('[data-more-share]').addEventListener('click', async () => {
+    if (navigator.share) {
+      try { await navigator.share({title:'VKXR Pit Crew', text:'I’m supporting VKXR.', url:shareUrl}); } catch (error) { if (error.name !== 'AbortError') status.textContent = 'Share unavailable in this browser.'; }
+    } else {
+      try { await navigator.clipboard.writeText(shareUrl); status.textContent = 'Link copied'; } catch { status.textContent = 'Copy the page address to share it.'; }
+    }
   });
 </script>
 </body></html>

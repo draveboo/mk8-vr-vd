@@ -12,7 +12,7 @@ function tierFor(amount) {
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed.' });
-  const { claim, transactionId, orderId, displayName, handle, contactEmail, priorityRequest, isPublic = true } = req.body || {};
+  const { claim, transactionId, orderId, displayName, handle, contactEmail, emailUpdatesOptIn = false, priorityRequest, isPublic = true } = req.body || {};
   const normalizedHandle = String(handle || '').trim().toLowerCase();
   const normalizedName = String(displayName || '').trim().replace(/\s+/g, ' ');
   const normalizedEmail = String(contactEmail || '').trim().toLowerCase();
@@ -21,7 +21,7 @@ module.exports = async function handler(req, res) {
   if (!/^[a-f0-9-]{24,80}$/i.test(String(claim || ''))) return res.status(400).json({ error: 'That supporter link is invalid.' });
   if (!VALID_HANDLE.test(normalizedHandle)) return res.status(400).json({ error: 'Use 3–24 lowercase letters, numbers, or hyphens for your callsign.' });
   if (!normalizedName || normalizedName.length > 48) return res.status(400).json({ error: 'Enter a display name up to 48 characters.' });
-  if (normalizedEmail && (normalizedEmail.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail))) return res.status(400).json({ error: 'Enter a valid email address or leave it blank.' });
+  if (!normalizedEmail || normalizedEmail.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(normalizedEmail)) return res.status(400).json({ error: 'A valid email is required to claim your supporter reward.' });
   if (normalizedRequest.length > 600) return res.status(400).json({ error: 'Priority request must be 600 characters or less.' });
   if (!/^[A-Za-z0-9_-]{8,128}$/.test(String(transactionId || ''))) return res.status(400).json({ error: 'Square did not send a valid payment reference.' });
 
@@ -47,12 +47,13 @@ module.exports = async function handler(req, res) {
     await sql`UPDATE supporter_claims SET payment_id = ${payment.id}, status = 'completed', completed_at = COALESCE(completed_at, NOW()) WHERE token = ${claim}`;
     const tier = tierFor(supporterClaim.amount_cents);
     const supporters = await sql`
-      INSERT INTO supporters (claim_token, handle, display_name, contact_email, priority_request, tier, amount_cents, is_public)
-      VALUES (${claim}, ${normalizedHandle}, ${normalizedName}, ${normalizedEmail || null}, ${normalizedRequest || null}, ${tier}, ${supporterClaim.amount_cents}, ${Boolean(isPublic)})
+      INSERT INTO supporters (claim_token, handle, display_name, contact_email, email_updates_opt_in, priority_request, tier, amount_cents, is_public)
+      VALUES (${claim}, ${normalizedHandle}, ${normalizedName}, ${normalizedEmail}, ${emailUpdatesOptIn === true}, ${normalizedRequest || null}, ${tier}, ${supporterClaim.amount_cents}, ${isPublic === true})
       ON CONFLICT (claim_token) DO UPDATE SET
         handle = EXCLUDED.handle,
         display_name = EXCLUDED.display_name,
         contact_email = COALESCE(EXCLUDED.contact_email, supporters.contact_email),
+        email_updates_opt_in = EXCLUDED.email_updates_opt_in,
         priority_request = COALESCE(EXCLUDED.priority_request, supporters.priority_request),
         is_public = EXCLUDED.is_public,
         updated_at = NOW()

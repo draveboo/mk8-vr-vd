@@ -30,7 +30,7 @@ module.exports = async function handler(req, res) {
     const rows = await sql`
       SELECT c.completed_at, c.amount_cents, c.payment_id,
              s.display_name, s.handle, s.tier, s.contact_email,
-             s.priority_request, s.discord_user_id, s.is_public
+             s.email_updates_opt_in, s.priority_request, s.discord_user_id, s.is_public
       FROM supporter_claims c
       LEFT JOIN supporters s ON s.claim_token = c.token
       WHERE c.status = 'completed' AND c.payment_id IS NOT NULL
