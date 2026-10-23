@@ -893,6 +893,8 @@ html.js .hero__title.is-in .line__in { transform: none; }
 .hero__support small { flex-basis:100%; }
 .hero__support > span { font-size:.82rem; letter-spacing:.06em; }
 .hero__support small { color:rgba(236,237,239,.58); font-size:.72rem; }
+.hero__security { display:inline-flex; align-items:center; justify-content:center; gap:7px; margin:0; padding:7px 11px; border:1px solid rgba(154,217,232,.2); border-radius:999px; color:rgba(211,239,247,.78); background:rgba(154,217,232,.06); font-family:var(--font-mono); font-size:.58rem; letter-spacing:.07em; line-height:1.35; text-transform:uppercase; }
+.hero__security span { color:var(--accent); font-size:.78rem; text-shadow:0 0 10px var(--accent); }
 .glass-btn--support {
   position:relative;
   isolation:isolate;
