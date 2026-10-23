@@ -6,6 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/supporter.css">
+  <link rel="stylesheet" href="assets/css/social-share.css">
 </head>
 <body>
   <main class="shell"><a class="brand" href="/">VKXR <span>•</span> PIT CREW</a>
@@ -15,6 +16,12 @@
       <div class="tier" id="tier"></div>
       <p class="lede">Keeps the VKXR project moving toward a sharper, more comfortable ride in virtual reality.</p>
       <p class="fine" id="date"></p>
+      <nav class="social-links" aria-label="Share this supporter card">
+        <a class="social-link" data-share="x" target="_blank" rel="noopener noreferrer">Share on X</a>
+        <a class="social-link" data-share="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="social-link" data-share="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <button class="social-link copy-card-link" type="button">Copy card link</button>
+      </nav>
       <a class="back" href="/">Back to VKXR</a>
     </section>
     <section class="card" id="error" hidden><h1>Card unavailable</h1><p class="lede">This Pit Crew card is private or the callsign does not exist.</p><a class="back" href="/">Back to VKXR</a></section>
@@ -30,6 +37,15 @@
     document.querySelector('#handle').textContent = '@' + supporter.handle;
     document.querySelector('#tier').textContent = supporter.tier;
     document.querySelector('#date').textContent = 'Pit Crew since ' + new Intl.DateTimeFormat(undefined, {month:'long', year:'numeric'}).format(new Date(supporter.created_at));
+    const cardUrl = location.href;
+    const encodedUrl = encodeURIComponent(cardUrl);
+    document.querySelector('[data-share="x"]').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent('I’m part of the VKXR Pit Crew!') + '&url=' + encodedUrl;
+    document.querySelector('[data-share="facebook"]').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodedUrl;
+    document.querySelector('[data-share="linkedin"]').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodedUrl;
+    document.querySelector('.copy-card-link').addEventListener('click', async (event) => {
+      try { await navigator.clipboard.writeText(cardUrl); event.currentTarget.textContent = 'Link copied'; }
+      catch { event.currentTarget.textContent = 'Copy from address bar'; }
+    });
     card.hidden = false;
   }).catch(() => { error.hidden = false; });
 </script>

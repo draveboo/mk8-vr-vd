@@ -43,6 +43,7 @@ async function main() {
       event_id TEXT PRIMARY KEY,
       received_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
     )`;
+  await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS contact_email TEXT`;
   console.log('VKXR supporter tables are ready.');
 }
 
