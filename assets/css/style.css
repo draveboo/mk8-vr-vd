@@ -291,8 +291,8 @@ h1, h2, h3, h4, .hero__lede, .head__lede, .prose p, .benefit p, .step p { text-s
 .brand__mark { display: grid; place-items: center; opacity: 0.92; }
 
 .nav__toggle { display:inline-flex; flex-shrink:0; }
-.nav__cta { flex-shrink:0; min-width:auto; margin-left:auto; padding:9px 15px; animation:none; box-shadow:inset 0 1px rgba(255,255,255,.58),0 5px 15px rgba(255,137,50,.25); }
-.nav__cta::before,.nav__cta::after { display:none; }
+.nav__cta { flex-shrink:0; margin-left:auto; padding:9px 15px; border:1px solid rgba(255,255,255,.32); border-bottom-color:rgba(90,0,7,.72); border-radius:9px; color:#fff; background:linear-gradient(180deg,#f34b55,#e60012 62%,#c90010); box-shadow:inset 0 1px rgba(255,255,255,.48),inset 0 -1px rgba(112,0,8,.35),0 3px 0 #97000b,0 8px 18px rgba(142,0,10,.32); font-size:.78rem; font-weight:700; letter-spacing:.01em; text-decoration:none; text-shadow:0 1px rgba(80,0,6,.45); transition:transform .22s var(--ease),box-shadow .22s var(--ease),filter .22s var(--ease); }
+.nav__cta:hover { filter:brightness(1.08); box-shadow:inset 0 1px rgba(255,255,255,.58),inset 0 -1px rgba(112,0,8,.35),0 4px 0 #97000b,0 11px 22px rgba(142,0,10,.42); transform:translateY(-2px); }
 .nav__toggle-lines { position:relative; display:grid; width:18px; height:14px; }.nav__toggle-lines i { position:absolute; left:0; width:18px; height:1.5px; border-radius:99px; background:currentColor; transition:transform .28s var(--ease),opacity .2s var(--ease),top .28s var(--ease); }.nav__toggle-lines i:nth-child(1){top:0}.nav__toggle-lines i:nth-child(2){top:6px}.nav__toggle-lines i:nth-child(3){top:12px}#nav-toggle[aria-expanded="true"] .nav__toggle-lines i:nth-child(1){top:6px;transform:rotate(45deg)}#nav-toggle[aria-expanded="true"] .nav__toggle-lines i:nth-child(2){opacity:0}#nav-toggle[aria-expanded="true"] .nav__toggle-lines i:nth-child(3){top:6px;transform:rotate(-45deg)}
 
 .mobile-menu {
@@ -846,7 +846,7 @@ html.js .hero__title.is-in .line__in { transform: none; }
   .hero__inner { padding-inline: 20px; }
   .nav { padding-inline: 14px; }
   .hero { padding-top: calc(var(--nav-h) + 44px); }
-  .nav__cta { display:inline-flex; padding:9px 12px; font-size:.72rem; }
+  .nav__cta { display:inline-flex; padding:8px 10px; font-size:.68rem; }
   .hero__cta { flex-direction: column; align-items: stretch; }
   .hero__cta .glass-btn { width: 100%; }
   .quiet-link { text-align: center; }
