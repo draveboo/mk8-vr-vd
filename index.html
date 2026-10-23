@@ -552,28 +552,14 @@
 </div>
 
 <!-- =========================== DESERT RADIO =========================== -->
-<aside class="desert-radio" data-radio data-open="false" aria-label="Desert Radio music player">
-  <button class="desert-radio__toggle" type="button" data-radio-toggle aria-expanded="false" aria-controls="desert-radio-panel">
-    <span class="desert-radio__pulse" aria-hidden="true"></span><span>Desert Radio</span>
-  </button>
-  <div class="desert-radio__panel" id="desert-radio-panel" hidden>
-    <div class="desert-radio__visual">
-      <video data-radio-video playsinline preload="metadata" poster="assets/img/desert-systems-endcard.png"></video>
-      <div class="desert-radio__scan" aria-hidden="true"></div>
-    </div>
-    <div class="desert-radio__meta"><p>Now playing</p><h2 data-radio-title>Midnight at the Glass Horizon</h2></div>
-    <div class="desert-radio__controls">
-      <button type="button" data-radio-prev aria-label="Previous track">‹</button>
-      <button class="desert-radio__play" type="button" data-radio-play aria-label="Play Midnight at the Glass Horizon">▶</button>
-      <button type="button" data-radio-next aria-label="Next track">›</button>
-      <input type="range" min="0" max="100" value="0" data-radio-progress aria-label="Track progress" />
-    </div>
-    <div class="desert-radio__tracks" role="list" aria-label="Tracks">
-      <button type="button" role="listitem" data-radio-track="0">01 <span>Midnight at the Glass Horizon</span></button>
-      <button type="button" role="listitem" data-radio-track="1">02 <span>Copper Sky Horizon</span></button>
-      <button type="button" role="listitem" data-radio-track="2">03 <span>Mesa Architect</span></button>
-      <button type="button" role="listitem" data-radio-track="3">04 <span>Empire of the Sands</span></button>
-    </div>
+<aside class="desert-radio" data-radio aria-label="Desert Radio music player">
+  <div class="desert-radio__visual">
+    <video data-radio-video playsinline preload="metadata" poster="assets/img/desert-systems-endcard.png" aria-label="Midnight at the Glass Horizon visual"></video>
+  </div>
+  <div class="desert-radio__controls">
+    <button type="button" data-radio-prev aria-label="Previous track">‹</button>
+    <button class="desert-radio__play" type="button" data-radio-play aria-label="Play Midnight at the Glass Horizon">▶</button>
+    <button type="button" data-radio-next aria-label="Next track">›</button>
   </div>
 </aside>
 
