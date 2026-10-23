@@ -7,9 +7,11 @@
     { title: 'Midnight at the Glass Horizon', src: 'assets/music/midnight-at-the-glass-horizon.mp4' },
     { title: 'Copper Sky Horizon', src: 'assets/music/copper-sky-horizon.mp4' },
     { title: 'Mesa Architect', src: 'assets/music/mesa-architect.mp4' },
-    { title: 'Empire of the Sands', src: 'assets/music/empire-of-the-sands.mp4' }
+    { title: 'Empire of the Sands', src: 'assets/music/empire-of-the-sands.mp4' },
+    { title: 'Midnight in the Canyon', src: 'assets/music/midnight-in-the-canyon.mp4' }
   ];
   var video = radio.querySelector('[data-radio-video]');
+  var expand = radio.querySelector('[data-radio-expand]');
   var play = radio.querySelector('[data-radio-play]');
   var index = 0;
 
@@ -40,6 +42,15 @@
     play.setAttribute('aria-label', (playing ? 'Pause ' : 'Play ') + tracks[index].title);
     radio.classList.toggle('is-playing', playing);
   }
+  expand.addEventListener('click', function () {
+    var open = !radio.classList.contains('is-open');
+    radio.classList.toggle('is-open', open);
+    expand.setAttribute('aria-expanded', String(open));
+    if (open) {
+      radio.classList.add('is-bloop');
+      window.setTimeout(function () { radio.classList.remove('is-bloop'); }, 260);
+    }
+  });
   play.addEventListener('click', togglePlayback);
   radio.querySelector('[data-radio-prev]').addEventListener('click', function () { setTrack(index - 1, !video.paused); });
   radio.querySelector('[data-radio-next]').addEventListener('click', function () { setTrack(index + 1, !video.paused); });
