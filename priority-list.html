@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>VKXR Priority Inbox</title>
+  <link rel="stylesheet" href="assets/css/supporter.css">
+  <link rel="stylesheet" href="assets/css/social-share.css">
+  <style>
+    .inbox{width:min(100% - 32px,1100px);margin:auto;padding:36px 0 70px}.inbox-head{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:22px}.inbox-head h1{font-size:clamp(2rem,5vw,3.4rem)}.inbox-note{color:var(--muted);line-height:1.6}.inbox-form{max-width:480px}.inbox-form button,.logout{width:auto;padding:12px 18px}.inbox-error{color:#ffb2a9}.table-wrap{overflow:auto;margin-top:22px;border:1px solid rgba(255,255,255,.16);border-radius:16px;background:rgba(3,5,11,.35)}table{width:100%;border-collapse:collapse;min-width:830px}th,td{padding:14px 16px;border-bottom:1px solid rgba(255,255,255,.1);text-align:left;vertical-align:top}th{color:var(--cyan);font:600 .74rem 'Space Grotesk';letter-spacing:.08em;text-transform:uppercase}td{font-size:.86rem;line-height:1.5}td small{display:block;margin-top:4px;color:var(--muted)}.amount{color:var(--gold);font:700 1rem 'Space Grotesk'}.request-cell{min-width:250px;white-space:pre-wrap}.empty{padding:24px;color:var(--muted)}.pill-status{color:var(--cyan)}@media(max-width:650px){.inbox-head{align-items:flex-start;flex-direction:column}}
+  </style>
+</head>
+<body>
+  <main class="inbox">
+    <a class="brand" href="/">VKXR <span>•</span> PRIVATE PIT CREW INBOX</a>
+    <section class="card">
+      <div class="inbox-head"><div><p class="eyebrow">OWNER VIEW · VERIFIED SQUARE PAYMENTS</p><h1>Priority inbox</h1></div><button class="social-link logout" id="logout" type="button" hidden>Lock inbox</button></div>
+      <p class="inbox-note">Requests are ordered by donation amount, largest first. Private supporter details stay on this page and are never included on public cards.</p>
+      <form class="inbox-form" id="login-form">
+        <label>Inbox password<input name="password" type="password" autocomplete="current-password" required></label>
+        <button type="submit">Open verified donor list</button>
+      </form>
+      <p class="status inbox-error" id="message" role="status" aria-live="polite"></p>
+      <div id="results" hidden></div>
+    </section>
+  </main>
+<script>
+  const form = document.querySelector('#login-form');
+  const message = document.querySelector('#message');
+  const results = document.querySelector('#results');
+  const logout = document.querySelector('#logout');
+  let authHeader = '';
+
+  function cell(text, className) {
+    const element = document.createElement('td');
+    if (className) element.className = className;
+    element.textContent = text || '—';
+    return element;
+  }
+
+  function render(rows) {
+    results.replaceChildren();
+    if (!rows.length) {
+      const empty = document.createElement('p'); empty.className = 'empty';
+      empty.textContent = 'No verified donations yet. New paid checkouts will appear after Square confirms them.';
+      results.append(empty); results.hidden = false; return;
+    }
+    const wrapper = document.createElement('div'); wrapper.className = 'table-wrap';
+    const table = document.createElement('table');
+    const headings = ['Donation', 'Supporter', 'Priority request', 'Contact', 'Discord', 'Paid'];
+    const thead = document.createElement('thead'), headRow = document.createElement('tr');
+    headings.forEach((heading) => { const th = document.createElement('th'); th.textContent = heading; headRow.append(th); });
+    thead.append(headRow); table.append(thead);
+    const tbody = document.createElement('tbody');
+    rows.forEach((row) => {
+      const tr = document.createElement('tr');
+      const donation = cell(new Intl.NumberFormat(undefined, {style:'currency',currency:'USD'}).format(Number(row.amount_cents) / 100), 'amount');
+      if (row.tier) { const small = document.createElement('small'); small.textContent = row.tier; donation.append(small); }
+      tr.append(donation);
+      const supporter = cell(row.display_name || 'Card not claimed');
+      if (row.handle) { const small = document.createElement('small'); small.textContent = '@' + row.handle; supporter.append(small); }
+      tr.append(supporter, cell(row.priority_request, 'request-cell'), cell(row.contact_email));
+      const discord = cell(row.discord_user_id ? 'Linked' : 'Not linked'); discord.className = 'pill-status'; tr.append(discord);
+      tr.append(cell(row.completed_at ? new Date(row.completed_at).toLocaleDateString() : 'Confirmed'));
+      tbody.append(tr);
+    });
+    table.append(tbody); wrapper.append(table); results.append(wrapper); results.hidden = false;
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    message.textContent = 'Loading verified payments…';
+    const password = new FormData(form).get('password');
+    const encodedCredentials = new TextEncoder().encode('vkxr-owner:' + password);
+    const binaryCredentials = Array.from(encodedCredentials, (byte) => String.fromCharCode(byte)).join('');
+    authHeader = 'Basic ' + btoa(binaryCredentials);
+    try {
+      const response = await fetch('/api/admin/supporters', {headers:{Authorization:authHeader}, cache:'no-store'});
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error || 'Could not open the inbox.');
+      message.textContent = '';
+      form.hidden = true; logout.hidden = false;
+      render(payload.supporters || []);
+    } catch (error) {
+      authHeader = '';
+      message.textContent = error.message;
+    }
+  });
+
+  logout.addEventListener('click', () => {
+    authHeader = ''; results.replaceChildren(); results.hidden = true;
+    form.reset(); form.hidden = false; logout.hidden = true; message.textContent = 'Inbox locked.';
+  });
+</script>
+</body>
+</html>
