@@ -9,6 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/supporter.css">
   <link rel="stylesheet" href="assets/css/social-share.css">
+  <style>
+    .welcome-note{position:relative;margin:25px 0;padding:20px 22px;border:1px solid rgba(158,231,255,.2);border-radius:16px;background:linear-gradient(135deg,rgba(158,231,255,.09),rgba(255,255,255,.025));box-shadow:inset 0 1px rgba(255,255,255,.1),0 12px 30px rgba(0,0,0,.18)}
+    .welcome-note h2{margin:0 0 10px;color:#ffd257;font:600 1.18rem 'Space Grotesk',sans-serif}
+    .welcome-note p{margin:10px 0 0;color:#d2d6e0;font-size:.88rem;line-height:1.65}
+    .welcome-note a{color:#9ee7ff;text-underline-offset:3px}
+    .welcome-note .synthesis-line{margin-top:18px;color:#fff;font:600 1rem 'Space Grotesk',sans-serif}
+    .welcome-note .synthesis-caption{margin-top:5px;color:#9ee7ff;font-size:.8rem;letter-spacing:.04em}
+    .synthesis-art{display:block;width:min(100%,520px);height:auto;margin:16px auto -2px;filter:drop-shadow(0 12px 25px rgba(93,132,255,.18));overflow:visible}
+    @media(prefers-reduced-motion:no-preference){.synthesis-art{animation:art-float 6s ease-in-out infinite}@keyframes art-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}}
+  </style>
 </head>
 <body>
   <main class="shell">
@@ -17,6 +27,32 @@
       <p class="eyebrow">THANK YOU FOR SUPPORTING VKXR</p>
       <h1>Your support moves this project forward.</h1>
       <p class="lede">Square sends a unique order reference back so we can verify your payment. Then create your Pit Crew card so we know which supporter to prioritize for release feedback and updates.</p>
+      <section class="welcome-note" aria-labelledby="welcome-title">
+        <h2 id="welcome-title">Welcome to the Pit Crew.</h2>
+        <p>Your support helps keep independent projects moving, creates room for new experiments, and gives this work more energy to reach people. There is no assignment attached to your support, and you do not owe us feedback or promotion. If you choose to share an idea, it may help shape the project’s overall direction, but individual requests and replies are not guaranteed.</p>
+        <p>You’re welcome to write to <a href="mailto:draveboo@gmail.com">draveboo@gmail.com</a>. This is a small, independent operation, so messages may be read late—or may not receive a reply. Please don’t take silence personally. Support helps fund the compute and time behind future work; it doesn’t buy a response or a promised feature.</p>
+        <p class="synthesis-line">In the meanwhile, please enjoy our new synthesis.</p>
+        <p class="synthesis-caption">A social justice paradigm-shaper. A donor to new realities. Helping accelerate new experience synthesis.</p>
+        <svg class="synthesis-art" viewBox="0 0 520 220" role="img" aria-labelledby="synthesis-art-title synthesis-art-desc">
+          <title id="synthesis-art-title">VKXR synthesis emblem</title>
+          <desc id="synthesis-art-desc">A luminous dimensional horizon with a floating VR visor above a desert landscape.</desc>
+          <defs>
+            <linearGradient id="art-sky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#61dbff"/><stop offset=".52" stop-color="#a28aff"/><stop offset="1" stop-color="#ffbd62"/></linearGradient>
+            <linearGradient id="art-glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d9faff" stop-opacity=".9"/><stop offset="1" stop-color="#8a89ff" stop-opacity=".2"/></linearGradient>
+            <radialGradient id="art-core"><stop stop-color="#fff"/><stop offset=".2" stop-color="#fff2b0"/><stop offset="1" stop-color="#ffb543" stop-opacity="0"/></radialGradient>
+            <filter id="art-glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="7"/></filter>
+          </defs>
+          <ellipse cx="260" cy="177" rx="166" ry="16" fill="#8c7cff" opacity=".23" filter="url(#art-glow)"/>
+          <path d="M88 177 Q164 146 260 164 Q351 144 432 177" fill="none" stroke="url(#art-sky)" stroke-width="2" opacity=".62"/>
+          <path d="M118 181 Q191 159 260 172 Q335 158 402 181" fill="none" stroke="#ffd77c" stroke-width="1" opacity=".44"/>
+          <circle cx="260" cy="142" r="54" fill="url(#art-core)"/>
+          <path d="M165 86 Q174 61 204 59 L316 59 Q346 61 355 86 L344 119 Q337 138 315 138 L205 138 Q183 138 176 119 Z" fill="#111626" stroke="url(#art-sky)" stroke-width="3"/>
+          <path d="M183 87 Q190 73 208 72 L253 72 L249 122 L207 122 Q196 122 192 111 Z M267 72 L312 72 Q330 73 337 87 L328 111 Q324 122 313 122 L271 122 Z" fill="url(#art-glass)" stroke="#d9faff" stroke-opacity=".65"/>
+          <path d="M249 73 L260 66 L271 73 L269 124 L260 130 L251 124 Z" fill="#f4d58c" opacity=".9"/>
+          <circle cx="143" cy="104" r="3" fill="#fff"/><circle cx="377" cy="94" r="2" fill="#fff"/><circle cx="221" cy="34" r="2" fill="#ffd77c"/><circle cx="306" cy="42" r="2.5" fill="#baf3ff"/>
+          <text x="260" y="207" text-anchor="middle" fill="#d6d8e8" font-family="Space Grotesk, sans-serif" font-size="11" letter-spacing="5">VKXR • DESERT SYSTEMS</text>
+        </svg>
+      </section>
       <a class="download-thanks" href="https://github.com/draveboo/mk8-vr-vd/releases/download/v0.1.0/MarioKart8-VR-v0.1.0-windows-x64.zip">Download VKXR for Windows</a>
       <nav class="social-links" aria-label="Share VKXR">
         <button class="social-link" type="button" data-more-share>More apps</button>
