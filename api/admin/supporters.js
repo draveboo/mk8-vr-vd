@@ -36,7 +36,12 @@ module.exports = async function handler(req, res) {
       WHERE c.status = 'completed' AND c.payment_id IS NOT NULL
       ORDER BY c.amount_cents DESC, c.completed_at ASC
       LIMIT 500`;
-    return res.status(200).json({ supporters: rows });
+    const videoSignups = await sql`
+      SELECT email, direction_choice, email_updates_opt_in, created_at
+      FROM video_access_signups
+      ORDER BY created_at DESC
+      LIMIT 1000`;
+    return res.status(200).json({ supporters: rows, videoSignups });
   } catch (error) {
     console.error('Priority inbox failed:', error.message);
     return res.status(500).json({ error: 'Could not load verified supporter records.' });

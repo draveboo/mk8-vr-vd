@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,follow"><meta name="theme-color" content="#090b12">
+  <title>VKXR video room</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/supporter.css"><link rel="stylesheet" href="assets/css/social-share.css">
+  <style>
+    .watch-card{width:min(100% - 32px,980px)}.watch-intro{color:var(--muted);line-height:1.65}.video-frame{position:relative;margin:24px 0 14px;overflow:hidden;border:1px solid rgba(158,231,255,.3);border-radius:18px;background:#03050a;box-shadow:0 20px 65px rgba(0,0,0,.5),0 0 30px rgba(86,154,255,.12)}.video-frame video{display:block;width:100%;max-height:72vh;background:#03050a}.video-note{color:var(--muted);font-size:.8rem;line-height:1.5}.watch-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:24px}.watch-actions .download-thanks{margin:0}.share-set{margin-top:26px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}
+  </style>
+</head>
+<body><main class="shell watch-card">
+  <a class="brand" href="/">VKXR <span>•</span> VIDEO ROOM</a>
+  <section class="card" id="video-room" hidden>
+    <p class="eyebrow">THANK YOU FOR JOINING US</p>
+    <h1>In the meanwhile, enjoy our new synthesis.</h1>
+    <p class="watch-intro">A look at VKXR in motion. More long-form chapters will appear here as they’re connected.</p>
+    <div class="video-frame">
+      <video controls playsinline preload="metadata" poster="assets/img/vr-headset-montage-poster.jpg" aria-label="VKXR headset montage">
+        <source src="assets/video/vr-headset-montage.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="video-note">This is the current project montage. Long-form social video embeds will be added when the video links are supplied.</p>
+    <div class="share-set" data-share-set data-share-url="https://vkxr.vercel.app/watch.html" data-share-title="VKXR VR project" data-share-text="Take a look at this VKXR project video.">
+      <p class="hint">Share this video room</p>
+      <nav class="social-links" aria-label="Share this video room">
+        <button class="social-link" type="button" data-share-native>More apps</button>
+        <a class="social-link" data-share-service="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="social-link" data-share-service="x" target="_blank" rel="noopener noreferrer">X</a>
+        <a class="social-link" data-share-service="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <button class="social-link" type="button" data-share-copy>Copy link</button>
+      </nav>
+    </div>
+    <div class="watch-actions">
+      <a class="download-thanks" href="/#support">Next: support VKXR →</a>
+      <a class="back" href="/">Back to the project</a>
+    </div>
+  </section>
+  <section class="card" id="access-error" hidden>
+    <p class="eyebrow">VIDEO ROOM</p><h1>Enter with your email.</h1>
+    <p class="lede">Complete the quick direction poll to open this page.</p>
+    <a class="download-thanks" href="/watch-access.html">Continue to video access</a>
+  </section>
+</main>
+<script src="assets/js/social-share.js" defer></script>
+<script>
+  fetch('/api/video-access', {cache:'no-store'}).then((response) => response.json()).then(({allowed}) => {
+    document.querySelector(allowed ? '#video-room' : '#access-error').hidden = false;
+  }).catch(() => { document.querySelector('#access-error').hidden = false; });
+</script>
+</body></html>

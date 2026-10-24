@@ -46,6 +46,17 @@ async function main() {
   await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS contact_email TEXT`;
   await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS priority_request TEXT`;
   await sql`ALTER TABLE supporters ADD COLUMN IF NOT EXISTS email_updates_opt_in BOOLEAN NOT NULL DEFAULT FALSE`;
+  await sql`
+    CREATE TABLE IF NOT EXISTS video_access_signups (
+      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+      email TEXT NOT NULL UNIQUE,
+      direction_choice TEXT NOT NULL CHECK (direction_choice IN ('comfort', 'native', 'more-games', 'polish')),
+      email_updates_opt_in BOOLEAN NOT NULL DEFAULT FALSE,
+      access_token_hash TEXT NOT NULL,
+      access_expires_at TIMESTAMPTZ NOT NULL,
+      created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+      updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+    )`;
   await sql`CREATE UNIQUE INDEX IF NOT EXISTS supporters_discord_user_id_unique ON supporters (discord_user_id) WHERE discord_user_id IS NOT NULL`;
   console.log('VKXR supporter tables are ready.');
 }
