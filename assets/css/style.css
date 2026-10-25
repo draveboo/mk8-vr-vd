@@ -288,7 +288,12 @@ h1, h2, h3, h4, .hero__lede, .head__lede, .prose p, .benefit p, .step p { text-s
 }
 
 .brand { display: inline-flex; align-items: center; gap: 9px; font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; letter-spacing: 0.01em; }
-.brand__mark { display: grid; place-items: center; opacity: 0.92; }
+.brand__mark { position:relative; display:grid; place-items:center; opacity:.92; }
+.brand__mark svg { display:block; transform-origin:center; animation:brand-mark-breathe 7s ease-in-out infinite; }
+.brand__mark::after { position:absolute; inset:2px; border-radius:50%; content:""; pointer-events:none; opacity:.34; background:conic-gradient(from 0deg,transparent 0 78%,rgba(255,255,255,.72) 79%,rgba(154,217,232,.42) 81%,transparent 83% 100%); -webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1.3px)); mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1.3px)); animation:brand-mark-glint 18s linear infinite; }
+@keyframes brand-mark-breathe { 0%,100% { filter:brightness(.98) drop-shadow(0 0 1px rgba(154,217,232,.12)); } 50% { filter:brightness(1.08) drop-shadow(0 0 4px rgba(154,217,232,.24)); } }
+@keyframes brand-mark-glint { to { transform:rotate(360deg); } }
+@media (prefers-reduced-motion:reduce) { .brand__mark svg,.brand__mark::after { animation:none; } .brand__mark::after { opacity:.16; } }
 
 .nav__toggle { display:inline-flex; flex-shrink:0; }
 .nav__cta { position:relative; isolation:isolate; overflow:hidden; flex-shrink:0; margin-left:auto; padding:9px 15px; border:1px solid rgba(255,255,255,.32); border-bottom-color:rgba(90,0,7,.72); border-radius:9px; color:#fff; background:linear-gradient(180deg,#f34b55,#e60012 62%,#c90010); box-shadow:inset 0 1px rgba(255,255,255,.48),inset 0 -1px rgba(112,0,8,.35),0 3px 0 #97000b,0 8px 18px rgba(142,0,10,.32); font-size:.78rem; font-weight:700; letter-spacing:.01em; text-decoration:none; text-shadow:0 1px rgba(80,0,6,.45); transition:transform .22s var(--ease),box-shadow .22s var(--ease),filter .22s var(--ease); }
