@@ -1,5 +1,7 @@
 # Mario Kart 8 VR for Cemu
 
+**[Download the Windows x64 VR layer](https://github.com/draveboo/mk8-vr-vd/releases/download/v0.1.0/MarioKart8-VR-v0.1.0-windows-x64.zip)** · [View the release](https://github.com/draveboo/mk8-vr-vd/releases/tag/v0.1.0) · [Browse source code](https://github.com/draveboo/mk8-vr-vd)
+
 This repository contains the current Cemu Vulkan layer, MK8 graphic pack, configurable launcher, and reverse-engineering documentation for playing the Wii U version of Mario Kart 8 in a Quest headset through Virtual Desktop.
 
 > **Status:** the current build can transport MK8’s TV/DRC images through the Cemu Vulkan layer and submit them through the Virtual Desktop OpenXR projection path. It is an experimental stereo/reference build, not a finished head-tracked 6DOF mod. Review [status and known limits](docs/STATUS.md).
