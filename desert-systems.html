@@ -44,11 +44,11 @@
   const revealButton = document.querySelector('#matrix-reveal');
   const matrixStatus = document.querySelector('#matrix-status');
   const matrixSpeech = document.querySelector('#matrix-speech');
-  const guideLine = 'The objective matrix is aligned. Build strong foundations, bridge the gap, and leave more room for creative freedom.';
+  const guideLine = 'Intrinsic underlying connection established. Build strong foundations, bridge the gap, and leave more room for creative freedom.';
   revealButton.addEventListener('click', () => {
     const awake = matrix.classList.toggle('is-awake');
     revealButton.textContent = awake ? 'Reset the guide' : 'Reveal the guide';
-    matrixStatus.textContent = awake ? 'System aligned · guide active · shared objective ready.' : 'System idle · waiting for a shared objective.';
+    matrixStatus.textContent = awake ? 'Intrinsic underlying connection · guide active · shared objective ready.' : 'System idle · waiting for a shared objective.';
     if (awake) {
       matrixSpeech.textContent = guideLine;
       if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); const voice = new SpeechSynthesisUtterance(guideLine); voice.rate = .92; voice.pitch = 1.08; window.speechSynthesis.speak(voice); }
