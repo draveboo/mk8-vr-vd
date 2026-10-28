@@ -638,5 +638,12 @@
   });
   document.getElementById('btnDriveConstruct')?.addEventListener('click', () => saveToGoogleDrive(defaultState));
 </script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
+</script>
 </body>
 </html>
