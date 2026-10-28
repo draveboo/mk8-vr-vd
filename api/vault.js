@@ -11,26 +11,14 @@ function hashKey(key) {
  */
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store, private');
-  const sql = getDb();
-
-  // Ensure table exists on first invocation (auto-migration)
+  let sql;
   try {
-    await sql`
-      CREATE TABLE IF NOT EXISTS sovereign_vault (
-        id SERIAL PRIMARY KEY,
-        email VARCHAR(255) UNIQUE NOT NULL,
-        key_hash VARCHAR(64) NOT NULL,
-        payment_id VARCHAR(128),
-        matrix_state JSONB NOT NULL DEFAULT '{}'::jsonb,
-        created_at TIMESTAMPTZ DEFAULT NOW(),
-        updated_at TIMESTAMPTZ DEFAULT NOW()
-      )
-    `;
-    await sql`CREATE INDEX IF NOT EXISTS idx_sovereign_vault_email ON sovereign_vault(email)`;
-    await sql`CREATE INDEX IF NOT EXISTS idx_sovereign_vault_key_hash ON sovereign_vault(key_hash)`;
-  } catch (err) {
-    console.error('Vault table init warning:', err.message);
+    sql = getDb();
+  } catch (dbErr) {
+    console.error('Database connection failed:', dbErr.message);
+    return res.status(503).json({ error: 'Database service unavailable.', detail: dbErr.message });
   }
+
 
   // GET: Restore / Auto-insert Matrix Data by Email + Cryptographic Key
   if (req.method === 'GET') {
@@ -62,7 +50,7 @@ module.exports = async function handler(req, res) {
       });
     } catch (error) {
       console.error('Vault retrieval failed:', error.message);
-      return res.status(500).json({ error: 'Failed to access vault.' });
+      return res.status(500).json({ error: 'Failed to access vault.', detail: error.message });
     }
   }
 
@@ -110,7 +98,7 @@ module.exports = async function handler(req, res) {
       });
     } catch (error) {
       console.error('Vault save failed:', error.message);
-      return res.status(500).json({ error: 'Failed to preserve matrix state in vault.' });
+      return res.status(500).json({ error: 'Failed to preserve matrix state in vault.', detail: error.message });
     }
   }
 
