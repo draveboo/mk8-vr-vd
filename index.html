@@ -484,6 +484,14 @@
               <button class="social-link" type="button" data-share-copy>Copy page link</button>
             </nav>
           </section>
+          <section class="share-panel" style="margin-top:12px;" aria-label="Own your sovereign data">
+            <p class="micro">Own Your Data Forever</p>
+            <nav class="social-links" aria-label="Data ownership tools">
+              <button class="social-link" type="button" id="btnDownloadConstruct">💾 Download World (.json)</button>
+              <button class="social-link" type="button" id="btnEmailConstruct">📧 Email Passport</button>
+              <button class="social-link" type="button" id="btnDriveConstruct">📁 Save to Google Drive</button>
+            </nav>
+          </section>
           <div class="support-media-grid">
             <figure class="support-montage">
               <video controls playsinline preload="metadata" poster="assets/img/vr-headset-montage-poster.jpg" aria-label="VKXR headset montage with audio and fullscreen playback">
@@ -620,5 +628,15 @@
 <script src="assets/js/social-share.js" defer></script>
 <script src="assets/js/desert-radio.js" defer></script>
 <script src="assets/js/support-celebration.js" defer></script>
+<script type="module">
+  import { downloadConstructState, emailConstructBackup, saveToGoogleDrive } from './assets/js/sovereign-actions.js';
+  const defaultState = { creativity: 0.95, balance: 0.98, harmony: 1.0, energy: 0.9, joy: 1.0, customSymbol: '✦', customColor: '#ffd700' };
+  document.getElementById('btnDownloadConstruct')?.addEventListener('click', () => downloadConstructState(defaultState));
+  document.getElementById('btnEmailConstruct')?.addEventListener('click', () => {
+    const email = prompt('Enter your email to receive your construct passport:', '') || '';
+    emailConstructBackup(defaultState, email);
+  });
+  document.getElementById('btnDriveConstruct')?.addEventListener('click', () => saveToGoogleDrive(defaultState));
+</script>
 </body>
 </html>
