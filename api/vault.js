@@ -24,10 +24,10 @@ module.exports = async function handler(req, res) {
         matrix_state JSONB NOT NULL DEFAULT '{}'::jsonb,
         created_at TIMESTAMPTZ DEFAULT NOW(),
         updated_at TIMESTAMPTZ DEFAULT NOW()
-      );
+      )
     `;
-    await sql`CREATE INDEX IF NOT EXISTS idx_sovereign_vault_email ON sovereign_vault(email);`;
-    await sql`CREATE INDEX IF NOT EXISTS idx_sovereign_vault_key_hash ON sovereign_vault(key_hash);`;
+    await sql`CREATE INDEX IF NOT EXISTS idx_sovereign_vault_email ON sovereign_vault(email)`;
+    await sql`CREATE INDEX IF NOT EXISTS idx_sovereign_vault_key_hash ON sovereign_vault(key_hash)`;
   } catch (err) {
     console.error('Vault table init warning:', err.message);
   }
@@ -81,13 +81,17 @@ module.exports = async function handler(req, res) {
 
     try {
       // Upsert: Save matrix values tied to email and key hash
+      const matrixJson = typeof matrixState === 'string' ? matrixState : JSON.stringify(matrixState);
       const rows = await sql`
         INSERT INTO sovereign_vault (email, key_hash, payment_id, matrix_state, updated_at)
-        VALUES (${normalizedEmail}, ${hashed}, ${paymentId}, ${JSON.stringify(matrixState)}, NOW())
+        VALUES (${normalizedEmail}, ${hashed}, ${paymentId}, ${matrixJson}::jsonb, NOW())
         ON CONFLICT (email) DO UPDATE SET
           matrix_state = EXCLUDED.matrix_state,
           payment_id = COALESCE(EXCLUDED.payment_id, sovereign_vault.payment_id),
           updated_at = NOW()
+        WHERE sovereign_vault.key_hash = ${hashed} OR sovereign_vault.key_hash = EXCLUDED.key_hash
+        RETURNING email, payment_id, matrix_state, updated_at
+      `;
         WHERE sovereign_vault.key_hash = ${hashed} OR sovereign_vault.key_hash = EXCLUDED.key_hash
         RETURNING email, payment_id, matrix_state, updated_at
       `;
