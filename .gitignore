@@ -28,3 +28,6 @@ dist/
 node_modules/
 .agents/
 skills-lock.json
+
+*.orig.mp4
+*.tmp.mp4
