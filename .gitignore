@@ -1,4 +1,4 @@
-﻿# Temporary conservative ignore list
+# Temporary conservative ignore list
 # Keep game dumps, credentials, and machine-specific runtime data out of source control.
 *.rpx
 *.bin
@@ -24,3 +24,7 @@ cmake-build-*/
 dist/
 .vercel
 .env*
+
+node_modules/
+.agents/
+skills-lock.json
