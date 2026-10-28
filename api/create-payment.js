@@ -1,3 +1,5 @@
+const crypto = require('crypto');
+
 const ENDPOINTS = {
   sandbox: 'https://connect.squareupsandbox.com/v2/payments',
   production: 'https://connect.squareup.com/v2/payments',
